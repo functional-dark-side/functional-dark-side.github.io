@@ -8,22 +8,40 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="/">The functional dark side</a>
+            <a class="navbar-brand page-scroll" href="#page-top">The functional dark side</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a class="page-scroll" href="/about.html">About</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#portfolio">Portfolio</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                </li>
-            </ul>
+          <ul class="nav navbar-nav navbar-right">
+              {% assign links = site.data.navigation-page %}
+              {% for link in links %}
+                  {% assign class = nil %}
+                  {% if page.url contains link.url %}
+                      {% assign class = 'active' %}
+                  {% endif %}
+                  {% if link.sublinks %}
+                      <li class="dropdown {{ class }}">
+                          <a href="{{ site.baseurl }}{{ link.url }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ link.title }} <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                              {% for sublink in link.sublinks %}
+                                  {% if sublink.title == 'separator' %}
+                                      <li role="separator" class="divider"></li>
+                                  {% else %}
+                                      <li>
+                                          <a href="{{ site.baseurl }}{{ sublink.url }}">{{ sublink.title }}</a>
+                                      </li>
+                                  {% endif %}
+                              {% endfor %}
+                          </ul>
+                      </li>
+                  {% else %}
+                      <li class="{{ class }}">
+                          <a href="{{ site.baseurl }}{{ link.url }}">{{ link.title }}</a>
+                      </li>
+                  {% endif %}
+              {% endfor %}
+          </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>

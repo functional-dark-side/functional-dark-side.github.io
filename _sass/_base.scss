@@ -349,3 +349,56 @@ img::-moz-selection {
 body {
     -webkit-tap-highlight-color: $theme-dark;
 }
+
+div#who ul {
+  list-style: none;
+  padding: 0;
+}
+div#who li {
+  padding-left: 1.3em;
+  margin: 10px 0;
+}
+div#who li:before {
+  content: "\f007"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+.img_container{
+  text-align: center;
+}
+
+/**
+ * Tables
+ */
+ $spacing-unit:     30px !default;
+ $table-text-align: left !default;
+ $text-color:       #111 !default;
+ $grey-color:       #828282 !default;
+ $grey-color-light: lighten($grey-color, 40%) !default;
+ $grey-color-dark:  darken($grey-color, 25%) !default;
+table {
+  margin-bottom: $spacing-unit;
+  width: 100%;
+  text-align: $table-text-align;
+  color: lighten($text-color, 18%);
+  border-collapse: collapse;
+  border: 1px solid $grey-color-light;
+  tr {
+    &:nth-child(even) {
+      background-color: lighten($grey-color-light, 6%);
+    }
+  }
+  th, td {
+    padding: ($spacing-unit / 3) ($spacing-unit / 2);
+  }
+  th {
+    background-color: lighten($grey-color-light, 3%);
+    border: 1px solid darken($grey-color-light, 4%);
+    border-bottom-color: darken($grey-color-light, 12%);
+  }
+  td {
+    border: 1px solid $grey-color-light;
+  }
+}
