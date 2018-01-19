@@ -10,6 +10,8 @@ As a first approach to the functional dark side of the metagenomes we used marin
 -   **Malaspina:** 116 samples at 30 different stations for a total of ~22 million predicted ORFs
 -   **Ocean Sampling Day (OSD):** 146 samples at 139 different locations for a total of ~7 million predicted ORFs
 
+<div class="img_container" style="width:50%; margin:5em auto;">
+
 |  Project  | Samples | Stations |         ORFs        |
 | :-------: | :-----: | :------: | :-----------------: |
 |    TARA   |   242   |    141   | 111,903,261 (70.1%) |
@@ -18,14 +20,18 @@ As a first approach to the functional dark side of the metagenomes we used marin
 |    GOS    |    80   |    70    |  20,068,580 (12.6%) |
 | **Total** | **588** |  **380** |   **159,561,257**   |
 
-> At the moment we also included the data from the Human Microbiome Project v2, **1249** metagenomes and **162,687,295** predicted ORFs. In overall we used **322,248,552** predicted ORFs
+</div>
 
-## Protein clusters of unknown function
+<h2 class="section-heading  text-primary">ORF clusters of unknown function</h2>
 
 The analysis of the first marine dataset resulted in:
+
+<div class="img_container" style="width:80%; margin:5em auto;">
 
 |     Categories    |   Knowns   | Genomic unknowns | Environmental unknowns | Knowns without Pfam |
 | :---------------: | :--------: | :--------------: | :--------------------: | :-----------------: |
 |    **Clusters**   |  1,128,119 |      580,724     |         259,100        |       640,388       |
 |      **ORFs**     | 58,942,129 |    21,197,358    |        5,756,505       |      19,946,569     |
 | **Rejected ORFs** |   94,199   |      25,992      |          5,305         |        19,505       |
+
+</div>
