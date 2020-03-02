@@ -20,9 +20,9 @@ From the set of 3,003,897 clusters, we removed 57,052 clusters classified as “
 
 _Steps of the cluster refinement both in terms of number of clusters and number of ORFs (kept and removed)._
 
-<img alt="refinement_steps_clu.png" src="/img/refinement_steps_clu.png" width="" height="" >
+<img alt="refinement_steps_clu.png" src="/img/refinement_steps_clu.png" width="80%" height="" >
 
-<img alt="refinement_steps_ORFs.png" src="/img/refinement_steps_ORFs.png" width="" height="" >
+<img alt="refinement_steps_ORFs.png" src="/img/refinement_steps_ORFs.png" width="80%" height="" >
 
 <br>
 

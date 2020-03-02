@@ -77,7 +77,7 @@ Those queries without any match to nr entries represent the EU set. The not anno
 Of the 1,946,737 refined not annotated clusters, ∼1.5M reported a match (81%) to the UniRef90 database, and more than 50% of these hits resulted annotated to “hypothetical” proteins. The remaining ~400K (19%) clusters with no matches to UniRef90 entries were screened against the NCBI nr database. This second search resulted in ∼20K (5.5%) clusters with a match to NCBI nr entries, divided into ~16K clusters (79%), annotated to “hypothetical” proteins and ~4K (21%) clusters to not hypothetical. The remaining majority, ∼350K clusters (94.5%), reported no matches to NCBI nr entries.
 The results of the different steps are shown in the next figure, and the numbers reported in the table below.
 
-<img alt="Classification_steps.png" src="/img/Classification_steps.png" width="" height="" >
+<img alt="Classification_steps.png" src="/img/Classification_steps.png" width="60%" height="" >
 
 *Panel describing the steps applied to classify the cluster of unknowns*
 
@@ -115,7 +115,7 @@ Results are summarised in the following table and figure:
 
 <br>
 
-<img alt="Classific_cluster_first_categ.png" src="/img/Classific_cluster_first_categ.png" width="" height="" >
+<img alt="Classific_cluster_first_categ.png" src="/img/Classific_cluster_first_categ.png" width="60%" height="" >
 
 *Percentage of clusters and ORFs in the different categories.*
 
