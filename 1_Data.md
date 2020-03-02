@@ -27,6 +27,8 @@ The Global Ocean Sampling Expedition (GOS) [[2]](#2), the Tara Oceans expedition
 ![](/img/Metag_world_map.png){:height="80%" width="80%"}
 </div>
 
+<img alt="Metag_world_map.png" src="/img/Metag_world_map.png" width="80%" height="80%" >
+
 *Ocean distribution of the metagenomic samples*
 
 <br>
