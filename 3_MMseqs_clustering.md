@@ -26,7 +26,7 @@ For our downstream analyses we only will use the remaining **3,003,897** cluster
 
 <div class="img_container" style="width:50%; margin:2em auto;">
 
-*Cascaded clustering results.*
+*Cascaded clustering results*
 
 |                     |  Clusters   |
 |:-------------------:|:-----------:|
@@ -56,9 +56,8 @@ The clustering general results after the filtering based on the number of member
 
 <br>
 <br>
-<div class="img_container img-responsive">
-![](/img/MG_mmseqs_clustering_res.png){:height="80%" width="80%"}
-</div>
+
+<img alt="MG_mmseqs_clustering_res.png" src="/img/MG_mmseqs_clustering_res.png" width="80%" height="" >
 
 *Clustering results: (a) Percentage of clusters in the different sets and (b) percentage of ORFs in the different cluster sets.*
 
@@ -66,9 +65,7 @@ The clustering general results after the filtering based on the number of member
 
 #### Cluster sizes
 
-<div class="img_container img-responsive">
-![](/img/MG_cluster_size_threshold.png){:height="60%" width="60%"}
-</div>
+<img alt="MG_cluster_size_threshold.png" src="/img/MG_cluster_size_threshold.png" height="" width="60%">
 
 *Cluster size distribution. The red line indicates the "breaking point" of the distribution, which corresponds to clusters of ~10 ORFs.*
 
