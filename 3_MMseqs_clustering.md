@@ -36,6 +36,7 @@ For our downstream analyses we only will use the remaining **3,003,897** cluster
 | **Cluster step 1**  | 42,891,295  |
 | **Cluster step 2**  | 35,267,181  |
 | **Cluster step 3**  | 32,465,074  |
+
 </div>
 
 Total number of clusters for each level in the cascaded clustering (we keep the intermediate results of the clustering) and report the size of each cluster and it’s related statistics (average, min, max).
@@ -48,7 +49,9 @@ Total number of clusters for each level in the cascaded clustering (we keep the 
 | -------- |:-----------:|:------------------:|:---------------------:|:----------:|
 | Clusters | 32,465,074  |     3,003,897      |       9,549,853       | 19,911,324 |
 | ORFs     | 322,248,552 |    268,467,763     |      33,869,465       | 19,911,324 |
+
 </div>
+
 The clustering general results after the filtering based on the number of members, i.e. genes, for each cluster.
 
 <br>
@@ -64,7 +67,7 @@ The clustering general results after the filtering based on the number of member
 #### Cluster sizes
 
 <div class="img_container img-responsive">
-![](/img/MG_cluster_size_threshold.png){:height="80%" width="80%"}
+![](/img/MG_cluster_size_threshold.png){:height="60%" width="60%"}
 </div>
 
 *Cluster size distribution. The red line indicates the "breaking point" of the distribution, which corresponds to clusters of ~10 ORFs.*

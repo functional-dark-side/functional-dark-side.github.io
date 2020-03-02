@@ -23,6 +23,7 @@ We were able to annotate to a Pfam protein domain barely over 40% (44%) of the t
 | Original dataset | Annotated ORFs | Not-annotated ORFs |
 | :--------------: | :------------: | :----------------: |
 |    322,248,552   |   140,352,580  |     181,895,972    |
+
 </div>
 
 The distribution of Pfam annotations in the clusters can be found [here](4.2_Cluster_annotation#annotations-in-the-clusters)

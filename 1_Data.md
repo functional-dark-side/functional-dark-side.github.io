@@ -19,7 +19,9 @@ The Global Ocean Sampling Expedition (GOS) [[2]](#2), the Tara Oceans expedition
 | OSD       |   145   |  139  |
 | GOS       |    80   |   70  |
 | HMP       | 1,249   |   18  |
+
 </div>
+
 <br>
 <div class="img_container img-responsive">
 ![](/img/Metag_world_map.png){:height="80%" width="80%"}
@@ -54,6 +56,7 @@ We collected 90,621,864 proteins from 27,372 bacterial genomes, and 3,101,326 fr
 | Bacterial | 27,372  | 90,621,864 |
 | Archaeal  |  1,569  | 3,101,326  |
 |   Total   | 28,941  | 93,723,190 |
+
 </div>
 
 <br>
@@ -69,6 +72,8 @@ It can be downloaded from the <https://www.ocean-microbiome.org/> portal.
 
 <br>
 <br>
+
+* * *
 
 <h4 class="section-heading  text-primary">References</h4>
 
