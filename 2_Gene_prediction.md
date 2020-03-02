@@ -14,7 +14,9 @@ To predict our Open Reading Frames (ORFs) we used the Prodigal (Prokaryotic Dyna
 We identified a total of 322,248,552 predicted ORFs.
 The numbers of contigs and ORFs retrieved for each project are shown in the table below.
 
-**Number of contigs and predicted ORFs retrieved with Prodigal**
+<div class="img_container" style="width:70%; margin:5em auto;">
+
+*Number of contigs and predicted ORFs retrieved with Prodigal*
 
 | Data set  | Number of contigs  | Number of ORFs |
 |:---------:|:------------------:|:--------------:|
@@ -23,7 +25,7 @@ The numbers of contigs and ORFs retrieved for each project are shown in the tabl
 | OSD       |       4,127,095    |     7,015,383  |
 | GOS       | 12,672,518 (reads) |    20,068,580  |
 | HMP       |      80,560,927    |   162,687,295  |
-
+</div>
 
 <br>
 <br>
