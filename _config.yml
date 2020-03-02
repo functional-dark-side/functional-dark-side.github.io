@@ -14,3 +14,10 @@ collections:
   portfolio:
 kramdown:
   parse_block_html: true
+
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
