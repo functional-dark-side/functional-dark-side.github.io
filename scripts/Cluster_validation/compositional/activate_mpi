@@ -1,0 +1,3 @@
+export OPENMPI_HOME=/bioinf/software/openmpi/openmpi-1.8
+export LD_LIBRARY_PATH=/home/cvanni/opt/parasail/lib:${OPENMPI_HOME}/lib:$LD_LIBRARY_PATH
+export PATH=$OPENMPI_HOME/bin:$PATH

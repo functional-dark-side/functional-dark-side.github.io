@@ -1,0 +1,38 @@
+default:
+  # Basic runtime config
+  dt_cores:             64 # Number of cores that data.table is going to use
+  dt_verbose:           FALSE # Should data.table be verbose
+  mcl_bin:              "mcl" # Where is the MCL binary
+  mcl_inflation_min:    1.2 # Minimum MCL inflation value
+  mcl_inflation_max:    3.0 # Maximum MCL inflation value
+  mcl_inflation_step:   0.1 # MCL inflation step
+  mcl_jobs:             2 # How many simultaneous MCL jobs should be ran
+  mcl_cores:            32 # How many cores MCL will use
+  max_gc_jobs:          19 # How many simulatneous jobs are going to be used for the inflation values
+  entropy_cores:        32 # Number of cores to calculate MCL cluster entropy (uses a lot of RAM, 32 for bigmems)
+  das_refinement_cores: 64
+  # Files
+  wd:                   "/scratch/cvanni/unk_C_SC"
+  graph_lib:            "/scratch/cvanni/unk_C_SC/component_inference/graph_lib.R"
+  cl_cat:               "/bioinf/projects/megx/UNKNOWNS/2017_11/cl_categories/cl_ids_categ.tsv"
+  cl_comp:              "/bioinf/projects/megx/UNKNOWNS/chiara/cluster_ranks/completeness/cl_completeness.tsv.gz"
+  p_clan:               "/bioinf/projects/megx/UNKNOWNS/2017_11/Pfam_annotation/pfam_files/Pfam-A.clans.tsv.gz"
+  p_doms:               "/bioinf/projects/megx/UNKNOWNS/chiara/architect/DA/da_reduced_original_names_fix.tsv.gz"
+  hhblits_results:      "/scratch/cvanni/unk_C_SC/data/k_hhblits.tsv"
+  # Files with results that can be loaded to skip time consuming steps, leave it empty to recalculate them
+  k_g_mcl_list:         ""
+  k_gc:                 ""
+  k_gc_da_sg:           ""
+  k_gc_entropy:         ""
+  da_dist:              ""
+  k_das_refinement:     ""
+
+  kwp_hhblits_results:  "/scratch/cvanni/unk_C_SC/data/kwp_hhblits.tsv.gz"
+  kwp_g_mcl_list:       ""
+  kwp_gc:               ""
+  gu_hhblits_results:   "/scratch/cvanni/unk_C_SC/data/gu_hhblits.tsv.gz"
+  gu_g_mcl_list:        ""
+  gu_gc:                ""
+  eu_hhblits_results:   "/scratch/cvanni/unk_C_SC/data/eu_hhblits.tsv.gz"
+  eu_g_mcl_list:        ""
+  eu_gc:                ""

@@ -3,7 +3,7 @@ layout: page
 title: Data
 ---
 
-### Metagenomic
+<h3 class="section-heading  text-primary">Metagenomic data</h3>
 
 To obtain a comprehensive view of the microbial communities in different environments we combined four major/primary marine metagenomic datasets, which cover all the ocean regions at various depths and the Human Microbiome Project dataset [[1]](#1)
 The Global Ocean Sampling Expedition (GOS) [[2]](#2), the Tara Oceans expedition (TARA) [[3]](#3), Malaspina [Council SNRC (CSIC). Malaspina expedition. Available at: http://www.expedicionmalaspina.es/, 2010] and Ocean Sampling Day (OSD) [[4]](#4), form together one of the most extensive public marine data sets. The data from GOS originated from 80 samples at 70 different sampling sites; the Malaspina data set comprises data from 116 samples, taken at 30 different stations; the TARA data covers 141 different locations for a total 242 samples and OSD data belongs to 146 metagenomic samples taken at 139 different stations. We added to this dataset 1,249 HMP metagenomes, coming from 5 main body sites (“gastrointestinal tract”, “oral”, “airways”, “urogenital tract” and “skin”) and 18 specific sites. The numbers are shown in Table 1.
@@ -34,6 +34,7 @@ The data were collected in the form of single-reads from GOS and at the stage of
 <h2 class="section-heading  text-primary">Data sets integration via incremental clustering</h2>
 
 <br>
+<br>
 
 <h3 class="section-heading  text-primary">Genomic data</h3>
 
@@ -51,6 +52,7 @@ We collected 90,621,864 proteins from 27,372 bacterial genomes, and 3,101,326 fr
 | Archaeal  |  1,569  | 3,101,326  |
 |   Total   | 28,941  | 93,723,190 |
 
+<br>
 
 <h3 class="section-heading  text-primary">TARA gene catalog (version 2)</h3>
 
@@ -61,6 +63,8 @@ OM-RGC.v2 contains 46,775,154 non-redundant genes.
 
 It can be downloaded from the <https://www.ocean-microbiome.org/> portal.
 
+<br>
+<br>
 
 <h4 class="section-heading  text-primary">References</h4>
 
