@@ -1,5 +1,3 @@
-source "http://gems.github.com"
-source 'http://rubygems.org'
-source 'http://gemcutter.org'
+source "https://rubygems.org"
 
-gem 'jekyll-relative-links'
+gem "github-pages", group: :jekyll_plugins
