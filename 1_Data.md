@@ -28,15 +28,18 @@ The Global Ocean Sampling Expedition (GOS) [[2]](#2), the Tara Oceans expedition
 
 The data were collected in the form of single-reads from GOS and at the stage of metagenomic assemblies from the other four projects. Specifically, GOS single-reads came from shotgun sequencing performed with the Sanger sequencing techniques, which leads to sufficiently long reads [[5]](#5) (GOS Sanger data have an average read length of ~800 nucleotides [[2]](#2)). TARA, OSD, Malaspina and the HMP data are, instead, metagenomic assemblies of Illumina pair-end reads. TARA reads were assembled using MOCAT [[6]](#6), Malaspina with RAY-Meta [[7]](#7), OSD using SPAdes [[8]](#8) and the HMP with SOAPdenovo (V 1.04 28) [[9]](#9).
 
----
+<br>
+<br>
 
 <h2 class="section-heading  text-primary">Data sets integration via incremental clustering</h2>
+
+<br>
 
 <h3 class="section-heading  text-primary">Genomic data</h3>
 
 **The Genome Taxonomy Database (GTDB):** 127,318 genomes, BACTERIA (125,243), ARCHAEA (2,075), Release 03-RS86 (19th August 2018)
 
-Download the protein sequences from bacterial and archaeal genomes stored in the Annotree website at <https://data.ace.uq.edu.au/public/misc_downloads/annotree/r86/>.
+We downloaded the protein sequences for bacterial and archaeal genomes from the Annotree website at: <https://data.ace.uq.edu.au/public/misc_downloads/annotree/r86/>.
 
 We collected 90,621,864 proteins from 27,372 bacterial genomes, and 3,101,326 from 1,569 archaeal genomes
 
