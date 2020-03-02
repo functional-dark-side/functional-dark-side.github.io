@@ -6,6 +6,7 @@ title: Gene prediction
 We decided to collect the data at the assembly state/level and to start our workflow with the gene prediction step. (The metagenomic assembly is rather computationally expensive step and re-do it for all the considered projects would have required too many resources).
 
 <h3 class="section-heading  text-primary">Methods</h3>
+
 To predict our Open Reading Frames (ORFs) we used the Prodigal (Prokaryotic Dynamic Programming Gene-finding Algorithm) (version 2.6.3: February 2016) program, applied in metagenomic mode [[1]](#1). In addiction we mapped pair-end reads back to the assembled contigs using the short-read BWA mapper [[2]](#2), to obtain an estimation of the ORF abundances based on the counts of mapped reads.
 
 **Scripts and description:** The script <a href="scripts/Gene_prediction/gene_prediction.sh">gene_prediction.sh</a> takes in input contigs from genomes or metagenomes, in fasta format, and returns the predicted ORFs amino acid sequences and a summary in .gff format. The ORFs headers are created using the script <a href="scripts/Gene_prediction/rename_orfs.awk">rename_orfs.awk</a>.
