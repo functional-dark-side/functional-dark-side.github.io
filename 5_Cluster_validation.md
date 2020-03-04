@@ -71,6 +71,8 @@ The **compositional homogeneity** evaluation of the clusters confirmed a good cl
 
 <img alt="Comp_val_prop_non_homolog.png" src="/img/Comp_val_prop_non_homolog.png" width="650" height="" >
 
+*Proportion of bad-aligned/non-homologous ORFs detected within each cluster MSA. Distribution of observed values compared with those of the Broken-stick model. The threshold was determined at 10% non-homologous ORFs per cluster.*
+
 <img alt="Comp_val_bad_clu.png" src="/img/Comp_val_bad_clu.png" width="600" height="" >
 
 *Number of clusters as a function of the proportion of rejected ORFs per cluster.*

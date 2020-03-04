@@ -18,8 +18,6 @@ ORF clusters that have an unknown function (e.g. DUF, hypothetical protein) but 
 ORF clusters of unknown function that are not found in sequenced or draft genomes, but only in environmental metagenomes.
 
 
-
-
 <h2 class="section-heading  text-primary">Cluster of _knowns_</h2>
 
 **Pfam domain architectures in the clusters of knowns**
