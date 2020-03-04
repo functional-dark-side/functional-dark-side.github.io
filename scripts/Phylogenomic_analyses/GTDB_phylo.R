@@ -105,7 +105,7 @@ tip_ancestors <-
 
 # Prepare cluster data ----------------------------------------------------
 # Get number of ORFs per genome
-orf_genome <-
+orf_genome <- lo_env$cl_data %>%
   dt_select(genome) %>%
   dt_mutate(n_orfs = .N, by = genome) %>%
   unique()
