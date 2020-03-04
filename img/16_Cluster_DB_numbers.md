@@ -1,9 +1,6 @@
----
-layout: page
-title: Cluster Databases
----
+## Cluster Databases
 
-<h3 class="section-heading  text-primary">Environmental origin (MG)</h3>
+### Environmental origin (MG)
 
 **Starting data:**
 
@@ -53,7 +50,7 @@ Discarded cluster classes:
 | ORFs        | 172,147,128 | 30,601,694 | 54,052,275 | 3,341,257 | **260,142,354** |
 
 
-<h3 class="section-heading  text-primary">Environmental (MG) + Genomic origin (GTDB)</h3>
+### Environmental (MG) + Genomic origin (GTDB)
 
 **Starting data:**
 
@@ -106,14 +103,14 @@ Discarded cluster classes:
 | ORFs        | 232,895,994 | 32,930,286 | 68,757,918 | 3,541,592 | **338,125,790** |
 
 
-<h3 class="section-heading  text-primary">MG + GTDB</h3>
+### MG + GTDB
 
-<img alt="MG_GTDB_venn.png" src="/img/MG_GTDB_venn.png" width="60%" height="" >
+<img alt="MG_GTDB_venn.png" src="assets/MG_GTDB_venn.png" width="" height="" >
 
-<img alt="mg_gtdb_numbers.png" src="/img/mg_gtdb_numbers.png" width="90%" height="" >
+<img alt="mg_gtdb_numbers.png" src="assets/mg_gtdb_numbers.png" width="" height="" >
 
 
-<h3 class="section-heading  text-primary">Integration with the TARA OM-RGC-v2 (OMRGC2)</h3>
+#### Integration with the TARA OM-RGC-v2 (OMRGC2)
 
 OM-RGC.v2 contains 46,775,154 non-redundant genes.
 
@@ -132,6 +129,6 @@ OM-RGC.v2 contains 46,775,154 non-redundant genes.
 | ORFs     | 233,736,295 | 33,167,164 | 69,675,441 | 4,513,27 | **341,091,927** |
 
 
-<h3 class="section-heading  text-primary">MG + GTDB + OMRGC2</h3>
+### MG + GTDB + OMRGC2
 
-<img alt="MG_GTDB_OMRGC2_venn.png" src="/img/MG_GTDB_OMRGC2_venn.png" width="60%" height="" >
+<img alt="MG_GTDB_OMRGC2_venn.png" src="assets/MG_GTDB_OMRGC2_venn.png" width="" height="" >
