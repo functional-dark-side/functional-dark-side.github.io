@@ -18,10 +18,10 @@ lo_env <- new.env()
 
 # Gather data -------------------------------------------------------------
 # Data stored in /bioinf/project/megx/UNKNOWNS/2017_11/GTDB
-# All GTDB ORFs, included those in MG clusters
+# All GTDB ORFs, included those in MG clusters (3,270,101 clusters, and 75,297,319 ORFs)
 lo_env$cl_data <-
   fread(
-    "all_gtdb_genome_orf_cl_categ.tsv.gz",
+    "mg_gtdb_kept_cluster_genome_orf_categ.tsv.gz",
     header = FALSE,
     col.names = c(
       "genome",
