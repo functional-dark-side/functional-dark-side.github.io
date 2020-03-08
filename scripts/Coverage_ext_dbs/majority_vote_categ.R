@@ -55,7 +55,7 @@ df_summ <- efilters %>% left_join(votes) %>% group_by(gene) %>%
   arrange(evalue, desc(qcov),desc(tcov)) %>% mutate(is_best=ifelse(row_number()==1,TRUE,FALSE)) %>%
   select(gene,majority,cl_name,category,is_best)
 #write.table(df_summ,paste(getwd(),"/",res,"_summary.tsv",sep=""), col.names = T, row.names = F, quote = F, sep = "\t")
-df_best <- df_summ %>% filter(is_best==TRUE) %>% select(-is_best,-category) %>% rename(category=majority)
+df_best <- df_summ %>% filter(is_best==TRUE) %>% select(-is_best,-majority) #%>% rename(category=majority)
 write.table(df_best,paste(getwd(),"/",res,"_best-hits.tsv",sep=""), col.names = T, row.names = F, quote = F, sep = "\t")
 
 # Join with info about genomes/MAGs if available
