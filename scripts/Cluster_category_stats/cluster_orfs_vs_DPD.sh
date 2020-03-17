@@ -24,7 +24,7 @@ mmseqs search "${OUTDIR}"/refined_cl_orfs_db "${OUTDIR}"/dpd_db \
 
 mmseqs convertalis "${OUTDIR}"/refined_cl_orfs_db "${OUTDIR}"/dpd_db "${OUTDIR}"/refined_cl_orfs_dpd_db \
   "${OUTDIR}"/refined_cl_orfs_dpd.tsv \
-  --format-mode 2 --threads 32 \
+  --threads 32 \
   --format-output 'query,target,pident,alnlen,mismatch,gapopen,qstart,qend,tstart,tend,evalue,bits,qcov,tcov'
 
 # Extract best-hits
@@ -32,7 +32,7 @@ export LANG=C; export LC_ALL=C; sort -k1,1 -k11,11g -k13,13gr -k14,14gr "${OUTDI
   sort -u -k1,1 --merge > "${OUTDIR}"/refined_cl_orfs_dpd_bh.tsv
 
 # Join with cluster categories
-join -11 -21 <(awk'{print $1,$2}' "${OUTDIR}"/refined_cl_orfs_dpd_bh.tsv | sort -k1,1) \
+join -11 -23 <(awk'{print $1,$2}' "${OUTDIR}"/refined_cl_orfs_dpd_bh.tsv | sort -k1,1) \
   <(sort -k3,3 "${CL_CATEG}") > "${OUTDIR}"/refined_cl_orfs_dpd_bh_categ.tsv
 
 sed -i 's/ /\t/g' "${OUTDIR}"/refined_cl_orfs_dpd_bh_categ.tsv
