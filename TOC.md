@@ -4,11 +4,9 @@ title: Table of contents
 ---
 
 
-
-
 We implemented a bioinformatics workflow to structure and explored the consistent pool of genes with unknown function from marine and human microbiomes. We used a protein domain-based approach to partition more than 400 million predicted genes from 1,628 metagenomes and ~29 genomes into different categories of gene clusters of known and unknown functions.
 
-<img alt="workflow.png" src="assets/workflow.png" width="900" height="" >
+<img alt="workflow.png" src="img/workflow.png" width="900" height="" >
 
 <a name="wrkfl"></a>_Workflow different modules_
 
