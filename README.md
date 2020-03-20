@@ -12,17 +12,11 @@ Large-scale metagenomic surveys have generated terabytes of sequence data from a
 **Population genomic unknowns (PGUs):** clusters of ORFs with an unknown function, found in population-level genomes (or Metagenome Assembled Genomes).
 **Environmental unknowns (EUs):** ORF clusters of unknown function not found in sequenced or draft genomes, but only in environmental metagenomes.
 
-
-<img alt="cl_categories.png" src="assets/cl_categories.png" width="400" height="" >
-
-_Cluster categories_
-
-
 These categories are thought to be dynamic and clusters can be moved from one to the other when the level of characterisation changes.
 Combining the idea of bringing a structure into the UNKNOWN functional space and a sequence-clustering approach, we created a workflow that combines state-of-the-art clustering strategies (Steinegger and Söding 2017) with a strong emphasis in cluster quality (in terms of high intra-cluster homogeneity) and deep categorisation of the clusters of unknowns. We implemented the bioinformatics workflow on 1,829 metagenomes from both marine and human microbiomes. We build it from five main consecutive steps, which start from a gene prediction and end in an in-depth ORF cluster classification and cluster aggregation in cluster communities. The clustering method is based on sequence similarity and for the functional annotation we used a protein domain based approach, with the idea to use the domain architectures as a constraint for our clusters. We validated both intra-cluster sequence composition and functional annotation. During the categorisation we also considered the detection of remote homologies, applying HMM profile vs HMM profile searches. And this was done also at the cluster level, to aggregate cluster showing distant homologies into cluster communities.
 
 
-<img alt="methodology.png" src="assets/methodology.png" width="800" height="">
+<img alt="methodology.png" src="img/methodology.png" width="800" height="">
 
 <a name="method"></a>_Methodology_
 
@@ -30,8 +24,5 @@ Combining the idea of bringing a structure into the UNKNOWN functional space and
 
 We implemented a bioinformatics workflow to structure and explored the consistent pool of genes with unknown function from marine and human microbiomes. We used a protein domain-based approach to partition more than 400 million predicted genes from 1,628 metagenomes and ~29 genomes into different categories of gene clusters of known and unknown functions.
 
-<img alt="workflow.png" src="assets/workflow.png" width="900" height="" >
 
-<a name="wrkfl"></a>_Workflow different modules_
-
-For more details about data, methods and results visit our website: [The functional darkside](https://dark.metagenomics.eu/).
+For more details about data, workflow, methods and results visit our website: [The functional darkside](https://dark.metagenomics.eu/).
