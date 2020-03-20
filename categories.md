@@ -13,11 +13,13 @@ We defined initially four categories of _unknowns_ (might be more in the future)
 
 -   **GENOMIC POPULATION UNKNOWNS**: The third category of unkwnowns are those environmental unknowns that have been identified in population genomes (aka Metagenome Assembled Genomes) and now we have a genomic context. Those are candidates to become a genomic unknown in the future.
 
+<img alt="cl_categories.png" src="/img/cl_categories.png" width="50%" height="">
+
 <br />
-<h2 class="section-heading  text-primary">A bioinformatic pipeline to classify the unknown</h2>
+<h2 class="section-heading  text-primary">A bioinformatic workflow to structure the unknown functional space</h2>
 
-We have implemented a bioinformatic pipeline that performs the partitioning of metagenomic datasets on the different categories of KNOWNS and UNKNOWNS.
+We have implemented a bioinformatic workflow that performs the partitioning of genomic metagenomic datasets on the different categories of KNOWNS and UNKNOWNS.
 
-We start from a de-novo clustering of all environmental ORFs and continue through a complex pipeline that validates and characterizes those clusters. For a more detailed explanation of the pipeline check how we [create](Clustering) the protein clusters, how we do the [validation](Validation) or how we [classify](Classification) them.
+We start from a de-novo clustering of all genomic and environmental genes and continue through a complex pipeline that validates and characterizes the gene clusters. For a more detailed explanation of the pipeline check how we [create](3_MMseqs_clustering) the protein clusters, how we do the [validation](5_Cluster_validation) and how we [classify](7_Cluster_classification) them.
 
-![](/img/pipeline_overview.png){:class="img-responsive"}
+<img alt="workflow.png" src="/img/workflow.png" width="80%" height="">

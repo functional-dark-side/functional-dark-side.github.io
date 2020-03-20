@@ -34,7 +34,7 @@ awk '{match($2, /=([^ ;]+)/, a); print $1"\t"a[1]; }' uniprotDB.tsv_tmp > unipro
 
 # Create database from each cluster category set of ORFs:
 # the files are in: /bioinf/projects/megx/UNKNOWNS/2017_11/cl_categories/ffindex_files/"${categ}"_cl_orfs.fasta.gz
-mmseqs createdb eu_cl_orfs.fasta.gz queryDB
+mmseqs createdb cl_orfs.fasta.gz queryDB
 # retrieve taxonomy
 mmseqs taxonomy queryDB uniprotDB uniprotDB.tsv ncbi-taxdump queryLcaDB tmp --threads 64 -e 1e-05 --cov-mode 0 -c 0.6 --lca-mode 2
 # Create standard (BLAST) search output: 1) query accession 2) target accession and search parameters (evalue,bitscore,coverage etc..)

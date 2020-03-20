@@ -226,6 +226,7 @@ cl_dark <- dpd_res %>% left_join(dpd_info, by=c("dpd_acc"="Primary_Accession")) 
 write.table(cl_dark,paste0(args[6],"/darkness/cluster_dpd_perc.tsv"),
             col.names=T,row.names=F,quote=F,sep="\t")
 cat_dark <- dpd_res %>% left_join(dpd_info, by=c("dpd_acc"="Primary_Accession")) %>% group_by(categ) %>%
+  replace_na(list(Darkness=0, Disorder=0,Compositional_Bias=0,Transmembrane=0)) %>%
   summarise(mean_darkness=mean(Darkness),median_darkness=median(Darkness),
             mean_disorder=mean(Disorder), median_disorder=median(Disorder))
 write.table(cat_dark,paste0(args[6],"/darkness/cluster_category_dpd_perc.tsv"),
