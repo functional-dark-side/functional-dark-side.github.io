@@ -15,12 +15,12 @@ We implemented a bioinformatics workflow to structure and explored the consisten
 
 The methods (included all the scripts/code) and results for each module are documented. Below you can find the links to the different reports:
 
--   [**DATA**](1_Data)
+[**DATA**](1_Data)
+
 <br>
 
 <h3 class="section-heading  text-primary">Workflow steps</h3>
 
-<br>
 
 -   [1. Gene prediction](2_Gene_prediction)
 <br>
