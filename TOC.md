@@ -16,15 +16,24 @@ We implemented a bioinformatics workflow to structure and explored the consisten
 The methods (included all the scripts/code) and results for each module are documented. Below you can find the links to the different reports:
 
 -   [**DATA**](1_Data)
--   [**Workflow steps**](#wrkfl)
-    -   [1. Gene prediction](2_Gene_prediction)
-    -   [2. MMseqs clustering](3_MMseqs_clustering)
-    -   [3. Pfam annotations](4_Pfam_annotation)
-    -   [4. Cluster validation](5_Cluster_validation)
-    -   [5. Cluster refinement](6_Cluster_refinement)
-    -   [6. Cluster classification in categories](7_Cluster_classification)
-    -   [7. Known-Unknown cluster category refinement](8_Known-Unknown_refinement)
-    -   [8. Cluster communities inference](9_Cluster_communities)
+
+<h3 class="section-heading  text-primary">Workflow steps</h3>
+
+-   [1. Gene prediction](2_Gene_prediction)
+<br>
+-   [2. MMseqs clustering](3_MMseqs_clustering)
+<br>
+-   [3. Pfam annotations](4_Pfam_annotation)
+<br>
+-   [4. Cluster validation](5_Cluster_validation)
+<br>
+-   [5. Cluster refinement](6_Cluster_refinement)
+<br>
+-   [6. Cluster classification in categories](7_Cluster_classification)
+<br>
+-   [7. Known-Unknown cluster category refinement](8_Known-Unknown_refinement)
+<br>
+-   [8. Cluster communities inference](9_Cluster_communities)
 
 <br>
 
