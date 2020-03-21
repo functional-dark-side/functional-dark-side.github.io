@@ -14,15 +14,21 @@ A detailed description of both methods follows:
 **A) Compositional homogeneity**
 To identify improper/incongruous sequences inside each cluster, we performed a multiple sequence alignment (MSA) within each cluster, using the FAMSA fast multiple alignments program [[2]](#2) (version 1.1). To evaluate the MSAs of clusters with a size ranging between 10 and 1K ORFs, we then used LEON-BIS [[3]](#3), a method that allows the accurate detection of conserved regions in multiple sequence alignments, via Bayesian statistics, identifying the non-homologous sequences with respect to the cluster representative. LEON-BIS proved to be too computationally expensive in processing clusters with more than 1K ORFs, thus we proceeded with OD-SEQ [[4]](#4), a tool that identifies outliers ORFs based on their average distance from the other sequences. In the end, We applied the broken-stick model [[5]](#5) to the detected incongruous ORFs distribution in the clusters to determine the cut-off number above which we classified a cluster as “bad”. In parallel we applied PARASAIL [[6]](#6) (version 2.1.5), a C library for global, semi-global and local alignments, to retrieve the ‘all vs all’ similarities (pairwise similarities) within each cluster and build the correspondent sequence similarity network (SSN), i.e. an homology graph where the nodes are the ORFs and the edges the similarities). We thus trimmed the SSN using an algorithm that removes edges while maintaining the structural integrity, and we used a measure of centrality (specifically the eigenvector centrality) to refine the cluster representative selection and identify a proper representative sequence for each cluster (more details in the next paragraph/supplementary).
 
+<div class="img_container" style="width:70%; margin:2em auto;">
+
 <img alt="pipeline_validation_ch.png" src="/img/pipeline_validation_ch.png" width="400" height="" >
 
 *Cluster compositional homogeneity validation scheme.*
+
+</div>
 
 - **Scripts and description:** The input for the compositional validation main script, [compos_val.sh](scripts/Cluster_validation/compositional/compos_val.sh), is the cluster sequence DB. The output is a tab-formatted file containing the new representatives and the results from the MSA evaluation expressed/measured in terms of number and proportion of bad-aligned sequences per cluster. For more detailed info check the [README_comp.md](scripts/Cluster_validation/compositional/README_comp.md) file.
 
 **B) Functional homogeneity**
 Since our predicted ORFs can have multiple (multi-domain) annotations, in different orders, we investigated the functional composition of the annotated clusters applying a combination of text mining and Jaccard similarity. As text mining technique we used Shingling, a method commonly used in the field of language processing to represent documents as sets. A k-shingle is a consecutive set of k words. Once transformed the protein domain annotations of each cluster’s member into shingle sets, we calculated the Jaccard similarity between sets of shingles as the ratio between distinct shared shingles and distinct unshared shingles between two members. The median Jaccard similarity score was calculated for each cluster and scaled by the percentage of annotated members. Since different Pfam domains can be grouped into the same clan (_"A collection of related Pfam entries. The relationship may be defined by similarity of sequence, structure or profile-HMM."_), we decided to consider completely homogeneous those clusters annotated to the same clan.
 In addition Pfam contains both C-terminal, N-terminal and few times the M-(middle) domains of some proteins, hence (since we are dealing with fragmented ORFs) we decided to consider completely homogeneous those clusters annotated to different domains of the same protein.
+
+<div class="img_container" style="width:70%; margin:2em auto;">
 
 <img alt="Funct_val_scheme.png" src="/img/Funct_val_scheme.png" width="400" height="" >
 
@@ -32,9 +38,15 @@ In addition Pfam contains both C-terminal, N-terminal and few times the M-(middl
 
 *Cluster functional homogeneity validation: illustration of different possible cases inside the clusters.*
 
+</div>
+
 More in detail, the evaluation of the functional homogeneity is based on the following decisions:
 
-<img alt="pipeline_validation_fh.jpeg" src="/img/pipeline_validation_fh.jpeg" width="450" height="" >
+<div class="img_container" style="width:90%; margin:2em auto;">
+
+<img alt="pipeline_validation_fh.jpeg" src="/img/pipeline_validation_fh.jpeg" width="" height="" >
+
+</div>
 
 1.  If all the cluster members are annotated to the same Pfam domain (_"Homog_pf"_) Shingling is not applied and the Jaccard similarity index is calculated, and scaled for the percentage of annotated members.
 
@@ -69,6 +81,8 @@ We combined the two validation results and we saved/stored them in the form of a
 
 The **compositional homogeneity** evaluation of the clusters confirmed a good cluster quality at the sequence level. Of the ∼3 million clusters 249,506 (8%) contain a rejected sequence (i.e., bad-aligned sequence). We identified the proportion of rejected sequences that defines a cluster as "bad" at 10% of the ORFs in a cluster. About 46K (1.9%) clusters resulted classified as “bad”.
 
+<div class="img_container" style="width:80%; margin:2em auto;">
+
 <img alt="Comp_val_prop_non_homolog.png" src="/img/Comp_val_prop_non_homolog.png" width="650" height="" >
 
 *Proportion of bad-aligned/non-homologous ORFs detected within each cluster MSA. Distribution of observed values compared with those of the Broken-stick model. The threshold was determined at 10% non-homologous ORFs per cluster.*
@@ -80,6 +94,8 @@ The **compositional homogeneity** evaluation of the clusters confirmed a good cl
 <img alt="Comp_size_non_homolog.png" src="/img/Comp_size_non_homolog.png" width="450" height="" >
 
 *Size distribution of the kept and rejected clusters.*
+
+</div>
 
 We observed an overall high **functional homogeneity** for the set of annotated clusters. Only 1% of the annotated clusters reported a Jaccard similarity index < 1.
 
@@ -100,9 +116,13 @@ The **combination** of the results of both cluster evaluations led to a set of 2
 
 The proportion of rejected sequences appears to decrease at the increasing of the intra-cluster average similarity, as shown in the plots of the next figure.
 
-<img alt="Valid_non_homolog_vs_clu_simil.png" src="/img/Valid_non_homolog_vs_clu_simil.png" width="60%" height="" >
+<div class="img_container" style="width:90%; margin:2em auto;">
+
+<img alt="Valid_non_homolog_vs_clu_simil.png" src="/img/Valid_non_homolog_vs_clu_simil.png" width="" height="" >
 
 *Relationship between the proportion of rejected ORFs identified and the average ORF similarity within each cluster (In red rejected clusters).*
+
+</div>
 
 We don’t observe a particular correlation between the number of bad-aligned ORFs and the annotation status of the clusters.
 
