@@ -55,19 +55,24 @@ Total number of clusters for each level in the cascaded clustering (we keep the 
 The clustering general results after the filtering based on the number of members, i.e. genes, for each cluster.
 
 <br>
-<br>
 
-<img alt="MG_mmseqs_clustering_res.png" src="/img/MG_mmseqs_clustering_res.png" width="80%" height="" >
+<div class="img_container" style="width:90%; margin:2em auto;">
+
+<img alt="MG_mmseqs_clustering_res.png" src="/img/MG_mmseqs_clustering_res.png" width="100%" height="" >
 
 *Clustering results: (a) Percentage of clusters in the different sets and (b) percentage of ORFs in the different cluster sets.*
 
-<br>
+</div>
 
 #### Cluster sizes
 
-<img alt="MG_cluster_size_threshold.png" src="/img/MG_cluster_size_threshold.png" height="" width="60%">
+<div class="img_container" style="width:80%; margin:2em auto;">
+
+<img alt="MG_cluster_size_threshold.png" src="/img/MG_cluster_size_threshold.png" height="" width="90%">
 
 *Cluster size distribution. The red line indicates the "breaking point" of the distribution, which corresponds to clusters of ~10 ORFs.*
+
+</div>
 
 * * *
 
