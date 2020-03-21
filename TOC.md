@@ -60,7 +60,7 @@ The methods (included all the scripts/code) and results for each module are docu
 
 -   [**Phylogenomic analyses**](14_Phylogenomic_analyses)
 
--   [**TARA ocean OM-RGC-v.2 integration**](15_TARA_Ocean_OM-RGC-v2)
+-   [**TARA ocean OM-RGC-v.2 integration**](15_Tara_Ocean_OMRGCv2)
 
 -   [**Results in numbers**](16_Cluster_DB_numbers)
 
