@@ -96,10 +96,13 @@ For the GTDB genomes we used ORF counts.
 
 The proportion distribution of the cluster categories in the marine and human metagenomes in Figure 2, shows that the UNKNOWN fraction is mainly represented by GUs. The UNKNOWN fraction goes up to 95% in the Human microbiome metagenomes and to 75% in the marine ones.
 
-<img alt="Cluster_categ_prop_ditrib_mg.png" src="/img/Cluster_categ_prop_ditrib_mg.png" width="80%" height="" >
+<div class="img_container" style="width:90%; margin:2em auto;">
+
+<img alt="Cluster_categ_prop_ditrib_mg.png" src="/img/Cluster_categ_prop_ditrib_mg.png" width="" height="" >
 
 *The proportion distribution of the cluster category in the metagenomes. The KNOWN fraction is represented by the Knowns (K) and the Knowns without Pfam (KWP). The UNKNOWN fraction by the Genomic unknowns (GU) and the Environmental unknowns (EU). The gray fraction represents the pool of non classified data, containing the singletons, and the clusters discarded during the validation step.*
 
+</div>
 
 <h2 class="section-heading  text-primary">Environment - specificity</h2>
 
@@ -119,12 +122,14 @@ We observed that the Ks are more evenly distributed between narrow and wide comm
 We observed the presence of a group of EU communities that are narrow and with mean proportions greater than 1e-04. This indicates that they are found in relatively high abundance in only a few samples. These communities may be truly adaptive and could be providing the microbes with a selective advantage. However, more surprisingly, we observed also 73 EU communities that showed a broad distribution.
 The signal of broad distributed EU communities may demonstrate that these groups of genes/functions, which have no functional annotation or are found in sequenced or draft genomes, share core microbial functions with the other community categories in the world’s oceans. This is a surprising result because it could infer that a set of proteins from a ubiquitous domain of life and or function in the ocean have been left uncharacterized by metagenomics. On a broader level, considering all TARA samples, we still observed a higher number of narrow distributed communities in the unknown fraction, but the differences are smaller/smoother. In the HMP samples instead the narrow-distributed fraction of communities seems to decrease from the Ks to the EUs in favor of the increase of the intermediate fraction, without a significant distribution pattern.
 
-<img alt="NicheBreadth.png" src="/img/NicheBreadth.png" width="85%" height="" >
+<div class="img_container" style="width:70%; margin:2em auto;">
 
-Levins Niche Breadth scores of the clusters (A) and cluster communities (B) categories in the metagenomic samples. On the bars is reported the percentage of clusters (A), communities (B) with a broad, narrow or non-significant distribution.
+<img alt="NicheBreadth.png" src="/img/NicheBreadth.png" width="" height="" >
 
+*Levins Niche Breadth scores of the clusters (A) and cluster communities (B) categories in the metagenomic samples. On the bars is reported the percentage of clusters (A), communities (B) with a broad, narrow or non-significant distribution.*
 
-<br>
+</div>
+
 <br>
 
 <h4 class="section-heading  text-primary">References</h4>

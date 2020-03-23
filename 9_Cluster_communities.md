@@ -22,10 +22,13 @@ To aggregate the clusters, we performed a community identification using the Mar
 The best inflation value corresponds to the radar plot with the largest area. Once determined the best inflation value, we added the missing clusters (nodes) to the MCL communities. We then used coverage, probability and Score/aligned-columns from the profile-vs-profile search results to find the best hits in a three-step approach: First, we checked if any of the not assigned clusters had any homology to the just classified ones using more relaxed filtering thresholds for the profile search results (probability ≥ 50% and coverage > 40%) and keeping just the best hits. Second, we found secondary relationships between the newly assigned clusters and the missing ones. And third, we ran the MCL algorithm on the missing clusters, using the identified best inflation value and we created new MCL communities.
 In the end, we collected and aggregated all communities. We repeated the whole process for the other categories (KWPs, GUs and EUs), with the exception that at the end we selected and applied the optimal inflation value found for the Ks.
 
-<img alt="k_partition_stats_eval_plot_red.png" src="/img/k_partition_stats_eval_plot_red.png" width="60%" heigth="">
+<div class="img_container" style="width:60%; margin:2em auto;">
+
+<img alt="k_partition_stats_eval_plot_red.png" src="/img/k_partition_stats_eval_plot_red.png" width="" heigth="">
 
 *Radar plots used to determine the best MCL inflation value for the partitioning of the Ks into cluster components. The plots were built using a combination of five variables: 1=proportion of clusters with 1 component and 2=proportion of clusters with more than 1 member, 3=clan entropy (proportion of clusters with entropy = 0), 4=intra hhblits score-per-column (normalised by the maximum value), and 5=number of clusters (related to the non-redundant set of DAs).*
 
+</div>
 
 **Scripts:** [community_inference](scripts/Cluster_communities/community_inference). \
 Usage: \
@@ -77,25 +80,35 @@ The output files: "ribo_com_cl.tsv" and "ribo_com_cl_hq.tsv" can be visualised/p
 
 Olson et al. [[3]](#3) phylogenetically analysed PRs in the sunlit ocean and grouped them into clades called Superclusters. We found that our clusters resolve the PR’s Superclusters, as shown in the figure below. We observed one large K community encompassing the 99% of the PR annotated ORFs. All the superclusters are represented in the K community, with the only exception of 20 ORFs annotated to PR supercluster I, mostly viral, that fall into two GU communities (5 GU clusters) .
 
-<img alt="alluvial_PR.png" src="/img/alluvial_PR.png" width="80%" height="" >
+<div class="img_container" style="width:80%; margin:2em auto;">
+
+<img alt="alluvial_PR.png" src="/img/alluvial_PR.png" width="" height="" >
 
 *Cluster communities distribution within the microbial rhodopsin phylogeny.*
+
+</div>
 
 The distribution of the cluster communitites among 16 bacterial ribosomal protein families reflects the fragmented nature of metagenoic data.
 Because ribosomal proteins are highly conserved, we expect one protein family per ribosomal subunit. However, we observe the same ribosomal protein falling in different communities, as shown in the following figure and this is likely due to the fragmented nature of metagenomic ORFs.
 
-<img alt="alluvial_ribo_all.png" src="/img/alluvial_ribo_all.png" width="50%" height="" >
+<div class="img_container" style="width:50%; margin:2em auto;">
+
+<img alt="alluvial_ribo_all.png" src="/img/alluvial_ribo_all.png" width="" height="" >
 
 *Ribosomal protein distribution in our cluster communties.*
 
+</div>
+
 In fact, this effect almost disappear when we subset for the communities containing only [HQ clusters](8.1_Cluster_categories_overview) (high percentage of complete ORFs), as shown in the next figure:
 
+<div class="img_container" style="width:50%; margin:2em auto;">
 
-<img alt="alluvial_ribo_hq.png" src="/img/alluvial_ribo_hq.png" width="50%" height="" >
+<img alt="alluvial_ribo_hq.png" src="/img/alluvial_ribo_hq.png" width="" height="" >
 
 *Ribosomal protein distribution in HQ cluster communities.*
 
-<br>
+</div>
+
 <br>
 
 * * *

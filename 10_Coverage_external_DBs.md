@@ -288,10 +288,11 @@ Considering only the search best-hits: 14,026 clusters
 
 <h4 class="section-heading  text-primary">Summary of the coverage of external databases</h4>
 
+<div class="img_container" style="width:50%; margin:2em auto;">
 
-<img alt="Coverage_ext_DBs_summary.png" src="/img/Coverage_ext_DBs_summary.png" width="50%" height="" >
+<img alt="Coverage_ext_DBs_summary.png" src="/img/Coverage_ext_DBs_summary.png" width="" height="" >
 
-<br>
+</div>
 <br>
 
 * * *

@@ -42,10 +42,13 @@ We found that the 61% of the EUs have/show a remote homology to a Uniclust entry
 
 </div>
 
-<img alt="Unknown_refinement_barplot.png" src="/img/Unknown_refinement_barplot.png" width="60%" height="" >
+<div class="img_container" style="width:60%; margin:2em auto;">
+
+<img alt="Unknown_refinement_barplot.png" src="/img/Unknown_refinement_barplot.png" width="" height="" >
 
 *Percentage of clusters in the different category before and after the refinement.*
 
+</div>
 
 <h2 class="section-heading  text-primary">Clusters of knowns refinement</h2>
 

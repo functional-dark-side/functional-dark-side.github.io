@@ -18,11 +18,15 @@ III) Remove the single rejected/bad ORFs (shadow, spurious and bad-aligned)
 
 From the set of 3,003,897 clusters, we removed 57,052 clusters classified as “bad” after the validation. From the remaining 2,946,845 clusters we removed 6,252 clusters with more than 30% shadow ORFs. At the end from each of the left 2,940,593 clusters, we removed a total of 2.7 million single shadow, spurious and bad-aligned ORFs, and we obtained a set of 2,940,592 refined clusters with a total of 260,142,446 ORFs. In this last step we lost 336 clusters: 244 resulted composed of only spurious and bad aligned ORFs, one in the annotated set of clusters and 243 in the not annotated set, and 92 clusters were discarded/moved to the singletons set because left with only one sequence. Moreover, 1,190 annotated clusters became non annotated after the refinement/removal of the single ”unwanted”/”rejected” ORFs, which represented the only annotated ORFs in those clusters. Steps in numbers are shown in the tables below:
 
+<div class="img_container" style="width:80%; margin:2em auto;">
+
 _Steps of the cluster refinement both in terms of number of clusters and number of ORFs (kept and removed)._
 
 <img alt="refinement_steps_clu.png" src="/img/refinement_steps_clu.png" width="80%" height="" >
 
 <img alt="refinement_steps_ORFs.png" src="/img/refinement_steps_ORFs.png" width="80%" height="" >
+
+</div>
 
 <br>
 

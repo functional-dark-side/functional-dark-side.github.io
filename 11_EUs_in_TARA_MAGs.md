@@ -76,22 +76,33 @@ ORFs length stats for the two found EU cluster communities:
 **eu_c_769:** min=112     mean=142.3826    median=144      max=173
 **eu_c_5081:** min=84      mean=107.6189    median=109      max=139
 
+<div class="img_container" style="width:90%; margin:2em auto;">
+
 <img alt="MAG_perc_EU_completion.png" src="/img/MAG_perc_EU_completion.png" width="42%" height="" > &emsp;&emsp;&emsp;  <img alt="MAG_hypo_char.png" src="/img/MAG_hypo_char.png" width="35%" height="" >
 
 *Left figure: histogram of TARA MAG percent completeness (checkM). Red line represents the number of EUs found in the MAGs. Right figure: contigs from TARA MAGs TARA_ANW_MAG_00076 in descending order of highest proportion of non-hypothetical ORF content.*
 
-<img alt="TARA_ANW_MAG_00076_contig672_genes.png" src="/img/TARA_ANW_MAG_00076_contig672_genes.png" width="80%" height="" >
+</div>
+
+<div class="img_container" style="width:80%; margin:2em auto;">
+
+<img alt="TARA_ANW_MAG_00076_contig672_genes.png" src="/img/TARA_ANW_MAG_00076_contig672_genes.png" width="" height="" >
 
 *Contig genomic neighborhood around a two EU communties.*
 
+</div>
+
+
 <br>
 
+<div class="img_container" style="width:70%; margin:2em auto;">
 
-<img alt="MAG_EU_comm_LOGO.png" src="/img/MAG_EU_comm_LOGO.png" width="60%" height="" >
+<img alt="MAG_EU_comm_LOGO.png" src="/img/MAG_EU_comm_LOGO.png" width="" height="" >
 
 *Conserved consensus sequence logos of eu_com_769 and eu_com_5081.*
 
-<br>
+</div>
+
 <br>
 
 * * *

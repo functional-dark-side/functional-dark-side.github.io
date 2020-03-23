@@ -48,12 +48,19 @@ The 912,551 clusters annotated to Pfam domain of known function contains 26,626 
 The subset of refined non annotated clusters was further processed to identify the two categories of unknowns: the _genomic unknowns_ (GU) and the _environmental unknowns_ (EU), and the second category of knowns: the _knowns without Pfam_ (KWP).
 For this step we used a combination of searches against UniRef and NCBI nr protein databases.
 
-<img alt="pipeline_classification.jpeg" src="/img/pipeline_classification.jpeg" height="" width="50%">
+<div class="img_container" style="width:50%; margin:2em auto;">
+
+<img alt="pipeline_classification.jpeg" src="/img/pipeline_classification.jpeg" height="" width="">
+
+</div>
 
 All the searches have the following characteristics:
 
-<img alt="pipeline_classification_2bl.png" src="/img/pipeline_classification_2bl.png" height="" width="60%">
+<div class="img_container" style="width:50%; margin:2em auto;">
 
+<img alt="pipeline_classification_2bl.png" src="/img/pipeline_classification_2bl.png" height="" width="">
+
+</div>
 
 <h4 class="section-heading  text-primary">_1. Genomic unknowns: search against the Uniref90 database_</h4>
 In order to relate the filtered “good” subset of clusters of unknowns with the “hypothetical/uncharacterized” proteins found in sequenced genomes, we screened the not annotated cluster consensus sequences, retrieved from the MSAs of the compositional validation step, against the UniProt Reference Clusters (release 2017_11) from the UniProt Knowledgebase [[3]](#3). Specifically we searched UniRef90, which provides clusters of sequences with a sequence similarity > 90%.
@@ -75,9 +82,13 @@ Those queries without any match to nr entries represent the EU set. The not anno
 Of the 1,946,737 refined not annotated clusters, ∼1.5M reported a match (81%) to the UniRef90 database, and more than 50% of these hits resulted annotated to “hypothetical” proteins. The remaining ~400K (19%) clusters with no matches to UniRef90 entries were screened against the NCBI nr database. This second search resulted in ∼20K (5.5%) clusters with a match to NCBI nr entries, divided into ~16K clusters (79%), annotated to “hypothetical” proteins and ~4K (21%) clusters to not hypothetical. The remaining majority, ∼350K clusters (94.5%), reported no matches to NCBI nr entries.
 The results of the different steps are shown in the next figure, and the numbers reported in the table below.
 
-<img alt="Classification_steps.png" src="/img/Classification_steps.png" width="60%" height="" >
+<div class="img_container" style="width:70%; margin:2em auto;">
+
+<img alt="Classification_steps.png" src="/img/Classification_steps.png" width="" height="" >
 
 *Panel describing the steps applied to classify the cluster of unknowns*
+
+</div>
 
 <br>
 
@@ -111,11 +122,13 @@ Results are summarised in the following table and figure:
 
 </div>
 
-<br>
+<div class="img_container" style="width:70%; margin:2em auto;">
 
-<img alt="Classific_cluster_first_categ.png" src="/img/Classific_cluster_first_categ.png" width="60%" height="" >
+<img alt="Classific_cluster_first_categ.png" src="/img/Classific_cluster_first_categ.png" width="" height="" >
 
 *Percentage of clusters and ORFs in the different categories.*
+
+</div>
 
 **Scripts and description:** The main script, [classification.sh](scripts/Cluster_classification/classification.sh), calls both the cluster of unknowns and the clusters of knowns classifications. The input are the refined set of annotated and not annoated clusters. Additional info in the [README_class.md](scripts/Cluster_classification/README_class.md).
 

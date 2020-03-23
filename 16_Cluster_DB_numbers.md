@@ -108,10 +108,17 @@ Discarded cluster classes:
 
 <h3 class="section-heading  text-primary">MG + GTDB</h3>
 
-<img alt="MG_GTDB_venn.png" src="/img/MG_GTDB_venn.png" width="60%" height="" >
+<div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="mg_gtdb_numbers.png" src="/img/mg_gtdb_numbers.png" width="90%" height="" >
+<img alt="MG_GTDB_venn.png" src="/img/MG_GTDB_venn.png" width="" height="" >
 
+</div>
+
+<div class="img_container" style="width:90%; margin:2em auto;">
+
+<img alt="mg_gtdb_numbers.png" src="/img/mg_gtdb_numbers.png" width="" height="" >
+
+</div>
 
 <h3 class="section-heading  text-primary">Integration with the TARA OM-RGC-v2 (OMRGC2)</h3>
 
@@ -134,4 +141,8 @@ OM-RGC.v2 contains 46,775,154 non-redundant genes.
 
 <h3 class="section-heading  text-primary">MG + GTDB + OMRGC2</h3>
 
-<img alt="MG_GTDB_OMRGC2_venn.png" src="/img/MG_GTDB_OMRGC2_venn.png" width="60%" height="" >
+<div class="img_container" style="width:60%; margin:2em auto;">
+
+<img alt="MG_GTDB_OMRGC2_venn.png" src="/img/MG_GTDB_OMRGC2_venn.png" width="" height="" >
+
+</div>

@@ -31,17 +31,25 @@ We found 15% of clusters with a significant (P<0.05) [[2]](#2) non-random distri
 
 **Bacteria**
 
-<img alt="phylo_conservation_bac.png" src="/img/phylo_conservation_bac.png" width="70%" height="" >
+<div class="img_container" style="width:70%; margin:2em auto;">
+
+<img alt="phylo_conservation_bac.png" src="/img/phylo_conservation_bac.png" width="" height="" >
 
 *Phylogenetic conservation analysis. a) proportion of known and unknown clusters with a significant non-random distribution. We observed 15% of clusters with a significant non-random distribution (P<0.05) in the Bacterial phylogeny. b) letter-value plot showing the maximum clade depth (maximum tauD) distribution for the non-randomly distributed clusters of knowns and unknowns. TauD was calculated with consenTRAIT. The maximum tauD is ranging from 0.0003 - 0.012.*
+
+</div>
 
 Similar results are observed for the archaea tree.
 
 **Archaea**
 
-<img alt="phylo_conservation_arc.png" src="/img/phylo_conservation_arc.png" width="70%" height="" >
+<div class="img_container" style="width:70%; margin:2em auto;">
+
+<img alt="phylo_conservation_arc.png" src="/img/phylo_conservation_arc.png" width="" height="" >
 
 *Phylogenetic conservation analysis. a) proportion of known and unknown clusters with a significant non-random distribution. We observed 15% of clusters with a significant non-random distribution (P<0.05) in the Archaeal phylogeny. b) letter-value plot showing the maximum clade depth (maximum tauD) distribution for the non-randomly distributed clusters of knowns and unknowns. TauD was calculated with consenTRAIT. The maximum tauD is ranging from 0.05 - 0.99.*
+
+</div>
 
 -   **Lineage-specificity analysis results:**
 
@@ -62,12 +70,17 @@ Lineage-specific clusters were found at both broad taxonomic levels (e.g. Phylum
 
 </div>
 
-<img alt="Lineage_spec_bac.png" src="/img/Lineage_spec_bac.png" width="70%" height="" >
+<div class="img_container" style="width:70%; margin:2em auto;">
 
+<img alt="Lineage_spec_bac.png" src="/img/Lineage_spec_bac.png" width="" height="" >
 
-<img alt="Lineage_spec_bac_barplot.png" src="/img/Lineage_spec_bac_barplot.png" width="40%" height="" >
+*Number of lineage specific clusters as a function of the relative evolutionary divergence (RED) in the context of the GTDB bacteria tree.*
+
+<img alt="Lineage_spec_bac_barplot.png" src="/img/Lineage_spec_bac_barplot.png" width="50%" height="" >
 
 *Number of lineage specific clusters at each taxonomic level, divided by cluster categories.*
+
+</div>
 
 **Archaea**
 
@@ -80,20 +93,29 @@ Lineage-specific clusters were found at both broad taxonomic levels (e.g. Phylum
 |    GU    |   0    |   1    |  25   |  377  | 2,915  | 12,482 | 18,697  |
 |    EU    |   0    |   0    |   0   |   2   |   42   |  494   |  2,305  |
 
-<img alt="Lineage_spec_arc.png" src="/img/Lineage_spec_arc.png" width="70%" height="" >
 
-*Number of lineage specific clusters as a function of the relative evolutionary divergence (RED) in the context of the GTDB bacteria tree.*
+<div class="img_container" style="width:70%; margin:2em auto;">
+
+<img alt="Lineage_spec_arc.png" src="/img/Lineage_spec_arc.png" width="" height="" >
+
+*Number of lineage specific clusters as a function of the relative evolutionary divergence (RED) in the context of the GTDB archaea tree.*
 <br>
-<img alt="Lineage_spec_arc_barplot.png" src="/img/Lineage_spec_arc_barplot.png" width="40%" height="" >
+<img alt="Lineage_spec_arc_barplot.png" src="/img/Lineage_spec_arc_barplot.png" width="50%" height="" >
 
 *Number of lineage specific clusters at each taxonomic level, divided by cluster categories.*
 <br>
 
+</div>
+
 **General analysis panel (Bacteria)**
 
-<img alt="Phylo_analysis_bac.png" src="/img/Phylo_analysis_bac.png" width="80%" height="" >
+<div class="img_container" style="width:90%; margin:2em auto;">
+
+<img alt="Phylo_analysis_bac.png" src="/img/Phylo_analysis_bac.png" width="" height="" >
 
 *a) Number of lineage specific clusters as a function of the relative evolutionary divergence (RED) in the context of the GTDB bacteria tree. b) GTDB bacterial phyla ordered based on the number of clusters of unknowns and clusters of knowns/ratio of CUs and CKs (calculated for each phylum as the sum(total unknown/known ORFs)/sum(all genome-ORFs). The size shows the number of genomes per phyla. The gradient indicates the proportion of MAGs per phylum. (Nuber of MAGs/total number of genomes) c) Phylogenetic tree of GTDB bacterial phyla. We colored in green the phyla enriched in non-classified clusters, and in pink the phyla with a high percentage of MAGs and unknowns. The grey dots represent the number of phylum-specific clusters of unknowns. The branches are colored by the percentage of MAGs per phylum. Around the tree we drew a heatmap showing the proportion of unknowns per phylum.*
+
+</div>
 
 We focused on these higher ranks and we investigated the bacterial phyla distribution in the KNOWN and UNKNOWN space. In the above figure, panel b), we observe the GTDB bacterial phyla ordered based on the proportion of clusters of unknowns and clusters of knowns. The size shows the number of genomes per phyla and the gradient indicates the proportion of MAGs per phylum (number of MAGs over the total number of genomes). We observed a positive correlation between the proportion of MAGs and the proportion of unknowns and this again suggests a more environmentally related role for the UNKNOWN fraction. We also observe a group of phyla enriched in “non-classified” data (NC), i.e. singletons of cluster discarded during the validation process, and represented by only one or two MAGs. To gain a more detailed view on these phyla we combined the results from this analysis with the phylum-specific GU clusters on the bacterial phyla tree (in the above figure, panel c)). We found that these phyla enriched in NC are recently discovered/newly proposed phyla derived from metagenomes. Among them we have *Candidatus Coatesbacteria bacterium RBG_13_66_14*, from a sediment metagenome [[5]](#5), *BRC1*, from a deep subsurface aquifer metagenome [[5]](#5)[[6]](#6), and members of the candidate phyla consisting only of UBA genomes are shown in red and have been named *Uncultured Bacterial Phylum 1 to 17* (*UBP1–UBP17*) [[7]](#7). The group of phyla highly enriched in unknowns and represented mainly by MAGs includes yet-uncultured microorganism phyla already seen in different environments, like *Desantibacteria* [[8]](#8), *Eremiobacterota* [[9]](#9), *Margulisbacteria* [[5]](#5) and the superphylum of *Patescibacteria* [[10]](#10). The latter is particularly interesting, since is the newly proposed superphylum encompassing the candidate phyla within the previously called Candidate Phyla Radiation (CPR). *Patescibacteria* is the GTDB phylum most enriched in unknowns, and contains two phylum-specific GUs. We decided to focus on this phylum and to use it to prove how we can now from a genomic context go back to the metagenomes and hence the environment.
 
@@ -103,20 +125,26 @@ We investigated the distribution in the human and marine (TARA and Malaspina) me
 *Gracilibacteria* are particularly poorly understood microorganisms, due mostly to undersampling and the incompleteness of the available genomes. The first genome was retrieved in a hydrothermal vent environment in the deep sea ([[10]](#10). Was then also identified in an oil degrading community [[10]](#10)[[11]](#11) and as a part of the oral microbiome [[12]](#12). As shown in the figure below, panel b), we found both known and unknown lineage-specific clusters in this class, distributed in both human and marine metagenomes. We observe 3 clusters of unknowns only seen in the HMP, they could represent a nice target for human-health study, since *Gracilibacteria* was found enriched in healthy individuals. There are then lineage-specific clusters of knowns and unknowns only specific to the marine environment. In general these data can now lead to the generation of hypotheses and open the way for further/new investigations.
 In the context of this paper we want to use the example of *Gracilibacteria* to show the potential of our approach, which brings/leads to a unification of the KNOWN and UNKNOWN functional space and it can be used indifferently to explore both metagenomic and genomic data.
 
+<div class="img_container" style="width:90%; margin:2em auto;">
+
 <img alt="Phylo_analysis_bac_patesci.png" src="/img/Phylo_analysis_bac_patesci.png" width="80%" height="" >
 
 *Patescibacteria metagenomic lineage specific clusters. a) Phylogenetic tree of Patescibacteria genera, grouped/colored by classes. The heatmaps around the tree show the proportion of lineage specific cluster of knowns and unknowns in the metagenomes from TARA, Malaspina and the HMP. b) Metagenomic lineage specific clusters in the class of Gracilibacteria.*
 
-<br>
+</div>
+
 <br>
 
 **General analysis panel (Archaea)**
 
-<img alt="Phylo_analysis_arc.png" src="/img/Phylo_analysis_arc.png" width="80%" height="" >
+<div class="img_container" style="width:90%; margin:2em auto;">
+
+<img alt="Phylo_analysis_arc.png" src="/img/Phylo_analysis_arc.png" width="" height="" >
 
 *a) Number of lineage specific clusters as a function of the relative evolutionary divergence (RED) in the context of the GTDB archaea tree. b) GTDB archaeal phyla ordered based on the number of clusters of unknowns and clusters of knowns/ratio of CUs and CKs (calculated for each phylum as the sum(total unknown/known ORFs)/sum(all genome-ORFs). The size shows the number of genomes per phyla. The gradient indicates the proportion of MAGs per phylum. (Nuber of MAGs/total number of genomes) c) Phylogenetic tree of GTDB archaea phyla. We colored in green the phyla enriched in non-classified clusters, and in pink the phyla with a high percentage of MAGs and unknowns. The grey dots represent the number of phylum-specific clusters of unknowns. The branches are colored by the percentage of MAGs per phylum. Around the tree we drew a heatmap showing the proportion of unknowns per phylum.*
 
-<br>
+</div>
+
 <br>
 
 * * *
