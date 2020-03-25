@@ -105,7 +105,7 @@ The proportion of "rejected" ORFs defining a cluster as "BAD" was found at 0.12 
 
 <div class="img_container" style="width:70%; margin:2em auto;">
 
-<img alt="omrgc2_val_rej_non_homolog.png" src="/img/omrgc2_val_rej_non_homolog.png" width="" height="" >
+<img alt="omrgc2_val_rej_non_homolog.png" src="/img/omrgc2_val_rej_non_homolog.png" width="70%" height="" >
 
 *Proportion of bad-aligned/non-homologous ORFs detected within each cluster MSA. Distribution of observed values compared with those of the Broken-stick model. The threshold was determined at 12% non-homologous ORFs per cluster.*
 
@@ -273,7 +273,7 @@ The numbers of clusters and ORFs for each category are reported in the table bel
 
 <div class="img_container" style="width:80%; margin:2em auto;">
 
-<img alt="om-rgc_v2_unkn.png" src="/img/om-rgc_v2_unkn.png" width="" height="" >
+<img alt="om-rgc_v2_unkn.png" src="/img/om-rgc_v2_unkn.png" width="80%" height="" >
 
 </div>
 

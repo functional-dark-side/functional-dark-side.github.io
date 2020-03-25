@@ -86,7 +86,7 @@ ORFs length stats for the two found EU cluster communities:
 
 <div class="img_container" style="width:80%; margin:2em auto;">
 
-<img alt="TARA_ANW_MAG_00076_contig672_genes.png" src="/img/TARA_ANW_MAG_00076_contig672_genes.png" width="" height="" >
+<img alt="TARA_ANW_MAG_00076_contig672_genes.png" src="/img/TARA_ANW_MAG_00076_contig672_genes.png" width="80%" height="" >
 
 *Contig genomic neighborhood around a two EU communties.*
 
@@ -97,7 +97,7 @@ ORFs length stats for the two found EU cluster communities:
 
 <div class="img_container" style="width:70%; margin:2em auto;">
 
-<img alt="MAG_EU_comm_LOGO.png" src="/img/MAG_EU_comm_LOGO.png" width="" height="" >
+<img alt="MAG_EU_comm_LOGO.png" src="/img/MAG_EU_comm_LOGO.png" width="60%" height="" >
 
 *Conserved consensus sequence logos of eu_com_769 and eu_com_5081.*
 
@@ -110,9 +110,15 @@ ORFs length stats for the two found EU cluster communities:
 <h4 class="section-heading  text-primary">References</h4>
 
 <a name="1"></a>[1] Delmont, Tom O., Christopher Quince, Alon Shaiber, Özcan C. Esen, Sonny Tm Lee, Michael S. Rappé, Sandra L. McLellan, Sebastian Lücker, and A. Murat Eren. 2018. “Nitrogen-Fixing Populations of Planctomycetes and Proteobacteria Are Abundant in Surface Ocean Metagenomes.” Nature Microbiology 3 (7): 804–13.
-<a name="2"></a>[2] Steinegger, Martin, and Johannes Söding. 2017. “MMseqs2 Enables Sensitive Protein Sequence Searching for the Analysis of Massive Data Sets.” Nature Biotechnology
+
+<a name="2"></a>[2] Steinegger, Martin, and Johannes Söding. 2017. “MMseqs2 Enables Sensitive Protein Sequence Searching for the Analysis of Massive Data Sets.” Nature Biotechnology.
+
 <a name="3"></a>[3] Murat Eren, A., Özcan C. Esen, Christopher Quince, Joseph H. Vineis, Hilary G. Morrison, Mitchell L. Sogin, and Tom O. Delmont. 2015. “Anvi’o: An Advanced Analysis and Visualization Platform for ‘omics Data.” PeerJ 3 (October): e1319.
+
 <a name="4"></a>[4] Seemann, Torsten. 2014. “Prokka: Rapid Prokaryotic Genome Annotation.” Bioinformatics  30 (14): 2068–69.
+
 <a name="5"></a>[5] Guy, Lionel, Jens Roat Kultima, and Siv G. E. Andersson. 2010. “genoPlotR: Comparative Gene and Genome Visualization in R.” Bioinformatics  26 (18): 2334–35.
+
 <a name="6"></a>[6] Edgar, Robert C. 2004. “MUSCLE: Multiple Sequence Alignment with High Accuracy and High Throughput.” Nucleic Acids Research 32 (5): 1792–97.
+
 <a name="7"></a>[7] Crooks, G. E. 2004. “WebLogo: A Sequence Logo Generator.” Genome Research.

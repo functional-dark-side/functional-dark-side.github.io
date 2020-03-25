@@ -59,7 +59,7 @@ Metagenomes + Genomes cluster database ("mg_gtdb_db_20190502", MG+GTDB): 72% of 
 
 <div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="GTDB_clu_update.png" src="/img/GTDB_clu_update.png" width="" height="" >
+<img alt="GTDB_clu_update.png" src="/img/GTDB_clu_update.png" width="60%" height="" >
 
 </div>
 
@@ -182,7 +182,7 @@ Results for the two validastion steps are reported in the following tables:
 
 <div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="gtdb_cl_comp_val_rej_non_homolog.png" src="/img/gtdb_cl_comp_val_rej_non_homolog.png" width="" height="" >
+<img alt="gtdb_cl_comp_val_rej_non_homolog.png" src="/img/gtdb_cl_comp_val_rej_non_homolog.png" width="70%" height="" >
 
 *Proportion of bad-aligned/non-homologous ORFs detected within each cluster MSA. Distribution of observed values compared with those of the Broken-stick model. The threshold was determined at 11% non-homologous ORFs per cluster.*
 
@@ -326,7 +326,7 @@ The best inflation value for the cluster aggregation was determined at 2.5, and 
 
 <div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="k_partition_stats_eval_plot_gtdb.png" src="/img/k_partition_stats_eval_plot_gtdb.png" width="50%" height="" >
+<img alt="k_partition_stats_eval_plot_gtdb.png" src="/img/k_partition_stats_eval_plot_gtdb.png" width="60%" height="" >
 
 *Radar plots used to determine the best MCL inflation value for the partitioning of the Ks into cluster components. The plots were built using a combination of five variables: 1=proportion of clusters with 1 component and 2=proportion of clusters with more than 1 member, 3=clan entropy (proportion of clusters with entropy = 0), 4=intra hhblits score-per-column (normalised by the maximum value), and 5=number of clusters (related to the non-redundant set of DAs).*
 

@@ -110,13 +110,13 @@ Discarded cluster classes:
 
 <div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="MG_GTDB_venn.png" src="/img/MG_GTDB_venn.png" width="" height="" >
+<img alt="MG_GTDB_venn.png" src="/img/MG_GTDB_venn.png" width="70%" height="" >
 
 </div>
 
 <div class="img_container" style="width:90%; margin:2em auto;">
 
-<img alt="mg_gtdb_numbers.png" src="/img/mg_gtdb_numbers.png" width="" height="" >
+<img alt="mg_gtdb_numbers.png" src="/img/mg_gtdb_numbers.png" width="80%" height="" >
 
 </div>
 
@@ -143,6 +143,6 @@ OM-RGC.v2 contains 46,775,154 non-redundant genes.
 
 <div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="MG_GTDB_OMRGC2_venn.png" src="/img/MG_GTDB_OMRGC2_venn.png" width="" height="" >
+<img alt="MG_GTDB_OMRGC2_venn.png" src="/img/MG_GTDB_OMRGC2_venn.png" width="80%" height="" >
 
 </div>

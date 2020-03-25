@@ -24,7 +24,7 @@ In the end, we collected and aggregated all communities. We repeated the whole p
 
 <div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="k_partition_stats_eval_plot_red.png" src="/img/k_partition_stats_eval_plot_red.png" width="" heigth="">
+<img alt="k_partition_stats_eval_plot_red.png" src="/img/k_partition_stats_eval_plot_red.png" width="80%" heigth="">
 
 *Radar plots used to determine the best MCL inflation value for the partitioning of the Ks into cluster components. The plots were built using a combination of five variables: 1=proportion of clusters with 1 component and 2=proportion of clusters with more than 1 member, 3=clan entropy (proportion of clusters with entropy = 0), 4=intra hhblits score-per-column (normalised by the maximum value), and 5=number of clusters (related to the non-redundant set of DAs).*
 
@@ -82,7 +82,7 @@ Olson et al. [[3]](#3) phylogenetically analysed PRs in the sunlit ocean and gro
 
 <div class="img_container" style="width:80%; margin:2em auto;">
 
-<img alt="alluvial_PR.png" src="/img/alluvial_PR.png" width="" height="" >
+<img alt="alluvial_PR.png" src="/img/alluvial_PR.png" width="80%" height="" >
 
 *Cluster communities distribution within the microbial rhodopsin phylogeny.*
 
@@ -93,7 +93,7 @@ Because ribosomal proteins are highly conserved, we expect one protein family pe
 
 <div class="img_container" style="width:50%; margin:2em auto;">
 
-<img alt="alluvial_ribo_all.png" src="/img/alluvial_ribo_all.png" width="" height="" >
+<img alt="alluvial_ribo_all.png" src="/img/alluvial_ribo_all.png" width="90%" height="" >
 
 *Ribosomal protein distribution in our cluster communties.*
 
@@ -103,7 +103,7 @@ In fact, this effect almost disappear when we subset for the communities contain
 
 <div class="img_container" style="width:50%; margin:2em auto;">
 
-<img alt="alluvial_ribo_hq.png" src="/img/alluvial_ribo_hq.png" width="" height="" >
+<img alt="alluvial_ribo_hq.png" src="/img/alluvial_ribo_hq.png" width="90%" height="" >
 
 *Ribosomal protein distribution in HQ cluster communities.*
 
@@ -116,17 +116,31 @@ In fact, this effect almost disappear when we subset for the communities contain
 <h4 class="section-heading  text-primary">References</h4>
 
 <a name="1"></a>[1]	M. Remmert, A. Biegert, A. Hauser, and J. Söding, “HHblits: lightning-fast iterative protein sequence searching by HMM-HMM alignment.,” Nat Methods, Nov. 2011.
+
 <a name="2"></a>[2] van Dongen, Stijn van, and Cei Abreu-Goodger. 2012. “Using MCL to Extract Clusters from Networks.” In Bacterial Molecular Networks: Methods and Protocols, edited by Jacques van Helden, Ariane Toussaint, and Denis Thieffry, 281–95. New York, NY: Springer New York.
+
 <a name="3"></a>[3] Olson, Daniel K., Susumu Yoshizawa, Dominique Boeuf, Wataru Iwasaki, and Edward F. DeLong. 2018. “Proteorhodopsin Variability and Distribution in the North Pacific Subtropical Gyre.” The ISME Journal 12 (4): 1047–60.
+
 <a name="4"></a>[4] Finn, R. D., J. Clements, and S. R. Eddy. 2011. “HMMER Web Server: Interactive Sequence Similarity Searching.” Nucleic Acids Research 39 (suppl): W29–37.
+
 <a name="5"></a>[5] Boeuf, Dominique, Stéphane Audic, Loraine Brillet-Guéguen, Christophe Caron, and Christian Jeanthon. 2015. “MicRhoDE: A Curated Database for the Analysis of Microbial Rhodopsin Diversity and Evolution.” Database: The Journal of Biological Databases and Curation 2015 (August).
+
 <a name="6"></a>[6] Li, W., and A. Godzik. 2006. “Cd-Hit: A Fast Program for Clustering and Comparing Large Sets of Protein or Nucleotide Sequences.” Bioinformatics  22 (13): 1658–59.
+
 <a name="7"></a>[7] Barbera, Pierre, Alexey M. Kozlov, Lucas Czech, Benoit Morel, Diego Darriba, Tomáš Flouri, and Alexandros Stamatakis. 2019. “EPA-Ng: Massively Parallel Evolutionary Placement of Genetic Sequences.” Systematic Biology 68 (2): 365–69.
+
 <a name="8"></a>[8] Stamatakis, Alexandros. 2014. “RAxML Version 8: A Tool for Phylogenetic Analysis and Post-Analysis of Large Phylogenies.” Bioinformatics  30 (9): 1312–13.
+
 <a name="9"></a>[9] Berger, Simon A., and Alexandros Stamatakis. 2012. “PaPaRa 2.0: A Vectorized Algorithm for Probabilistic Phylogeny-Aware Alignment Extension.” Heidelberg Institute for Theoretical Studies
+
 <a name="10"></a>[10] Matsen, Frederick A., Robin B. Kodner, and E. Virginia Armbrust. 2010. “Pplacer: Linear Time Maximum-Likelihood and Bayesian Phylogenetic Placement of Sequences onto a Fixed Reference Tree.” BMC Bioinformatics 11 (October): 538.
+
 <a name="11"></a>[11] Paradis E. & Schliep K. 2018. ape 5.0: an environment for modern phylogenetics and evolutionary analyses in R. Bioinformatics 35: 526-528.
+
 <a name="12"></a>[12] Schliep, Klaus Peter. 2011. “Phangorn: Phylogenetic Analysis in R.” Bioinformatics  27 (4): 592–93.
+
 <a name="13"></a>[13] Mauri, Michele, Tommaso Elli, Giorgio Caviglia, Giorgio Uboldi, and Matteo Azzi. 2017. “RAWGraphs: A Visualisation Platform to Create Open Outputs.” In Proceedings of the 12th Biannual Conference on Italian SIGCHI Chapter, 28. ACM.
+
 <a name="14"></a>[14] Méheust, Raphaël, David Burstein, Cindy J. Castelle, and Jillian F. Banfield. 2019. “The Distinction of CPR Bacteria from Other Bacteria Based on Protein Family Content.” Nature Communications 10 (1): 4173.
+
 <a name="15"></a>[15] Murat, E. A., Özcan C. Esen, Christopher Quince, Joseph H. Vineis, Hilary G. Morrison, Mitchell L. Sogin, and Tom O. Delmont. 2015. “Anvi’o: An Advanced Analysis and Visualization Platform for ‘omics Data.” PeerJ 3 (October): e1319.

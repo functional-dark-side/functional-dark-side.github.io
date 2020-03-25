@@ -50,7 +50,7 @@ For this step we used a combination of searches against UniRef and NCBI nr prote
 
 <div class="img_container" style="width:50%; margin:2em auto;">
 
-<img alt="pipeline_classification.jpeg" src="/img/pipeline_classification.jpeg" height="" width="">
+<img alt="pipeline_classification.jpeg" src="/img/pipeline_classification.jpeg" height="" width="80%">
 
 </div>
 
@@ -58,7 +58,7 @@ All the searches have the following characteristics:
 
 <div class="img_container" style="width:50%; margin:2em auto;">
 
-<img alt="pipeline_classification_2bl.png" src="/img/pipeline_classification_2bl.png" height="" width="">
+<img alt="pipeline_classification_2bl.png" src="/img/pipeline_classification_2bl.png" height="" width="80%">
 
 </div>
 
@@ -84,7 +84,7 @@ The results of the different steps are shown in the next figure, and the numbers
 
 <div class="img_container" style="width:70%; margin:2em auto;">
 
-<img alt="Classification_steps.png" src="/img/Classification_steps.png" width="" height="" >
+<img alt="Classification_steps.png" src="/img/Classification_steps.png" width="80%" height="" >
 
 *Panel describing the steps applied to classify the cluster of unknowns*
 
@@ -124,7 +124,7 @@ Results are summarised in the following table and figure:
 
 <div class="img_container" style="width:70%; margin:2em auto;">
 
-<img alt="Classific_cluster_first_categ.png" src="/img/Classific_cluster_first_categ.png" width="" height="" >
+<img alt="Classific_cluster_first_categ.png" src="/img/Classific_cluster_first_categ.png" width="80%" height="" >
 
 *Percentage of clusters and ORFs in the different categories.*
 

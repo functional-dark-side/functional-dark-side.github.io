@@ -8,7 +8,7 @@ To get a biologically meaningful partitioning and reduce data redundancy, we per
 <h3 class="section-heading  text-primary">Methods</h3>
 
 We chose a sequence similarity-based method, because a higher speed characterizes it compared to other approaches, like the graph-based clustering methods, and therefore considered more suitable to be applied to the massive metagenomic datasets.
-The cascaded clustering was performed using the MMseqs2 (Many-against-Many sequence searching 2) open-source software [[1]](#1), which allows a fast and deep clustering of large datasets, based on sequence similarity and greedy set cover approach to identify the clusters. We selected a coverage threshold of 80%, a sequence identity threshold of 30% and a sensitivity of 5.
+The cascaded clustering was performed using the MMseqs2 (Many-against-Many sequence searching 2) open-source software [[1]](#1)[[2]](#2), which allows a fast and deep clustering of large datasets, based on sequence similarity and greedy set cover approach to identify the clusters. We selected a coverage threshold of 80%, a sequence identity threshold of 30% and a sensitivity of 5.
 
 The obtained cluster database was filtered based on cluster size. We first removed the singletons (clusters form by only one gene). Then, applying the broken-stick model, we determined a cluster-size threshold below which a cluster is discarded.
 
@@ -79,3 +79,5 @@ The clustering general results after the filtering based on the number of member
 <h4 class="section-heading  text-primary">References</h4>
 
 <a name="1"></a>[1]	M. Steinegger and J. Söding, “MMseqs2 enables sensitive protein sequence searching for the analysis of massive data sets.,” Nature biotechnology, vol. 35, no. 11, pp. 1026–1028, Nov. 2017.
+
+<a name="2"></a>[2] M. Steinegger and J. Söding. 2018. “Clustering Huge Protein Sequence Sets in Linear Time.” Nature Communications 9 (1): 2542.

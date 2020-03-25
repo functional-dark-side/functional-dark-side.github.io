@@ -33,7 +33,7 @@ We found 15% of clusters with a significant (P<0.05) [[2]](#2) non-random distri
 
 <div class="img_container" style="width:70%; margin:2em auto;">
 
-<img alt="phylo_conservation_bac.png" src="/img/phylo_conservation_bac.png" width="" height="" >
+<img alt="phylo_conservation_bac.png" src="/img/phylo_conservation_bac.png" width="70%" height="" >
 
 *Phylogenetic conservation analysis. a) proportion of known and unknown clusters with a significant non-random distribution. We observed 15% of clusters with a significant non-random distribution (P<0.05) in the Bacterial phylogeny. b) letter-value plot showing the maximum clade depth (maximum tauD) distribution for the non-randomly distributed clusters of knowns and unknowns. TauD was calculated with consenTRAIT. The maximum tauD is ranging from 0.0003 - 0.012.*
 
@@ -45,7 +45,7 @@ Similar results are observed for the archaea tree.
 
 <div class="img_container" style="width:70%; margin:2em auto;">
 
-<img alt="phylo_conservation_arc.png" src="/img/phylo_conservation_arc.png" width="" height="" >
+<img alt="phylo_conservation_arc.png" src="/img/phylo_conservation_arc.png" width="70%" height="" >
 
 *Phylogenetic conservation analysis. a) proportion of known and unknown clusters with a significant non-random distribution. We observed 15% of clusters with a significant non-random distribution (P<0.05) in the Archaeal phylogeny. b) letter-value plot showing the maximum clade depth (maximum tauD) distribution for the non-randomly distributed clusters of knowns and unknowns. TauD was calculated with consenTRAIT. The maximum tauD is ranging from 0.05 - 0.99.*
 
@@ -70,9 +70,9 @@ Lineage-specific clusters were found at both broad taxonomic levels (e.g. Phylum
 
 </div>
 
-<div class="img_container" style="width:70%; margin:2em auto;">
+<div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="Lineage_spec_bac.png" src="/img/Lineage_spec_bac.png" width="" height="" >
+<img alt="Lineage_spec_bac.png" src="/img/Lineage_spec_bac.png" width="80%" height="" >
 
 *Number of lineage specific clusters as a function of the relative evolutionary divergence (RED) in the context of the GTDB bacteria tree.*
 
@@ -94,9 +94,9 @@ Lineage-specific clusters were found at both broad taxonomic levels (e.g. Phylum
 |    EU    |   0    |   0    |   0   |   2   |   42   |  494   |  2,305  |
 
 
-<div class="img_container" style="width:70%; margin:2em auto;">
+<div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="Lineage_spec_arc.png" src="/img/Lineage_spec_arc.png" width="" height="" >
+<img alt="Lineage_spec_arc.png" src="/img/Lineage_spec_arc.png" width="80%" height="" >
 
 *Number of lineage specific clusters as a function of the relative evolutionary divergence (RED) in the context of the GTDB archaea tree.*
 <br>
@@ -111,7 +111,7 @@ Lineage-specific clusters were found at both broad taxonomic levels (e.g. Phylum
 
 <div class="img_container" style="width:90%; margin:2em auto;">
 
-<img alt="Phylo_analysis_bac.png" src="/img/Phylo_analysis_bac.png" width="" height="" >
+<img alt="Phylo_analysis_bac.png" src="/img/Phylo_analysis_bac.png" width="80%" height="" >
 
 *a) Number of lineage specific clusters as a function of the relative evolutionary divergence (RED) in the context of the GTDB bacteria tree. b) GTDB bacterial phyla ordered based on the number of clusters of unknowns and clusters of knowns/ratio of CUs and CKs (calculated for each phylum as the sum(total unknown/known ORFs)/sum(all genome-ORFs). The size shows the number of genomes per phyla. The gradient indicates the proportion of MAGs per phylum. (Nuber of MAGs/total number of genomes) c) Phylogenetic tree of GTDB bacterial phyla. We colored in green the phyla enriched in non-classified clusters, and in pink the phyla with a high percentage of MAGs and unknowns. The grey dots represent the number of phylum-specific clusters of unknowns. The branches are colored by the percentage of MAGs per phylum. Around the tree we drew a heatmap showing the proportion of unknowns per phylum.*
 
@@ -139,7 +139,7 @@ In the context of this paper we want to use the example of *Gracilibacteria* to 
 
 <div class="img_container" style="width:90%; margin:2em auto;">
 
-<img alt="Phylo_analysis_arc.png" src="/img/Phylo_analysis_arc.png" width="" height="" >
+<img alt="Phylo_analysis_arc.png" src="/img/Phylo_analysis_arc.png" width="80%" height="" >
 
 *a) Number of lineage specific clusters as a function of the relative evolutionary divergence (RED) in the context of the GTDB archaea tree. b) GTDB archaeal phyla ordered based on the number of clusters of unknowns and clusters of knowns/ratio of CUs and CKs (calculated for each phylum as the sum(total unknown/known ORFs)/sum(all genome-ORFs). The size shows the number of genomes per phyla. The gradient indicates the proportion of MAGs per phylum. (Nuber of MAGs/total number of genomes) c) Phylogenetic tree of GTDB archaea phyla. We colored in green the phyla enriched in non-classified clusters, and in pink the phyla with a high percentage of MAGs and unknowns. The grey dots represent the number of phylum-specific clusters of unknowns. The branches are colored by the percentage of MAGs per phylum. Around the tree we drew a heatmap showing the proportion of unknowns per phylum.*
 
@@ -152,14 +152,24 @@ In the context of this paper we want to use the example of *Gracilibacteria* to 
 <h4 class="section-heading  text-primary">References</h4>
 
 <a name="1"></a>[1] Chen, Han; Parks, Donovan H; Hug, Laura A; Doxey, Andrew C, "AnnoTree: visualization and exploration of a functionally annotated microbial tree of life". Nucleic Acids Research, 2019.
+
 <a name="2"></a>[2] Martiny, Adam C., Kathleen Treseder, and Gordon Pusch. 2013. “Phylogenetic Conservatism of Functional Traits in Microorganisms.” The ISME Journal 7 (4): 830–38.
+
 <a name="3"></a>[3] Louca, Stilianos, and Michael Doebeli. 2018. “Efficient Comparative Phylogenetics on Large Trees.” Bioinformatics  34 (6): 1053–55.
+
 <a name="4"></a>[4] Goodacre, Norman F., Dietlind L. Gerloff, and Peter Uetz. 2013. “Protein Domains of Unknown Function Are Essential in Bacteria.” mBio 5 (1): e00744–13.
+
 <a name="5"></a>[5] Anantharaman, Karthik, Christopher T. Brown, Laura A. Hug, Itai Sharon, Cindy J. Castelle, Alexander J. Probst, Brian C. Thomas, et al. 2016. “Thousands of Microbial Genomes Shed Light on Interconnected Biogeochemical Processes in an Aquifer System.” Nature Communications 7 (October): 13219.
+
 <a name="6"></a>[6] Kadnikov, Vitaly V., Andrey V. Mardanov, Alexey V. Beletsky, Andrey L. Rakitin, Yulia A. Frank, Olga V. Karnachuk, and Nikolai V. Ravin. 2019. “Phylogeny and Physiology of Candidate Phylum BRC1 Inferred from the First Complete Metagenome-Assembled Genome Obtained from Deep Subsurface Aquifer.” Systematic and Applied Microbiology 42 (1): 67–76.
+
 <a name="7"></a>[7] Parks, Donovan H., Christian Rinke, Maria Chuvochina, Pierre-Alain Chaumeil, Ben J. Woodcroft, Paul N. Evans, Philip Hugenholtz, and Gene W. Tyson. 2017. “Recovery of Nearly 8,000 Metagenome-Assembled Genomes Substantially Expands the Tree of Life.” Nature Microbiology 2 (11): 1533–42.
+
 <a name="8"></a>[8] Probst, Alexander J., Cindy J. Castelle, Andrea Singh, Christopher T. Brown, Karthik Anantharaman, Itai Sharon, Laura A. Hug, et al. 2017. “Genomic Resolution of a Cold Subsurface Aquifer Community Provides Metabolic Insights for Novel Microbes Adapted to High CO2 Concentrations.” Environmental Microbiology 19 (2): 459–74.
+
 <a name="9"></a>[9] Ji, Mukan, Chris Greening, Inka Vanwonterghem, Carlo R. Carere, Sean K. Bay, Jason A. Steen, Kate Montgomery, et al. 2017. “Atmospheric Trace Gases Support Primary Production in Antarctic Desert Surface Soil.” Nature 552 (7685): 400–403.
 <a name="10"></a>[10] Rinke, Christian, Patrick Schwientek, Alexander Sczyrba, Natalia N. Ivanova, Iain J. Anderson, Jan-Fang Cheng, Aaron Darling, et al. 2013. “Insights into the Phylogeny and Coding Potential of Microbial Dark Matter.” Nature 499 (7459): 431–37.
+
 <a name="11"></a>[11] Sieber, Christian M. K., Blair G. Paul, Cindy J. Castelle, Ping Hu, Susannah G. Tringe, David L. Valentine, Gary L. Andersen, and Jillian F. Banfield. 2019. “Unusual Metabolism and Hypervariation in the Genome of a Gracilibacteria (BD1-5) from an Oil Degrading Community.” bioRxiv. https://doi.org/10.1101/595074.
+
 <a name="12"></a>[12] Espinoza, Josh L., Derek M. Harkins, Manolito Torralba, Andres Gomez, Sarah K. Highlander, Marcus B. Jones, Pamela Leong, et al. 2018. “Supragingival Plaque Microbiome Ecology and Functional Potential in the Context of Health and Disease.” mBio 9 (6).

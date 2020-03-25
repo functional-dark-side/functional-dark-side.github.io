@@ -98,7 +98,7 @@ The proportion distribution of the cluster categories in the marine and human me
 
 <div class="img_container" style="width:90%; margin:2em auto;">
 
-<img alt="Cluster_categ_prop_ditrib_mg.png" src="/img/Cluster_categ_prop_ditrib_mg.png" width="" height="" >
+<img alt="Cluster_categ_prop_ditrib_mg.png" src="/img/Cluster_categ_prop_ditrib_mg.png" width="80%" height="" >
 
 *The proportion distribution of the cluster category in the metagenomes. The KNOWN fraction is represented by the Knowns (K) and the Knowns without Pfam (KWP). The UNKNOWN fraction by the Genomic unknowns (GU) and the Environmental unknowns (EU). The gray fraction represents the pool of non classified data, containing the singletons, and the clusters discarded during the validation step.*
 
@@ -124,7 +124,7 @@ The signal of broad distributed EU communities may demonstrate that these groups
 
 <div class="img_container" style="width:70%; margin:2em auto;">
 
-<img alt="NicheBreadth.png" src="/img/NicheBreadth.png" width="" height="" >
+<img alt="NicheBreadth.png" src="/img/NicheBreadth.png" width="80%" height="" >
 
 *Levins Niche Breadth scores of the clusters (A) and cluster communities (B) categories in the metagenomic samples. On the bars is reported the percentage of clusters (A), communities (B) with a broad, narrow or non-significant distribution.*
 
@@ -135,5 +135,7 @@ The signal of broad distributed EU communities may demonstrate that these groups
 <h4 class="section-heading  text-primary">References</h4>
 
 <a name="1"></a>[1] Levins, Richard. 1966. “THE STRATEGY OF MODEL BUILDING IN POPULATION BIOLOGY.” American Scientist 54 (4): 421–31
+
 <a name="2"></a>[2] Miklós, I., and J. Podani. 2004. “RANDOMIZATION OF PRESENCE–ABSENCE MATRICES: COMMENTS AND NEW ALGORITHMS.” Ecology.
+
 <a name="3"></a>[3] Oksanen, Jari, F. Guillaume Blanchet, Michael Friendly, Roeland Kindt, Pierre Legendre, Dan McGlinn, Peter R. Minchin, et al. 2019. “Vegan: Community Ecology Package.”

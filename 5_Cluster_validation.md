@@ -42,7 +42,7 @@ In addition Pfam contains both C-terminal, N-terminal and few times the M-(middl
 
 More in detail, the evaluation of the functional homogeneity is based on the following decisions:
 
-<div class="img_container" style="width:90%; margin:2em auto;">
+<div class="img_container" style="width:60%; margin:2em auto;">
 
 <img alt="pipeline_validation_fh.jpeg" src="/img/pipeline_validation_fh.jpeg" width="" height="" >
 
@@ -116,9 +116,9 @@ The **combination** of the results of both cluster evaluations led to a set of 2
 
 The proportion of rejected sequences appears to decrease at the increasing of the intra-cluster average similarity, as shown in the plots of the next figure.
 
-<div class="img_container" style="width:90%; margin:2em auto;">
+<div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="Valid_non_homolog_vs_clu_simil.png" src="/img/Valid_non_homolog_vs_clu_simil.png" width="" height="" >
+<img alt="Valid_non_homolog_vs_clu_simil.png" src="/img/Valid_non_homolog_vs_clu_simil.png" width="90%" height="" >
 
 *Relationship between the proportion of rejected ORFs identified and the average ORF similarity within each cluster (In red rejected clusters).*
 
