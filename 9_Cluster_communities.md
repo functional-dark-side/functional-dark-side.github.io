@@ -5,10 +5,10 @@ title: Cluster communities
 
 <h3 class="section-heading  text-primary">Methods</h3>
 
-The aim is to identify and aggreagte clusters sharing detectable degree of homology, which are now split due to the limitations of the sequence similarity approach used by MMseqs2. To achieve this, we exploited distant homologies to create communities of clusters in the KNOWN space constrained by the domain architectures. The, using the information retrieved for the KNOWN space we partitioned the UNKNOWN space.
+The aim is to identify and aggregate clusters sharing detectable degree of homology, which are now split due to the limitations of the sequence similarity approach used by MMseqs2. To achieve this, we exploited distant homologies to create communities of clusters in the KNOWN space constrained by the domain architectures. The, using the information retrieved for the KNOWN space we partitioned the UNKNOWN space.
 
 *A non-redundant set of domain architectures.*
-A larger proportion metagenomic data consists of fragmented ORFs, thus many of the domain architectures (DAs) we observed in the KNOWN space of fragmented ORFs could be part of a larger domain in a complete (or not) ORF. To minimise this effect, we identified DAs that could be part of a larger DA taking into account their topological order on the ORFs. In our data set, we had 29,341 different DAs. To speed up the process to identify if a DA could be a sub-DA of a larger one, we first calculated the pairwise string cosine distance (q-gram = 3) between pairs of DAs. This step allowed us to reduce the number of DA combinations to be screened, removing the DAs pairs that were too divergent. This was done conservatively with an applied a filter of a cosine distance < 0.9. We collapsed DAs that were fragments of larger DAs but taking into account the proportion of completed ORFs in each of the DAs. If a shorter DA has at least 75% of complete ORFs, was kept it as an independent DA. After this filtering and collapsing step, we have 23,681 different DAs.
+A larger proportion metagenomic data consists of fragmented ORFs, thus many of the domain architectures (DAs) we observed in the KNOWN space of fragmented ORFs could be part of a larger domain in a complete (or not) ORF. To minimise this effect, we identified DAs that could be part of a larger DA taking into account their topological order on the ORFs. In our data set, we had 29,341 different DAs. To speed up the process to identify if a DA could be a sub-DA of a larger one, we first calculated the pairwise string cosine distance (q-gram = 3) between pairs of DAs. This step allowed us to reduce the number of DA combinations to be screened, removing the DAs pairs that were too divergent. This was done conservatively with an applied a filter of a cosine distance < 0.9. We collapsed DAs that were fragments of larger DAs but taking into account the proportion of completed ORFs in each of the DAs. If a shorter DA has at least 75% of complete ORFs, is kept as an independent DA. After this filtering and collapsing step, we have 23,681 different DAs.
 
 *Graph inference.*
 We used the HMMs of the KNOWN clusters to perform an all-vs-all HMM search with HHblits [[1]](#1) (2 iterations and an e-value threshold of 1). We kept those pairs with a probability > 50% and a bidirectional coverage > 60%. Using the filtered results we created a network where we used the Score/aligned-columns as edge weights.
@@ -30,8 +30,9 @@ In the end, we collected and aggregated all communities. We repeated the whole p
 
 </div>
 
-**Scripts:** [community_inference](scripts/Cluster_communities/community_inference). \
-Usage: \
+**Scripts:** [community_inference](scripts/Cluster_communities/community_inference).
+
+Usage:
 [`./community_inference/get_communities.R`](scripts/Cluster_communities/community_inference/get_communities.R)` -c `[`${PWD}/community_inference/config.yml`](scripts/Cluster_communities/community_inference/config.yml)
 
 
