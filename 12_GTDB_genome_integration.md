@@ -321,6 +321,7 @@ After the refinement the only-GTDB clusters appeared dominated by the GU set, wh
 
 -   *GTDB cluster community inference*
 
+At first we searched GTDB clustersin the metagenomic data set communities. Then, for the clusters not found in the MG-communities, we performed the community inference.
 The best inflation value for the cluster aggregation was determined at 2.5, and we obtained a total of ~500K communities.
 (Both slightly higher number than those found for the metagenomic dataset/clusters)
 
@@ -336,11 +337,25 @@ The best inflation value for the cluster aggregation was determined at 2.5, and 
 
 *Only-GTDB cluster community categories*
 
-|             |      K      |     KWP     |      GU     |      EU     |      Total     |
-|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:--------------:|
-| Communities |   52,360    |    47,203   |  339,468    |    57,899   |   **496,930**  |
-| Clusters    |   617,344   |   136,406   | 1,525,550   |    68,202   | **2,347,502**  |
-| ORFs        | 9,997,529   |   663,107   | 9,305,621   |   175,379   | **20,141,636** |
+|             |     K     |   KWP   |    GU     |   EU    |     Total      |
+|:-----------:|:---------:|:-------:|:---------:|:-------:|:--------------:|
+| Communities |  52,360   | 47,203  |  339,468  | 57,899  |  **496,930**   |
+|  Clusters   |  617,344  | 136,406 | 1,525,550 | 68,202  | **2,347,502**  |
+|    ORFs     | 9,997,529 | 663,107 | 9,305,621 | 175,379 | **20,141,636** |
+
+</div>
+
+A set of these clusters and cluster communities, was found in the metagenomic communities. Numbers are shown in the following table:
+
+<div class="img_container" style="width:80%; margin:2em auto;">
+
+*GTDB cluster in MG communities*
+
+|             |    K    |   KWP   |    GU     |   EU   |     Total     |
+|:-----------:|:-------:|:-------:|:---------:|:------:|:-------------:|
+| MG-communities | 14,241  | 20,399  |  69,204  | 2,799 |  **106,643**  |
+|  Clusters   | 357,952 | 82,307 | 259,190 | 3,393 | **702,842** |
+
 
 </div>
 

@@ -27,7 +27,9 @@ Combining the idea of bringing a structure into the UNKNOWN functional space and
 
 <br>
 
-We implemented a bioinformatics workflow to structure and explored the consistent pool of genes with unknown functions from microbial genomes and metagenomes. We used a protein domain-based approach to partition more than 400 million predicted genes from 1,628 metagenomes and ~29 genomes into different categories of gene clusters of known and unknown functions.
+We implemented the bioinformatics workflow "agnostos", to structure and explored the consistent pool of genes with unknown functions from microbial genomes and metagenomes. We used a protein domain-based approach to partition more than 400 million predicted genes from 1,628 metagenomes and ~29 genomes into different categories of gene clusters of known and unknown functions.
 
+For more details about the used data, the workflow methods and results, visit our website: [The functional dark side](https://dark.metagenomics.eu/).
 
-For more details about data, workflow, methods and results visit our website: [The functional dark side](https://dark.metagenomics.eu/).
+### The agnostos workflow
+The agnostos snakemake workflow can be found [here](https://github.com/functional-dark-side/agnostos-wf).

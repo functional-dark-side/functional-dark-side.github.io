@@ -233,6 +233,29 @@ The numbers of clusters and ORFs for each category are reported in the table bel
 
 </div>
 
+**OM-RGC_v2 clusters and cluster communities**
+
+<div class="img_container" style="width:90%; margin:2em auto;">
+
+|             |    K    |  KWP   |   GU    |   EU    |    Total    |
+| ----------- |:-------:|:------:|:-------:|:-------:|:-----------:|
+| Clusters    | 130,350 | 60,607 | 206,142 | 301,902 | **699,001** |
+| Communities | 84,365  | 48,490 | 145,966 | 187,827 | **466,648** |
+
+</div>
+
+<div class="img_container" style="width:90%; margin:2em auto;">
+
+**MG+GTDB+OM-RGC-v2 cluster and cluster community categories:**
+
+|             |      K      |    KWP     |     GU     |    EU    |      Total      |
+| ----------- |:-----------:|:----------:|:----------:|:--------:|:---------------:|
+| Communities |   146,665   |  140,232   |  562,330   | 291,022  |  **1,140,249**  |
+| Clusters    |  1,797,860  |  829,466   | 2,853,501  | 505,933  |  **5,986,760**  |
+| ORFs        | 233,736,295 | 33,167,164 | 69,675,441 | 4,513,27 | **341,091,927** |
+
+
+</div>
 
 <h4 class="section-heading  text-primary">OMRGC-v2 singletons</h4>
 

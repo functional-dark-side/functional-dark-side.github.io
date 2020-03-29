@@ -48,7 +48,7 @@ The methods (included all the scripts/code) and results for each module are docu
 
 **Main analyses and results:**
 
--   [**Cluster and communities overview**](8.1_Cluster_categories_overview)
+-   [**Cluster and communities overview**](16.1_Cluster_and_communities_overview)
 
 -   [**Coverage of external databases**](10_Coverage_external_DBs)
 

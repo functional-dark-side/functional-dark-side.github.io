@@ -95,6 +95,10 @@ _Refined **cluster categories** and ORFs content._
 
 </div>
 
+
+An overview of the metagenomic cluster categories, including additional information about their taxonomy, level of darkness, completeness and set of HQ-clusters can e found [here](8.1_Cluster_categories_overview).
+
+
 * * *
 
 <h3 class="section-heading  text-primary">Finalization of the cluster categories</h3>
