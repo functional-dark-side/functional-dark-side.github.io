@@ -72,7 +72,7 @@ Data visualization: We visualised the resulting data using the alluvial plot pro
   `bash`[`./scripts/place_PR.sh`](scripts/Cluster_communities/community_validation/place_PR.sh)` ${PWD}/all_sequences_names_to_extract.fasta ${PWD}/all_communities_2019-03-28-144550.tsv`
 
 
-In addition we explored how the cluster communities and the subset of high quality (HQ) clusters and their communtities distributes among a bacterial set of ribosomal protein families. For the analysis we used the set 16 ribosomal proteins used in Méheust et al. [[14]](#14) ([ribo_markers.tsv](scripts/Cluster_communities/community_validation/ribo_markers.tsv)) in combination with the collection of bacterial single copy genes (scg) of Anvi'o [[15]](#15), that can be dowloaded from [here](https://github.com/merenlab/anvio/blob/master/anvio/data/hmm/Bacteria_71/genes.txt).
+In addition we explored how the cluster communities and the subset of high quality (HQ) clusters and their communties distribute among a bacterial set of ribosomal protein families. For the analysis we used the set 16 ribosomal proteins used in Méheust et al. [[14]](#14) ([ribo_markers.tsv](scripts/Cluster_communities/community_validation/ribo_markers.tsv)) in combination with the collection of bacterial single copy genes (scg) of Anvi'o [[15]](#15), that can be downloaded from [here](https://github.com/merenlab/anvio/blob/master/anvio/data/hmm/Bacteria_71/genes.txt).
 
 **Script:** The ribosomal protein analysis was performed using the R script [cl_comm_ribo_prot.r](scripts/communities/community_validation/cl_comm_ribo_prot.r).
 The output files: "ribo_com_cl.tsv" and "ribo_com_cl_hq.tsv" can be visualised/plotted usaing the [RawGraphs](https://rawgraphs.io/about) visualization framework.
