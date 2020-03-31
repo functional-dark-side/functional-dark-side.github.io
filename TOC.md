@@ -4,14 +4,16 @@ title: Table of contents
 ---
 
 
-We implemented a bioinformatics workflow (agnostos) to structure and explore the large pool of genes with unknown functions found in microbial genomes and metagenomes. We used a protein domain-based approach to partition more than 400 million predicted genes from 1,628 metagenomes and ~29 genomes into different categories of gene clusters of known and unknown functions.
-The agnostos workflow can be found [here](https://github.com/functional-dark-side/agnostos-wf).
+We implemented a bioinformatics workflow (Agnostos) to structure and explore the large pool of genes with unknown functions found in microbial genomes and metagenomes. We used a protein domain-based approach to partition more than 400 million predicted genes from 1,628 metagenomes and ~29 genomes into different categories of gene clusters of known and unknown functions.
 
 <img alt="workflow.png" src="img/workflow.png" width="750" height="" >
 
 <a name="wrkfl"></a>_Workflow different modules_
 
 <br>
+
+The agnostos workflow can be found [here](https://github.com/functional-dark-side/agnostos-wf).
+
 <br>
 
 The methods (included all the scripts/code) and results for each module are documented. Below you can find the links to the different reports:
