@@ -8,11 +8,11 @@ We implemented a bioinformatics workflow (Agnostos) to structure and explore the
 
 <img alt="workflow.png" src="img/workflow.png" width="750" height="" >
 
-<a name="wrkfl"></a>_Workflow different modules_
+<a name="wrkfl"></a>_Agnostos workflow different modules_
 
 <br>
 
-The agnostos workflow can be found [here](https://github.com/functional-dark-side/agnostos-wf).
+The AGNOSTOS WORKFLOW can be found [HERE](https://github.com/functional-dark-side/agnostos-wf).
 
 <br>
 
