@@ -55,7 +55,7 @@ The methods (included all the scripts/code) and results for each module are docu
 
 -   [**Coverage of external databases**](10_Coverage_external_DBs)
 
--   [**EUs in TARA Ocean MAGs (PGUs)**](11_EUs_in_TARA_MAGs)
+-   [**EUs in TARA Ocean MAGs**](11_EUs_in_TARA_MAGs)
 
 -   [**GTDB genomes integration**](12_GTDB_genome_integration)
 
