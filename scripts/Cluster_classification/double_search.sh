@@ -13,7 +13,7 @@ BIODB="${3}"
 NSLOTS="${4}"
 NAME_DB=$(basename "${BIODB}")
 TMPDIR="${OUTDIR}"/tmp
-MMSEQS=~/MMseqs2/bin/mmseqs
+MMSEQS=~/opt/MMseqs2/bin/mmseqs
 
 "${MMSEQS}" createdb "${UNKN}" "${OUTDIR}/cons_db"
 

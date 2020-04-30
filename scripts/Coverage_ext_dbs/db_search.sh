@@ -1,12 +1,13 @@
 #!/bin/#!/usr/bin/env bash
 
-#DIR=/bioinf/projects/megx/UNKNOWNS/2017_11
-# The cluster profiles are in /bioinf/projects/megx/UNKNOWNS/2017_11/cl_categories/ffindex_files/cl_hmm_db
+#DIR=data
+#RESULTS are stored in the folder data/coverage_ext_DBs
+# The cluster profiles are in data/cluster_categories/ffindex_files/cl_hmm_db
 DB=${1} # fasta file
 NAME=$(basename "${DB}" .fasta)
 PROFILES=cl_hmm_db
 NSLOTS=${2}
-CATEG=/bioinf/projects/megx/UNKNOWNS/2017_11/cl_categories/cl_ids_categ.tsv
+CATEG=data/cluster_categories/marine_hmp_cluster_ids_categories.tsv
 
 # Create databases
 # MMseqs2 Version: 8.fac81

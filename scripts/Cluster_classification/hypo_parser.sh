@@ -12,7 +12,7 @@ FILT=${4} # select filtering threshold for hypothetical hits
 OUT=${5}
 
 # Filter e-value inside the 60% of the best evalue
-F06=$(awk -f ~/opt/scripts/evalue_06_filter.awk <(sort -k1,1 -k11,11g "${FILE}" | awk '!seen[$1,$2]++'))
+F06=$(awk -f "${PWD}"/scripts/Cluster_classification/evalue_06_filter.awk <(sort -k1,1 -k11,11g "${FILE}" | awk '!seen[$1,$2]++'))
 #Retrive database protein information
 F06P="${F06}"_prot
 join -12 -21 <(sort -k2,2 --parallel=10 -S25% <(echo "${F06}")) <(sort -k1,1 --parallel=10 -S25% "${DBPROT}") >  "${F06P}"

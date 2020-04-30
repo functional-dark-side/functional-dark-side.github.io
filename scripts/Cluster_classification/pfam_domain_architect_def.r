@@ -10,7 +10,7 @@ library(parallel)
 
 args <- commandArgs(TRUE)
 
-pfam_cnames <- read_tsv("../../../2017_11/Pfam_annotation/pfam_files/Pfam-31_names_mod_01122019.tsv", col_names = TRUE)
+pfam_cnames <- read_tsv("data/DBs/pfam_files/Pfam-31_names_mod_01122019.tsv", col_names = TRUE)
 annot_kept  <- fread(paste0("gzip -dc ", args[1]), colClasses = c(V1 = "character", V8="character"),
                      stringsAsFactors = F, header = F) %>%
   dplyr::select(V1,V2,V3,V5,V6,V7,V8) %>%

@@ -11,7 +11,7 @@ library(batchtools)
 reg_dir_accum <- file.path(getwd(), paste(format(Sys.Date()), format(Sys.time(), "%H%M%S"), sep = "-"))
 reg_data_accum <- makeRegistry(reg_dir_accum, seed=123, conf.file = "~/.batchtools.conf.R")
 
-# DATA stored in /bioinf/projects/megx/UNKNOWNS/2017_11/collector_curves
+# DATA stored in data/collector_curves
 # MG clusters x samples (input data: sample"\t"categ"_"cl_name)
 cl_data_smpl <- fread("marine_hmp_smpl_cl_categ.tsv.gz", stringsAsFactors = F, header = F, nThread = 28) %>%
   setNames(c("sample","cl_name"))

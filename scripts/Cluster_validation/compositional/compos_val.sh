@@ -30,7 +30,7 @@ function create_outdir() {
 }
 
 function  create_destdir() {
-  DESTDIR="${DIR}"/cluster_validation/compositional/results
+  DESTDIR="${DIR}"/cluster_validation/compositional
   if [[ ! -d "${DESTDIR}" ]]; then
     mkdir -p "${DESTDIR}"
   fi
@@ -292,18 +292,18 @@ main (){
 trap "cleanup; exit 0" EXIT SIGHUP SIGINT SIGQUIT SIGPIPE SIGTERM
 
 declare -r MMSEQS_BIN="${HOME}/opt/MMseqs2/bin/mmseqs"
-declare -r FILTER_BIN="${PWD}/scripts/B_validation/compos/filter_graph"
+declare -r FILTER_BIN="${PWD}/scripts/Cluster_validation/compos/filter_graph"
 declare -r TCOFFEE_BIN="${HOME}/opt/tcoffee/bin/t_coffee"
 declare -r PARASAIL_BIN="${HOME}/opt/parasail/bin/parasail_aligner"
 declare -r FAMSA_BIN="${HOME}/opt/FAMSA/famsa"
 declare -r ODSEQ_BIN="${HOME}/opt/OD-Seq/OD-seq"
 declare -r DATAMASH_BIN="${HOME}/.linuxbrew/bin/datamash"
 declare -r SEQTK_BIN="${HOME}/opt/seqtk/seqtk"
-declare -r ISCON_BIN="${PWD}/scripts/B_validation/compos/is_connected"
-declare -r STATS_BIN="${PWD}/scripts/B_validation/compos/get_stats.r"
+declare -r ISCON_BIN="${PWD}/scripts/Cluster_validation/compos/is_connected"
+declare -r STATS_BIN="${PWD}/scripts/Cluster_validation/compos/get_stats.r"
 declare -r T=2.5
-declare -r DIR="/bioinf/projects/megx/UNKNOWNS/2017_11"
-declare -r TSV="${DIR}/clustering/results/marine_hmp_db_03112017_orfs_clu_rep.tsv"
+declare -r DIR="data"
+declare -r TSV="${DIR}/mmseqs_clustering/marine_hmp_db_03112017_orfs_clu_rep.tsv"
 declare -r LOG="${DIR}/cluster_validation/compositional/logs_val"
 declare -r NSLOTS=2
 OUTDIR=""

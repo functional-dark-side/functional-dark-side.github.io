@@ -5,10 +5,10 @@ set -x
 
 # Usage: ./cluster_orfs_vs_DPD.sh refined_clu_db DPD.fa cluster_darkness/
 
-CL_DB="${1}" #/bioinf/projects/megx/UNKNOWNS/2017_11/refinement/ffindex_files/marine_hmp_refined_cl_fa
-CL_CATEG="${2}" #/bioinf/projects/megx/UNKNOWNS/2017_11/cl_categories/cl_ids_categ_orfs.tsv
-DPD_FA="${3}" #/bioinf/projects/megx/UNKNOWNS/2017_11/cluster_stats/darkness/dpd_uniprot_sprot.fasta.gz
-OUTDIR="${4}" #/bioinf/projects/megx/UNKNOWNS/2017_11/cluster_stats/darkness/
+CL_DB="${1}" #data/cluster_refinement/ffindex_files/marine_hmp_refined_cl_fa
+CL_CATEG="${2}" #data/cluster_categories/cl_ids_categ_orfs.tsv
+DPD_FA="${3}" #data/cluster_category_stats/darkness/dpd_uniprot_sprot.fasta.gz
+OUTDIR="${4}" #data/cluster_category_stats/darkness/
 
 # Extract all sequences from the refined database set:
 sed -e 's/\x0//g' "${CL_DB}" | gzip > "${OUTDIR}"/refined_cl_orfs.fasta.gz

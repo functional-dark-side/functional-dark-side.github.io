@@ -4,14 +4,14 @@
 set -e
 
 SMPL="${1}"
-DIRCL="${PWD}"/"${SMPL}"/clustering
+DIRCL=data/mmseqs_clustering
 #Create cluster DB/subDB
 #Ex: not-annotated "good" cluster ids
 CIDS="${2}"
 DIRVAL=$(dirname "${CIDS}")
 mkdir -p "${DIRVAL}"/ffindex_files
 
-~/MMseqs2/bin/mmseqs createsubdb "${CIDS}" "${DIRCL}"/"${SMPL}"_clu_fa "${DIRVAL}"/ffindex_files/"${SMPL}"_kept_noannot_cl_fa
+~/opt/MMseqs2/bin/mmseqs createsubdb "${CIDS}" "${DIRCL}"/"${SMPL}"_clu_fa "${DIRVAL}"/ffindex_files/"${SMPL}"_kept_noannot_cl_fa
 
 # Create alignments and retrieve the consensus sequences
 FF="${DIRVAL}"/ffindex_files

@@ -1,12 +1,12 @@
 ### Cascaded clustering
 
 "clustering.sh" (script calling the cascaded clustering program of MMSeqs2):
-  - input: "/bioinf/projects/megx/UNKNOWNS/2017_11/DATA/ORFs/ORFs_fasta/TARA_OSD_GOS_malaspina_hmpI-II.fasta.gz"
-  - output: "/bioinf/projects/megx/UNKNOWNS/2017_11/clustering/unkdb_update_hmp/marine_hmp_db_03112017" & "/bioinf/projects/megx/UNKNOWNS/2017_11/clustering/unkdb_update_hmp/marine_hmp_db_03112017_clu"
+  - input: "data/gene_prediction/TARA_OSD_GOS_malaspina_hmpI-II.fasta.gz"
+  - output: "data/mmseqs_clustering/marine_hmp_db/marine_hmp_db_03112017" & "/data/mmseqs_clustering/marine_hmp_db/marine_hmp_db_03112017_clu"
 
 "clustering_res.sh" & "clustering_info.sh":
-  - input: The output DBs from "clustering.sh" and the orfs fasta file 
-  - output: Files in "/bioinf/projects/megx/UNKNOWNS/2017_11/clustering/results" folder
+  - input: The output DBs from "clustering.sh" and the orfs fasta file
+  - output: Files in "/data/mmseqs_clustering/" folder
       - marine_hmp_db_03112017_clu.tsv      (clusters, long format)
       - marine_hmp_db_03112017_clu_wide.tsv (clusters, wide format, first column = representative)
       - marine_hmp_db_03112017_clu_size.tsv (clusters representative - size)

@@ -17,7 +17,7 @@ setDTthreads(28)
 lo_env <- new.env()
 
 # Gather data -------------------------------------------------------------
-# Data stored in /bioinf/project/megx/UNKNOWNS/2017_11/GTDB
+# Data stored in data/GTDB
 # All GTDB ORFs, included those in MG clusters (3,270,101 clusters, and 75,297,319 ORFs)
 lo_env$cl_data <-
   fread(

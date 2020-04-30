@@ -29,7 +29,7 @@ MMSEQS=~/MMseqs2/bin/mmseqs
 # Fasta/sequences database for each cluster
 "${MMSEQS}" createseqfiledb "${seqDB}" "${CLSTR}" "${CLSTR}"_fa
 # This DB can be accessed with ffindex, to extract separated fasta files for each cluster and perform operations on them (https://github.com/soedinglab/MMseqs2/wiki#how-to-run-external-tools-for-each-database-entry)
-# Ex: ffindex_apply_mpi "${CLUSTER}"/unkdb_update_hmp/marine_hmp_db_03112017_clu_fa "${CLUSTER}"/unkdb_update_hmp/marine_hmp_db_03112017_clu_fa.index -- your_program
+# Ex: ffindex_apply_mpi "${CLUSTER}"/marine_hmp_db/marine_hmp_db_03112017_clu_fa "${CLUSTER}"/marine_hmp_db/marine_hmp_db_03112017_clu_fa.index -- your_program
 
 # To convert this tsv file in wide format (repres member member member ..)
 # This file defines the cluster number/ID,
@@ -65,9 +65,9 @@ gzip "${CLSTR}"_info.tsv
 N=$(awk '{sum+=$3}END{printf "%.0f\n", sum/NR}' "${CLSTR}"_cl_name_rep_size.tsv)
 
 if [ "$N" -eq "1" ]; then
-        let "N = N + 1";
+  let "N = N + 1";
 else
-        let "N=N";
+  let "N=N";
 fi
 
 echo "For the following analyses we are going to use only the clusters with >= ${N} ORFs"

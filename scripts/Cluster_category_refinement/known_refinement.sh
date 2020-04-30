@@ -3,16 +3,16 @@
 set -x
 set -e
 
-DIR=/bioinf/projects/megx/UNKNOWNS/2017_11/unkn_refinement
+DIR=data/cluster_classification/unkn_refinement
 SMPL="marine_hmp"
 INPUT="${DIR}"/"${SMPL}"_new_kwp_ids.txt
-OUTDIR="${DIR}"/known_refinement
-OUTDIR_CATEG=/bioinf/projects/megx/UNKNOWNS/2017_11/cluster_categories
-OUTPUT="${OUTDIR}"/"${SMPL}"_kwp
+OUTDIR=data/cluster_classification/known_refinement
+OUTDIR_CATEG=data/cluster_categories
+OUTPUT="${OUTDIR}"/cl_kwp
 NSLOTS=${1}
-PFAM=${PWD}/DBs/pfam
-PF_FILES=${PWD}/DBs/pfam_files
-MPIRUN=/bioinf/software/openmpi/openmpi-1.8.1/bin/mpirun
+PFAM=data/DBs/pfam
+PF_FILES=data/DBs/pfam_files
+MPIRUN=mpirun
 FFINDEX=ffindex_apply_mpi
 
 STEP="known_refinement"
@@ -72,8 +72,8 @@ if [ -s ${OUTPUT}_filt_name_acc_clan_multi.tsv ]; then
   cp "${DIR}"/"${SMPL}"_new_eu_ids.txt "${OUTDIR_CATEG}"/"${SMPL}"_eu_ids.txt
 else
   # The categories mantain the same clusters
-  cp "${DIR}"/"${SMPL}"new_k_ids.txt "${OUTDIR_CATEG}"/"${SMPL}"_k_ids.txt
-  cp "${DIR}"/"${SMPL}"new_kwp_ids.txt "${OUTDIR_CATEG}"/"${SMPL}"_kwp_ids.txt
-  cp "${DIR}"/"${SMPL}"new_gu_ids.txt "${OUTDIR_CATEG}"/"${SMPL}"_gu_ids.txt
-  cp "${DIR}"/"${SMPL}"new_eu_ids.txt "${OUTDIR_CATEG}"/"${SMPL}"_eu_ids.txt
+  cp "${DIR}"/"${SMPL}"_new_k_ids.txt "${OUTDIR_CATEG}"/"${SMPL}"_k_ids.txt
+  cp "${DIR}"/"${SMPL}"_new_kwp_ids.txt "${OUTDIR_CATEG}"/"${SMPL}"_kwp_ids.txt
+  cp "${DIR}"/"${SMPL}"_new_gu_ids.txt "${OUTDIR_CATEG}"/"${SMPL}"_gu_ids.txt
+  cp "${DIR}"/"${SMPL}"_new_eu_ids.txt "${OUTDIR_CATEG}"/"${SMPL}"_eu_ids.txt
 fi

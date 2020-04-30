@@ -37,12 +37,12 @@ fi
 MMSEQS_BIN=${MMSEQS_BIN:=~/opt/MMseqs2/bin/mmseqs}
 
 # Fixed variables
-CLHMM="${PWD}"/mg_gtdb_hmm_db #/bioinf/projects/megx/UNKNOWNS/2017_11/mg_gtdb_hmm_db
+CLHMM="${PWD}"/mg_gtdb_hmm_db #data/MG_GTDB_DB/mg_gtdb_mmseqs_profile_db/mg_gtdb_hmm_db
 CL_CATEG="${PWD}"/mg_gtdb_kept_cluster_categories_class.tsv.gz
 MPI="srun --mpi=pmi2"
 EFILTER="${PWD}"/scripts/evalue_filter.awk
 MVOTE="${PWD}"/scripts/majority_vote_categ.R
-LTMP=/vol/scratch/tmp
+LTMP=/scratch/tmp
 OUTDIR="${PWD}"/results
 
 mkdir -p "${OUTDIR}"

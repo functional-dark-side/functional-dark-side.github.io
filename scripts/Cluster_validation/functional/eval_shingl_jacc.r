@@ -13,7 +13,7 @@ cluster_annot <- fread(args[1], stringsAsFactors = F, header = F) %>%
   dplyr::select(rep,memb,partial,pf,clan)
 
 # Pfam terminal (C, N) domains of same proteins
-pfam_shared_term <- read.table("files/pfam_shared_all",
+pfam_shared_term <- read.table("data/DBs/pfam_files/Pfam-31_names_mod_01122019.tsv",
                                stringsAsFactors = F, header = F, fill=T, na.strings=c("","NA")) %>%
                                 setNames(c("com_name","n_term","c_term","m_term"))
 # Cluster lists
@@ -189,7 +189,7 @@ shingl.jacc <- function(clstr, pfam){
   return(res)
 }
 
-source("scripts/B_validation/funct/shingl_jacc_functions.R")
+source("scripts/Cluster_validation/functional/shingl_jacc_functions.R")
 res.list <- mclapply(cluster.list, shingl.jacc, pfam=pfam_shared_term, mc.cores = getOption("mc.cores",28))
 results <- plyr::ldply(res.list, data.frame)
 res.parsed.1 <- results %>% select(rep,jacc_median_raw,jacc_median_sc,type,prop_type,prop_partial) %>% group_by(rep) %>%

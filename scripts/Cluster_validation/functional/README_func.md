@@ -20,7 +20,7 @@ parallel
 #### Usage
 
 ```bash
-Rscript eval_shingl_jacc.r "/bioinf/projects/megx/UNKNOWNS/2017_11/annot_and_clust/marine_hmp_db_03112017_clu_ge10_annot.tsv" "/bioinf/projects/megx/UNKNOWNS/2017_11/cluster_validation/functional/shingl_jacc_val_annot.tsv"
+Rscript eval_shingl_jacc.r "data/annot_and_clust/marine_hmp_db_03112017_clu_ge10_annot.tsv" "data/cluster_validation/functional/shingl_jacc_val_annot.tsv"
 ```
 
 - output: tab-formatted table with 7 fields:

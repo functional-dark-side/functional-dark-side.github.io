@@ -33,7 +33,7 @@ tr -d '\000' < uniprotDB.mapping_OX_pref > uniprotDB.tsv_tmp
 awk '{match($2, /=([^ ;]+)/, a); print $1"\t"a[1]; }' uniprotDB.tsv_tmp > uniprotDB.tsv
 
 # Create database from each cluster category set of ORFs:
-# the files are in: /bioinf/projects/megx/UNKNOWNS/2017_11/cl_categories/ffindex_files/"${categ}"_cl_orfs.fasta.gz
+# the files are in: data/cluster_categories/ffindex_files/"${categ}"_cl_orfs.fasta.gz
 mmseqs createdb cl_orfs.fasta.gz queryDB
 # retrieve taxonomy
 mmseqs taxonomy queryDB uniprotDB uniprotDB.tsv ncbi-taxdump queryLcaDB tmp --threads 64 -e 1e-05 --cov-mode 0 -c 0.6 --lca-mode 2
@@ -43,12 +43,12 @@ mmseqs convertalis queryDB uniprotDB queryLcaDB queryLcaDB.m8 --therads 64 --for
 mmseqs createtsv queryDB queryLcaDB queryLca_c06.tsv
 
 #Filter the hits within the 60%Log(best-evalue)
-awk -f /home/cvanni/opt/scripts/evalue_06_filter.awk <(sort -k1,1 -k11,11g queryLcaDB.m8 | awk '!seen[$1,$2]++') > queryLcaDB_e60.m8
+awk -f "${PWD}"/scripts/Cluster_classification/evalue_06_filter.awk <(sort -k1,1 -k11,11g queryLcaDB.m8 | awk '!seen[$1,$2]++') > queryLcaDB_e60.m8
 
 join -12 -21 <(sort -k2,2 --parallel 10 -S25% queryLcaDB_e60.tsv) <(sort -k1,1 --parallel 20 -S25% <(zcat uniprot_prot.tsv.gz )) > queryLca_e60_prot.tsv
 
-LC_ALL=C rg -j 6 -i -f ~/opt/scripts/unknown_grep.tsv queryLca_e60_prot.tsv | awk '{print $0"\thypo"}' > queryLca_e60_prot_hypo
-LC_ALL=C rg -j 6 -i -v -f ~/opt/scripts/unknown_grep.tsv queryLca_e60_prot.tsv | awk '{print $0"\tchar"}' >> queryLca_e60_prot_hypo
+LC_ALL=C rg -j 6 -i -f "${PWD}"/scripts/Cluster_classification/unknown_grep.tsv queryLca_e60_prot.tsv | awk '{print $0"\thypo"}' > queryLca_e60_prot_hypo
+LC_ALL=C rg -j 6 -i -v -f "${PWD}"/scripts/Cluster_classification/unknown_grep.tsv queryLca_e60_prot.tsv | awk '{print $0"\tchar"}' >> queryLca_e60_prot_hypo
 
 sed -i 's/ /\t/g' queryLca_c06_prot_hypo
 
@@ -66,7 +66,7 @@ rm queryLca_c06_hits queryLca_c06_hypo1 queryLca_c06_nothypo
 join -11 -21 <(sort -k1,1 queryLca_c06.tsv) <(sort -k1,1 queryLca_c06_hypo_char) > queryLca_c06_info.tsv
 
 # Add cluster IDs
-# The file is in: /bioinf/projects/megx/UNKNOWNS/2017_11/cl_categories/
+# The file is in: data/cluster_categories/
 join -13 -21 <(zcat cl_ids_categ_orfs.tsv.gz | sort -k3,3) <(sort -k1,1 queryLca_c06_info.tsv) > eu_queryLca_c06_info.tsv
 
 # Repeat sam steps for the other categories (gu,kwp,k)

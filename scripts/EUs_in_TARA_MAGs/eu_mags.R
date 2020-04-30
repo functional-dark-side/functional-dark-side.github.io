@@ -4,40 +4,40 @@ library(RSQLite)
 library(genoPlotR)
 library(gggenes)
 
-#Main directory: /bioinf/projects/megx/UNKNOWNS/2017_11/
+#Main directory: data/
 
 # Search results
-mags_vs_eus <- read_tsv("cov_databases/mag_best-hits.tsv", col_names = TRUE, progress = TRUE) %>%
+mags_vs_eus <- read_tsv("coverage_ext_DBs/mag_best-hits.tsv", col_names = TRUE, progress = TRUE) %>%
   dplyr::select(-con_cat) %>%
   dplyr::rename(gene_callers_id = gene, clstr_ID = cl_name) %>%
   mutate(gene_callers_id = as.character(gene_callers_id),
          clstr_ID = as.character(clstr_ID))
 
 # Broad-distributed EU cluster communities
-load("eco_analyses/gClCo_nb_all_mv.Rda")
+load("niche_breadth/gClCo_nb_all_mv.Rda")
 broad_eus <- gClCo_nb_all_mv %>% filter(sign=="Broad", categ=="EU") %>%
     select(-categ) %>% rename(com_ID=gClCo_name)
 
 # Link cluster community ids to cluster ids
-cl_com <- fread("summary_tables/mg_cluster_communities.tsv.gz",header=F) %>%
+cl_com <- fread("cluster_communities/marine_hmp_cluster_communities.tsv.gz",header=F) %>%
  setNames(c("clstr_ID","com_ID"))
 broad_eus <- broad_eus %>% left_join(cl_com, by="com_ID")
 
 # Gene_callers_ID is a unique idenitifier for a contigs for ANVIO
-m_genes <- read_tsv("../chiara/MAG_unkn/orf2mag.tsv", col_names = TRUE, progress = TRUE) %>%
+m_genes <- read_tsv("EUs_vs_TARA_MAGs/orf2mag.tsv", col_names = TRUE, progress = TRUE) %>%
   dplyr::select(gene_callers_id, contig) %>%
   mutate(gene_callers_id = as.character(gene_callers_id))
 
 # Anvio MAG statistics
-mag_cdata <- read_tsv("../chiara/MAG_unkn/TARA_MAGs_v3_metadata.txt", col_names = TRUE) %>% rename(MAG = MAG_Id)
+mag_cdata <- read_tsv("EUs_vs_TARA_MAGs/TARA_MAGs_v3_metadata.txt", col_names = TRUE) %>% rename(MAG = MAG_Id)
 
 # MAG Taxonomy
-mag_tax <- read_csv("../chiara/MAG_unkn/tara_delmont_taxids.csv", col_names = FALSE) %>%
+mag_tax <- read_csv("EUs_vs_TARA_MAGs/tara_delmont_taxids.csv", col_names = FALSE) %>%
   separate(X3,into = c("domain","phylum","class", "order", "family", "genus"), sep = ";", fill = "right", extra = "drop") %>%
   dplyr::rename(MAG=X1)
 
 # MAG abundance
-mag_abun <- read_tsv("../chiara/MAG_unkn/Table_S12.txt", col_names =  TRUE) %>%
+mag_abun <- read_tsv("EUs_vs_TARA_MAGs/Table_S12.txt", col_names =  TRUE) %>%
   rename(MAG = `1077 MAGs`) %>% gather(key = sample, value = abun, -MAG) %>% arrange(desc(abun))
 
 # Join datasets
@@ -114,18 +114,18 @@ mag_complet <- eu_mag_data %>% ungroup() %>% filter(`Anvio-Comp` < 80, n_eus > 1
 #Alternative
 TARA_ANW_MAG_00076_index <- mags_vs_eus_comb %>% filter(MAG == "TARA_ANW_MAG_00076") %>% select(clstr_ID, gene_callers_id)
 
-TARA_ANW_MAG_00076_genecalls <- read_tsv("../chiara/MAG_unkn/bin_by_bin/TARA_ANW_MAG_00076/TARA_ANW_MAG_00076-gene_calls.txt")
+TARA_ANW_MAG_00076_genecalls <- read_tsv("EUs_vs_TARA_MAGs/bin_by_bin/TARA_ANW_MAG_00076/TARA_ANW_MAG_00076-gene_calls.txt")
 
 TARA_ANW_MAG_00076_contigs_with_eus <- TARA_ANW_MAG_00076_genecalls %>%
   filter(gene_callers_id %in% TARA_ANW_MAG_00076_index$gene_callers_id) %>%
   select(contig) %>% unique()
 
 write_tsv(TARA_ANW_MAG_00076_contigs_with_eus,
-          path = "../chiara/MAG_unkn/TARA_ANW_MAG_00076_contigs_with_eus.tsv", col_names = FALSE)
+          path = "EUs_vs_TARA_MAGs/TARA_ANW_MAG_00076_contigs_with_eus.tsv", col_names = FALSE)
 
 # The following commands need to be executed in bash
 #Filter for only contigs of interest
-#filterbyname.sh in=..chiara/MAG_unkn/bin_by_bin/TARA_ANW_MAG_00076/TARA_ANW_MAG_00076-contigs.fa out=TARA_ANW_MAG_00076_eu_CONTIGS.fa names=TARA_ANW_MAG_00076_contigs_with_eus.tsv include=T
+#filterbyname.sh in=EUs_vs_TARA_MAGs/bin_by_bin/TARA_ANW_MAG_00076/TARA_ANW_MAG_00076-contigs.fa out=TARA_ANW_MAG_00076_eu_CONTIGS.fa names=TARA_ANW_MAG_00076_contigs_with_eus.tsv include=T
 
 # [Installing Prokka on local Mac with Brew](https://github.com/tseemann/prokka)
 #git clone https://github.com/tseemann/prokka.git ~/opt/
@@ -135,19 +135,19 @@ write_tsv(TARA_ANW_MAG_00076_contigs_with_eus,
 #~/opt/prokka/bin/prokka eu_CONTIGS.fa --metagenome --compliant --centre XXX
 
 #Create index between gene-caller-ID and gbk
-#cut -f1,4 ../chiara/MAG_unkn/bin_by_bin/TARA_ANW_MAG_00076/TARA_ANW_MAG_00076-gene_calls.txt | while read LINE; do ID=$(echo $LINE | cut -f1 -d ' '); END=$(echo $LINE | cut -f2 -d ' '); grep CDS PROKKA_08082018.gff | awk -v E=$END -v I=$ID '$5 == E{split($9,a,";");print I"\t"a[1]}'; done | sed -e 's|ID=||' > genecallerID_to_gbk_index.tsv
+#cut -f1,4 EUs_vs_TARA_MAGs/bin_by_bin/TARA_ANW_MAG_00076/TARA_ANW_MAG_00076-gene_calls.txt | while read LINE; do ID=$(echo $LINE | cut -f1 -d ' '); END=$(echo $LINE | cut -f2 -d ' '); grep CDS PROKKA_08082018.gff | awk -v E=$END -v I=$ID '$5 == E{split($9,a,";");print I"\t"a[1]}'; done | sed -e 's|ID=||' > genecallerID_to_gbk_index.tsv
 
 ## Read in PROKKA results
-annotations <- read_tsv("../chiara/MAG_unkn/sel_contigs/PROKKA_08202019/PROKKA_08202019.tsv")
+annotations <- read_tsv("EUs_vs_TARA_MAGs/sel_contigs/PROKKA_08202019/PROKKA_08202019.tsv")
 
-annotation_index <- read_tsv("../chiara/MAG_unkn/sel_contigs/TARA_ANW_MAG_00076_genecallerID_to_gbk_index.tsv", col_names = FALSE) %>%
+annotation_index <- read_tsv("EUs_vs_TARA_MAGs/sel_contigs/TARA_ANW_MAG_00076_genecallerID_to_gbk_index.tsv", col_names = FALSE) %>%
   rename(genecallerID = X1, locus_tag = X2)
 
 annotations_for_contig <- annotations %>% left_join(annotation_index) %>% select(genecallerID, product) %>% drop_na()
 
 # You can additional search the genes against the Pfam database of protein families
 # Read Pfam annotations
-genes_pfam_annot <- fread("../chiara/MAG_unkn/sel_contigs/tara_anw_76_pfam_name_acc_clan_multi.tsv",
+genes_pfam_annot <- fread("EUs_vs_TARA_MAGs/sel_contigs/tara_anw_76_pfam_name_acc_clan_multi.tsv",
                           stringsAsFactors = F, header = F) %>% select(V1,V2) %>% setNames(c("gene_callers_id","pfam")
 
 

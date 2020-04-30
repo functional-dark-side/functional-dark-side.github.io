@@ -3,9 +3,9 @@
 DIR=$(dirname ${1})
 SMPL="marine_hmp"
 OUTDIR=$(dirname ${2})
-MMSEQS=~/MMseqs2/bin/mmseqs
+MMSEQS=~/opt/MMseqs2/bin/mmseqs
 FFINDEX=ffindex_apply
-LIB=${PWD}/workflow
+LIB=~/opt/hh-suite
 
 STEP=${3}
 
@@ -23,7 +23,7 @@ fi
 for categ in $CATEG; do
 
   "${MMSEQS}" createsubdb "${DIR}"/"${SMPL}"_"${categ}"_ids.txt \
-    "${SMPL}"/clustering/"${SMPL}"_clu_fa "${OUTDIR}"/"${SMPL}"_"${categ}"_clu
+    data/mmseqs_clustering/"${SMPL}"_clu_fa "${OUTDIR}"/"${SMPL}"_"${categ}"_clu
 
   # Retrieve set of ORFs for each category
   sed -e 's/\x0//g' "${OUTDIR}"/"${SMPL}"_"${categ}"_clu | gzip > "${OUTDIR}"/"${SMPL}"_"${categ}"_cl_orfs.fasta.gz
@@ -36,18 +36,18 @@ for categ in $CATEG; do
 
   "${FFINDEX}" "${OUTDIR}"/"${SMPL}"_"${categ}"_aln.ff{data,index} \
     -i "${OUTDIR}"/"${SMPL}"_"${categ}"_a3m.ffindex -d "${OUTDIR}"/"${SMPL}"_"${categ}"_a3m.ffdata \
-    -- ${PWD}/scripts/E_categories_refinement/reformat_file.sh
+    -- ${PWD}/scripts/Cluster_categories_refinement/reformat_file.sh
 
   "${FFINDEX}" "${OUTDIR}"/"${SMPL}"_"${categ}"_aln.ff{data,index} \
     -i "${OUTDIR}"/"${SMPL}"_"${categ}"_cons.ffindex -d "${OUTDIR}"/"${SMPL}"_"${categ}"_cons.ffdata \
-    -- ${PWD}/scripts/E_categories_refinement/consensus.sh
+    -- ${PWD}/scripts/Cluster_categories_refinement/consensus.sh
 
   cstranslate -A "${LIB}"/data/cs219.lib -D "${LIB}"/data/context_data.lib \
     -x 0.3 -c 4 -f -i "${OUTDIR}"/"${SMPL}"_"${categ}"_aln -o "${OUTDIR}"/"${SMPL}"_"${categ}"_cs219 -I fas -b
 
   "${FFINDEX}" "${OUTDIR}"/"${SMPL}"_"${categ}"_aln.ff{data,index} \
     -i "${OUTDIR}"/"${SMPL}"_"${categ}"_hmm.ffindex -d "${OUTDIR}"/"${SMPL}"_"${categ}"_hmm.ffdata \
-    -- ${PWD}/scripts/E_categories_refinement/hhmake.sh
+    -- ${PWD}/scripts/Cluster_categories_refinement/hhmake.sh
 done
 
 echo "Done all categes of clusters"

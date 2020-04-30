@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# MG=/bioinf/projects/megx/UNKNOWNS/2017_11/DATA/ORFs/ORFs_fasta/TARA_OSD_GOS_malaspina_hmpI-II.fasta.gz
-# GTDB=/bioinf/projects/megx/UNKNOWNS/2017_11/GTDB/gtdb_ata/gtdb_orfs.fasta.gz
-# DIR=/bioinf/projects/megx/UNKNOWNS/2017_11/GTDB
+# MG=data/gene_prediction/TARA_OSD_GOS_malaspina_hmpI-II.fasta.gz
+# GTDB=data/GTDB/gtdb_data/gtdb_orfs.fasta.gz
+# DIR=data/GTDB
 
 MG="${1}"
 GTDB="${2}"

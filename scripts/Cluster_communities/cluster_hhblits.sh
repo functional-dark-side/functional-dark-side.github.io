@@ -6,19 +6,6 @@
 #$ -R y
 #$ -N hhblits_cl
 
-### SET-UP environment
-
-OPENMPI_HOME=/bioinf/software/openmpi/openmpi-1.8
-export PATH=${OPENMPI_HOME}/bin:${PATH}
-export LD_LIBRARY_PATH=${OPENMPI_HOME}/lib:${LD_LIBRARY_PATH:-}
-
-GCC_HOME=/bioinf/software/gcc/gcc-4.9
-export PATH=${GCC_HOME}/bin:$PATH
-export LD_LIBRARY_PATH=${GCC_HOME}/lib64:${LD_LIBRARY_PATH}
-
-HHLIB=/home/cvanni/opt/hhsuite_mg_mpi
-export PATH=${HHLIB}/bin:${HHLIB}/scripts:${PATH}
-
 export LD_LIBRARY_PATH="${HOME}"/opt/igraph-0.7.1_mg/lib:${LD_LIBRARY_PATH}
 
 
@@ -28,11 +15,11 @@ function cleanup() {
 
 #trap cleanup EXIT SIGHUP SIGINT SIGPIPE SIGTERM
 CAT=k
-OUTDIR=/bioinf/projects/megx/UNKNOWNS/chiara/unkn_hhblits/"${CAT}"
+OUTDIR=data/cluster_communities/community_inference_wd/data/"${CAT}"
 mkdir -p "${OUTDIR}"
-DB=/bioinf/projects/megx/UNKNOWNS/2017_11/cl_categories/ffindex_files/"${CAT}"
-MPIRUN=/bioinf/software/openmpi/openmpi-1.8.1/bin/mpirun
-FFINDEX_BIN=/home/cvanni/opt/ffindex_mg_updt/bin/ffindex_apply_mpi
+DB=data/cluster_categories/ffindex_files/"${CAT}"
+MPIRUN=mpirun
+FFINDEX_BIN=ffindex_apply_mpi
 HHPARSE="${PWD}"/hhparse.sh
 RES="${OUTDIR}"/"${CAT}"_hhblits.tsv
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# cd  /bioinf/projects/megx/UNKNOWNS/2017_11/GTDB/gtdb_data/
+# cd  data/GTDB/gtdb_data/
 
 # Download protein data
 

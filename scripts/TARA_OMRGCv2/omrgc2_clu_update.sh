@@ -9,7 +9,7 @@ set -x
 set -e
 
 #MMseqs2 Version: 13e0fe466bc0cb8a13bf493f23695b35ebc5632b-MPI
-MMSEQS=/vol/cloud/opt/MMseqs2/bin/mmseqs
+MMSEQS=~/opt/MMseqs2/bin/mmseqs
 DIR=/vol/cloud/omrgc2
 OUTDIR="${DIR}"/results
 DATE=20200131

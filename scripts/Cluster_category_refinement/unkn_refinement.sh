@@ -3,22 +3,22 @@
 set -x
 set -e
 
-DIR=/bioinf/projects/megx/UNKNOWNS/2017_11/classification
+DIR=data/cluster_classification
 SMPL="marine_hmp"
 INPUT="${DIR}"/"${SMPL}"_eu_ids.txt
 OUTDIR="${DIR}"/unkn_refinement
 OUTPUT="${OUTDIR}"/"${SMPL}"_eu
-PATTERNS=${PWD}/scripts/E_categories_refinement/unknown_grep.tsv
+PATTERNS=${PWD}/scripts/Cluster_categories_refinement/unknown_grep.tsv
 FILT=1.0
 NSLOTS=${1}
-UNICL=${PWD}/DBs/uniclust30_2017_10/uniclust30_2017_10
+UNICL=data/DBs/uniclust30_2017_10/uniclust30_2017_10
 HHBLITS_MPI=hhblits_mpi
-MPIRUN=/bioinf/software/openmpi/openmpi-1.8.1/bin/mpirun
+MPIRUN=mpirun
 FFINDEX=ffindex_apply_mpi
 
 STEP="unkn_refinement"
 
-${PWD}/scripts/E_categories_refinement/categ_ffindex_files.sh "${INPUT}" "${OUTPUT}"_hhbl.ffdata "${STEP}"
+${PWD}/scripts/Cluster_categories_refinement/categ_ffindex_files.sh "${INPUT}" "${OUTPUT}"_hhbl.ffdata "${STEP}"
 
 "${MPIRUN}" -np "${NSLOTS}" "${HHBLITS_MPI}" -i "${OUTDIR}"/"${SMPL}"_eu_hmm -o stdout -d "${OUTPUT}"_hhbl \
   -cpu "${NSLOTS}" -n 2 -v 0 -d "${UNICL}"
@@ -28,7 +28,7 @@ rm "${OUTDIR}"/"${SMPL}"_eu_a3m.ff* "${OUTDIR}"/"${SMPL}"_eu_cs219.ff* "${OUTDIR
 
 # Parsing hhr result files and filtering for hits with probability ≥ 90%
 "${FFINDEX}" "${OUTPUT}"_hhbl.ff{data,index} -d "${OUTPUT}"_parsed.ffdata -i "${OUTPUT}"_parsed.ffindex \
-  -- ${PWD}/scripts/E_categories_refinement/hh_parser.sh
+  -- ${PWD}/scripts/Cluster_categories_refinement/hh_parser.sh
 
 sed -e 's/\x0//g' "${OUTPUT}"_parsed.ffdata | sed 's/ /_/g' > "${OUTPUT}"_parsed.tsv
 
@@ -44,7 +44,7 @@ rm "${OUTPUT}"_hypo_char
 join -11 -21 -v1 <(awk '!seen[$1]++{print $1}' "${OUTPUT}"_parsed.tsv | sort -k1,1) \
   <(sort -k1,1 "${OUTDIR}"/"${SMPL}"_new_gu_ids.txt) > "${OUTDIR}"/"${SMPL}"_new_kwp_ids.txt
 
-join -11 -21 -v1 <(sort -k1,1 "${SMPL}"/classification/"${SMPL}"_eu_ids.txt) \
+join -11 -21 -v1 <(sort -k1,1 "${SMPL}"/cluster_classification/"${SMPL}"_eu_ids.txt) \
   <(awk '!seen[$1]++{print $1}' "${OUTPUT}"_parsed.tsv | sort -k1,1) > "${OUTDIR}"/"${SMPL}"_new_eu_ids.txt
 
 cat "${DIR}"/"${SMPL}"_kwp_ids.txt >> "${OUTDIR}"/"${SMPL}"_new_kwp_ids.txt

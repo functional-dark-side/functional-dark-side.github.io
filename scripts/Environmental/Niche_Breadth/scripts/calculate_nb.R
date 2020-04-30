@@ -10,13 +10,13 @@ load_libraries(packages = packages)
 create_tmp(tmp = "/vol/scratch/nb/tmp")
 
 # Get sample data
-# /bioinf/projects/megx/UNKNOWNS/2017_11/DATA/contextual/
+# data/env_contextual_data/
 sample_list <- read_tsv(file = "listSamplesPaper.tsv")
 samples_analyses <- sample_list %>%
   filter(study != "OSD", study != "GOS")
 
 # Read cluster data
-# both tables are in /bioinf/projects/megx/UNKNOWNS/2017_11/cl_categories
+# both tables are in data/cluster_categories
 gCl_smpl <- fread("cl_abund_smpl_grouped.tsv.gz", stringsAsFactors = F, header = F) %>%
   setNames(c("gCl_name","sample_id","abund","categ")) %>%
   dt_filter(sample_id %in% samples_analyses$label) %>%
@@ -56,7 +56,7 @@ gCl_data <- get_stats_nb(X = gCl_smpl)
 # Calculate NB
 gCl_nb_all <- parNB_all(data = gCl_data)
 # Save results
-save(gCl_nb_all, file = "results/gCL_nb_all.Rda")
+save(gCl_nb_all, file = "data/niche_breadth/gCL_nb_all.Rda")
 # Get majority sign and average observed B
 gCl_nb_all_mv <- gCl_nb_all %>%
   bind_rows() %>%
@@ -67,7 +67,7 @@ gCl_nb_all_mv <- gCl_nb_all %>%
   inner_join(gCl_data %>% select(name, mean_proportion) %>% distinct()) %>%
   rename(gCl_name = name) %>%
   inner_join(gCl_cat)
-save(gCl_nb_all_mv, file = "results/gCl_nb_all_mv.Rda")
+save(gCl_nb_all_mv, file = "data/niche_breadth/gCl_nb_all_mv.Rda")
 
 cat_order <- c("Knowns", "Genomic unknowns", "Environmental unknowns")
 sign_order <- c("Narrow", "Non significant", "Broad")
@@ -104,7 +104,7 @@ gClCo_data <- get_stats_nb(X = gClCo_smpl)
 # Calculate NB
 gClCo_nb_all <- parNB_all(data = gClCo_data)
 # Save results
-save(gClCo_nb_all, file = "results/gClCo_nb_all.Rda")
+save(gClCo_nb_all, file = "data/niche_breadth/gClCo_nb_all.Rda")
 # Get majority sign and average observed B
 gClCo_nb_all_mv <- gClCo_nb_all %>%
   bind_rows() %>%
@@ -115,7 +115,7 @@ gClCo_nb_all_mv <- gClCo_nb_all %>%
   inner_join(gClCo_data %>% select(name, mean_proportion) %>% distinct()) %>%
   rename(gClCo_name = name) %>%
   inner_join(gClCo_cat)
-save(gClCo_nb_all_mv, file = "results/gClCo_nb_all_mv.Rda")
+save(gClCo_nb_all_mv, file = "data/niche_breadth/gClCo_nb_all_mv.Rda")
 
 cat_order <- c("Knowns", "Genomic unknowns", "Environmental unknowns")
 sign_order <- c("Narrow", "Non significant", "Broad")

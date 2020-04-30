@@ -3,7 +3,7 @@ library(data.table)
 library(sqldf)
 library(RSQLite)
 
-# setwd("/bioinf/projects/megx/UNKNOWNS/2017_11/DATA/contextual")
+# setwd("data/env_contextual_data")
 # List of samples obtained from the actual used metagenomes and orfs
 
 samples <- fread("marine_hmp_samples.txt", stringsAsFactors = F, header = F) %>% setNames(c("sample_ID"))
@@ -317,7 +317,7 @@ HMP1_I_assm <- read_csv("~/Downloads/HMASM.csv") %>%
   setNames(c("label", "body_site"))
 ​
 # Read data
-data <- read_tsv("/DATA/contextual/marine_hmp_smpl_norfs.tsv.gz", col_names = FALSE) %>%
+data <- read_tsv("data/env_contextual_data/marine_hmp_smpl_norfs.tsv.gz", col_names = FALSE) %>%
   setNames(c("label", "norfs")) %>%
   mutate(study = case_when(grepl("^TARA", label) ~ "TARA",
                            grepl("^MP", label) ~ "MALASPINA",
@@ -326,7 +326,7 @@ data <- read_tsv("/DATA/contextual/marine_hmp_smpl_norfs.tsv.gz", col_names = FA
                            TRUE ~ "GOS"))
 ​
 # Read HMP QC samples
-HMP_qc <- read_tsv("~/Downloads/HMP_qc_passed.txt", col_names = FALSE) %>%
+HMP_qc <- read_tsv("data/env_contextual_data/HMP_qc_passed.txt", col_names = FALSE) %>%
   setNames("label")
 # Get all cdata
 # HMP1-I date = 2011
@@ -384,7 +384,7 @@ orfXsample <- data_orig %>%
 data_final <- data_orig %>%
   filter(norfs >= p25)
 ## Write as "listSamplesPaper.tsv": lebel - norfs - study
-write.table(data_final,"DATA/contextual/listSamplesPaper.tsv", col.names=T,row.names=F,sep="\t",quote=F)
+write.table(data_final,"data/env_contextual_data/listSamplesPaper.tsv", col.names=T,row.names=F,sep="\t",quote=F)
 ​
 #Plot
 data_final %>%

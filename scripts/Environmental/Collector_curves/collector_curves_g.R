@@ -10,7 +10,7 @@ library(profmem)
 reg_dir_accum <- file.path(getwd(), paste(format(Sys.Date()), format(Sys.time(), "%H%M%S"), sep = "-"))
 reg_data_accum <- makeRegistry(reg_dir_accum, seed=123, conf.file = ".batchtools.conf.R")
 
-# Files are stored in /bioinf/projects/megx/UNKNOWNS/2017_11/collector_curves
+# Files are stored in data/collector_curves
 # GTDB cluster data
 lo_env$cl_data <-
   fread(

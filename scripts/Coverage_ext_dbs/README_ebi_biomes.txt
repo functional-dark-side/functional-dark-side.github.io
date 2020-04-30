@@ -1,7 +1,7 @@
 Notes
 -----
 
-Sequences and annotations from the 2018_09 release of the MGnify protein database. 
+Sequences and annotations from the 2018_09 release of the MGnify protein database.
 
 In the fasta files the header includes fields UP (observed in UniprotKB), PL (partial category)
 and BIOMES (membership of one of a reduced set of biomes). Full information on biomes is available in
@@ -75,7 +75,7 @@ mgy_clusters.tsv
     total redundant sequences
     biomes (sequence)
     biomes (cluster)
-  Columns 3 and 5 are thus aggregated over all sequences in the cluster 
+  Columns 3 and 5 are thus aggregated over all sequences in the cluster
 mgy_proteins.fa
 - fasta file of all sequences (split to reduce file sizes)
 mgy_swissprot.tsv

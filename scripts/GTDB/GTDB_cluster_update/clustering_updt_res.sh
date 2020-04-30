@@ -6,7 +6,7 @@ seqDB="${1}"
 CLSTR="${2}"
 NAME=$(basename "${CLSTR}" _clu)
 DIR=$(dirname "${CLSTR}")
-MMSEQS=~/MMseqs2/bin/mmseqs
+MMSEQS=~/opt/MMseqs2/bin/mmseqs
 
 # clusterupdate creates a new sequence database DB_new_updated that has consistent identifiers with the previous version.
 # Meaning, the same sequences in both sets will have the same numeric identifier.

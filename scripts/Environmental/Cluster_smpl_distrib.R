@@ -3,23 +3,23 @@ library(data.table)
 library(maditr)
 library(unixtools)
 
-set.tempdir("/scratch/cvanni/")
+set.tempdir("/scratch")
 
-setwd("/bioinf/projects/megx/UNKNOWNS/2017_11/")
+setwd("data")
 
 setDTthreads(32)
 
 # Combine cluster category files with sample ids and with the ORF abundances
 # Cluster ids - categ - orfs
-cl_cat <- fread("cl_categories/cl_ids_categ_orfs.tsv.gz", stringsAsFactors = F, header = F, sep="\t") %>% select(-V2) %>%
+cl_cat <- fread("cluster_categories/cl_ids_categ_orfs.tsv.gz", stringsAsFactors = F, header = F, sep="\t") %>% select(-V2) %>%
   setNames(c("cl_name","categ","orf"))
 # Results from read mapping (ORF coverage)
-orf_cov <- fread("DATA/ORFs/mapping/marine_hmp_orfs_coverage.tsv.gz", stringsAsFactors = F, header = F) %>%
+orf_cov <- fread("reads_mapping/marine_hmp_orfs_coverage.tsv.gz", stringsAsFactors = F, header = F) %>%
   setNames(c("orf","contig_cov","cov"))
 # Good quality samples, containing a number of ORFs larger than the first ORF-distribution quartile
-ok_samples <- fread("DATA/contextual/listSamplesPaper.tsv", stringsAsFactors = F, header = T)
+ok_samples <- fread("env_contextual_data/listSamplesPaper.tsv", stringsAsFactors = F, header = T)
 # Correspondence ORF-sample
-orf_smpl <- fread("DATA/contextual/marine_hmp_smpl_orfs.tsv.gz", stringsAsFactors = F, header = F, sep="\t") %>%
+orf_smpl <- fread("env_contextual_data/marine_hmp_smpl_orfs.tsv.gz", stringsAsFactors = F, header = F, sep="\t") %>%
   setNames(c("sample","orf")) %>% dt_filter(sample %in% ok_samples$label)
 
 # Join tables:
@@ -55,4 +55,4 @@ distr %>% drop_na() %>%
         legend.title=element_blank(),
         legend.key.size = unit(0.35,"cm"),
         legend.text = element_text(size=7),
-        legend.spacing.x = unit(0.1,"cm") ) 
+        legend.spacing.x = unit(0.1,"cm") )

@@ -18,9 +18,9 @@ Running the evaluation script using ffindex in mpi mode ([ffindex](https://githu
 
 ```bash
 /bioinf/software/openmpi/openmpi-1.8.1/bin/mpirun -np 32 ~/opt/ffindex_mg_updt/bin/ffindex_apply_mpi \
- /bioinf/projects/megx/UNKNOWNS/2017_11/clustering/results/marine_hmp_db_03112017_clu_fa \
- /bioinf/projects/megx/UNKNOWNS/2017_11/clustering/results/marine_hmp_db_03112017_clu_fa.index \
- -- scripts/B_validation/compos/compos_val.sh
+ data/mmseqs_clustering/marine_hmp_db_03112017_clu_fa \
+ data/mmseqs_clustering/marine_hmp_db_03112017_clu_fa.index \
+ -- scripts/Cluster_validation/compositional/compos_val.sh
 ```
   - output: tab-separated file with 24 fields:
     - <cl_name>

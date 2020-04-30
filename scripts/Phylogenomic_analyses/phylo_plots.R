@@ -9,15 +9,15 @@ library(wesanderson)
 library(castor)
 
 # GTDB data
-gtdb_data <- fread("all_gtdb_genome_orf_cl_categ.tsv.gz",header = FALSE,
+gtdb_data <- fread("data/MG_GTDB_DB/mg_gtdb_kept_cluster_genome_orf_categ.tsv.gz",header = FALSE,
              col.names = c("genome","domain","orf","cl_name"))
 
-gtdb_tree <- read.tree("gtdb_data/gtdb_r86_bac.tree") #"gtdb_r86_ar.tree"
-gtdb_tax <- read_tsv("gtdb_data/bac_taxonomy_r86.tsv", col_names = c("genome", "lineage")) %>% #"arc_taxonomy_r86.tsv"
+gtdb_tree <- read.tree("data/GTDB/gtdb_data/gtdb_r86_bac.tree") #"gtdb_r86_ar.tree"
+gtdb_tax <- read_tsv("data/GTDB/gtdb_data/bac_taxonomy_r86.tsv", col_names = c("genome", "lineage")) %>% #"arc_taxonomy_r86.tsv"
             separate(lineage, into=c("domain","phylum","class","order","family","genus","species"), sep = ";")
 
 # Phylo analyses results
-load("gtdb_bac_r86_plot.Rda")  #"gtdb_arc_r86_plot.Rda"
+load("data/GTDB/phylogenetic_analysis/gtdb_bac_r86_plot.Rda")  #"gtdb_arc_r86_plot.Rda"
 #f1score.out_table.cl
 #tree
 #gtdb_tax
@@ -85,9 +85,9 @@ f1score.out_table.cl_filt %>%
 # GTDB phyla analysis
 # Proportion of MAGs, unknowns and lineage-specific clusters per phylum
 # MAGs in GTDB:
-gtdb_mag <- fread("gtdb_data/gtdb_genome_mags.tsv.gz", stringsAsFactors = F, header = F) %>% setNames(c("genome","mag"))
+gtdb_mag <- fread("data/GTDB/gtdb_data/gtdb_genome_mags.tsv.gz", stringsAsFactors = F, header = F) %>% setNames(c("genome","mag"))
 # Number of ORFs per genome
-genome_info <- fread("gtdb_data/gtdb_genome_info.tsv.gz", stringsAsFactors = F, header = T) %>% select("genome","n_orfs")
+genome_info <- fread("data/GTDB/gtdb_data/gtdb_genome_info.tsv.gz", stringsAsFactors = F, header = T) %>% select("genome","n_orfs")
 # Add lineage-specificity and taxonomic info to the GTDB data table
 gtdb_data <- gtdb_data %>% select(genome,cl_name) %>%
   dt_left_join(gtdb_tax, by="genome") %>%
