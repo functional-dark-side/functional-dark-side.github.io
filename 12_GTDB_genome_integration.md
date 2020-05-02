@@ -506,7 +506,7 @@ The GTDB singletons appeared to be mostly GUs and PGUs.
 
 * * *
 
-<h4 class="section-heading  text-primary">Enrichment of formaer metagenomic small clusters (less than 10 ORFs) and singletons</h4>
+<h4 class="section-heading  text-primary">Enrichment of former metagenomic small clusters (less than 10 ORFs) and singletons</h4>
 
 A fraction of the GTDB ORFs were found similar to metagenomic singletons or small clusters.
 
