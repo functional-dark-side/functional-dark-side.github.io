@@ -53,48 +53,48 @@ join -11 -22 <(awk '{print $1}' ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_fa
   <(awk '{print $1,$2}' ${SHSP} | sort -k2,2) > ${OUTDIR}/tmp
 
 join -12 -21 -v1 <(sort -k2,2 ${OUTDIR}/tmp) \
-  <(sort -k1,1 ${OUTDIR}/marine_hmp_orfs_to_remove.txt) > ${OUTDIR}/refined/marine_hmp_refined_cl.tsv
+  <(sort -k1,1 ${OUTDIR}/marine_hmp_orfs_to_remove.txt) > ${OUTDIR}/marine_hmp_refined_cl.tsv
 
 rm ${OUTDIR}/tmp
 
 # annotated (check those left with no-annotated sequences) --> join with file with all annotated clusters..for annotations
 
-join -11 -21 <(sort -k1,1 ${OUTDIR}/refined/marine_hmp_refined_cl.tsv) \
+join -11 -21 <(sort -k1,1 ${OUTDIR}/marine_hmp_refined_cl.tsv) \
   <(awk '{print $2,$1}' ${MD}/annot_and_clust/marine_hmp_clu_ge10_annot.tsv \
-  |  sort -k1,1) > ${OUTDIR}/refined/marine_hmp_refined_annot_cl.tsv
+  |  sort -k1,1) > ${OUTDIR}/marine_hmp_refined_annot_cl.tsv
 
-join -11 -21 <( awk '{print $3,$2}' ${OUTDIR}/refined/marine_hmp_refined_annot_cl.tsv | sort -k1,1) \
+join -11 -21 <( awk '{print $3,$2}' ${OUTDIR}/marine_hmp_refined_annot_cl.tsv | sort -k1,1) \
   <(awk '{print $1,$2,$3}' ${MD}/annot_and_clust/marine_hmp_clu_ge10_annot.tsv \
-  | sort -k1,1) > ${OUTDIR}/refined/marine_hmp_refined_all_annot_cl.tsv
+  | sort -k1,1) > ${OUTDIR}/marine_hmp_refined_all_annot_cl.tsv
 
 #find clusters with no annotated members
-sort -k1,1 ${OUTDIR}/refined/marine_hmp_refined_all_annot_cl.tsv \
+sort -k1,1 ${OUTDIR}/marine_hmp_refined_all_annot_cl.tsv \
   | awk '!seen[$2,$4]++{print $2,$4}' \
   | awk 'BEGIN{ getline; id=$1;l1=$1;l2=$2;} { if ($1 != id) { print l1,l2; l1=$1;l2=$2;} else { l2=l2"|"$2;} id=$1;} END { print l1,l2;}' \
   | grep -v '|' | awk '$2=="NA"{print $1}' > ${OUTDIR}/marine_hmp_new_unkn_cl.txt
 
 if [[ ! -s ${OUTDIR}/marine_hmp_new_unkn_cl.txt ]]; then
   #move the clusters left with no annotated member to the not annotated
-  join -12 -21 -v1 <(awk '!seen[$1,$2,$3]++' ${OUTDIR}/refined/marine_hmp_refined_all_annot_cl.tsv | sort -k2,2) \
-    <(sort ${OUTDIR}/marine_hmp_new_unkn_cl.txt) > ${OUTDIR}/refined/marine_hmp_refined_annot_cl.tsv
+  join -12 -21 -v1 <(awk '!seen[$1,$2,$3]++' ${OUTDIR}/marine_hmp_refined_all_annot_cl.tsv | sort -k2,2) \
+    <(sort ${OUTDIR}/marine_hmp_new_unkn_cl.txt) > ${OUTDIR}/marine_hmp_refined_annot_cl.tsv
 
-  join -12 -21 <(awk '!seen[$1,$2,$3]++' ${OUTDIR}/refined/marine_hmp_refined_annot_cl.tsv | sort -k2,2) \
-    <(sort ${OUTDIR}/marine_hmp_new_unkn_cl.txt) > ${OUTDIR}/refined/marine_hmp_refined_noannot_cl.tsv
+  join -12 -21 <(awk '!seen[$1,$2,$3]++' ${OUTDIR}/marine_hmp_refined_annot_cl.tsv | sort -k2,2) \
+    <(sort ${OUTDIR}/marine_hmp_new_unkn_cl.txt) > ${OUTDIR}/marine_hmp_refined_noannot_cl.tsv
 
   # not annotated
-  join -12 -21 <(sort -k2,2 ${OUTDIR}/refined/marine_hmp_refined_cl.tsv) \
-    <(awk '$4=="noannot"{print $1,$2}' ${GOOD} | sort -k1,1) >> ${OUTDIR}/refined/marine_hmp_refined_noannot_cl.tsv
+  join -12 -21 <(sort -k2,2 ${OUTDIR}/marine_hmp_refined_cl.tsv) \
+    <(awk '$4=="noannot"{print $1,$2}' ${GOOD} | sort -k1,1) >> ${OUTDIR}/marine_hmp_refined_noannot_cl.tsv
 
 else
   # not annotated
-  join -12 -21 <(sort -k2,2 ${OUTDIR}/refined/marine_hmp_refined_cl.tsv) \
-    <(awk '$4=="noannot"{print $1,$2}' ${GOOD} | sort -k1,1) > ${OUTDIR}/refined/marine_hmp_refined_noannot_cl.tsv
+  join -12 -21 <(sort -k2,2 ${OUTDIR}/marine_hmp_refined_cl.tsv) \
+    <(awk '$4=="noannot"{print $1,$2}' ${GOOD} | sort -k1,1) > ${OUTDIR}/marine_hmp_refined_noannot_cl.tsv
 fi
 
 # Uisng the cluster ids retrieve the two sub database for annotated clusters and not
 ln -s ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_fa.ffindex ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_fa.index
 ln -s ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_fa.ffdata ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_fa
 
-~/MMseqs2/bin/mmseqs createsubdb <(awk '!seen[$1]++{print $1}' ${OUTDIR}/refined/marine_hmp_refined_annot_cl.tsv) ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_fa ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_annot_fa
+~/MMseqs2/bin/mmseqs createsubdb <(awk '!seen[$1]++{print $1}' ${OUTDIR}/marine_hmp_refined_annot_cl.tsv) ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_fa ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_annot_fa
 
-~/MMseqs2/bin/mmseqs createsubdb <(awk '!seen[$1]++{print $1}' ${OUTDIR}/refined/marine_hmp_refined_noannot_cl.tsv) ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_fa ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_noannot_fa
+~/MMseqs2/bin/mmseqs createsubdb <(awk '!seen[$1]++{print $1}' ${OUTDIR}/marine_hmp_refined_noannot_cl.tsv) ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_fa ${OUTDIR}/ffindex_files/marine_hmp_refined_cl_noannot_fa

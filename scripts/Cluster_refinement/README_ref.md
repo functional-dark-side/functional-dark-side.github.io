@@ -9,4 +9,4 @@
   - Set of good cluster from the validation "data/cluster_validation/good_cl.tsv"
 - output:
   - FFINDEX database of refined clusters in "data/cluster_refinement/ffindex_files/"
-  - Tab separated file containing the refined cluster ids and their ORFs in "data/cluster_refinement/refined/"
+  - Tab separated file containing the refined cluster ids and their ORFs in "data/cluster_refinement/"
