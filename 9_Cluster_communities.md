@@ -116,7 +116,18 @@ We compared our community inference method with the one used by Méheust et al. 
 
 
 **Methods**
-The cluster community inference was validated in comparison to the approach used by Méheust et al. (2019), using the ribosomal protein families as reference. The cluster communities were filtered for those annotated to the 16  ribosomal proteins used in Méheust et al., and those contained in the collection of bacterial single-copy genes of Anvi'o10, that can be downloaded from (https://github.com/merenlab/anvio/blob/master/anvio/data/hmm/Bacteria_71/genes.txt). The genes contained in this community subset, were processed using the approach proposed by Méheust et al. The results were then compared with those obtained in this paper using the functions of the R package aricode (https://github.com/jchiquet/aricode), which allow comparisons between clustering methods.
+The cluster community inference was validated in comparison to the approach used by Méheust et al. (2019), using the ribosomal protein families as reference. The approach used by Méheust et al. is very similar to ours. They first clustered the genes using MMseqs2 (version 9f493f538d28b1412a2d124614e9d6ee27a55f45), performing an all-vs.-all search (e-value: 0.001, sensitivity: 7.5, and cover: 0.5). The search results were used to build a sequence similarity network that was then partitioned, using the greedy set cover algorithm from MMseqs2, into what they defined as subfamilies. Their subfamilies correspond to our gene clusters.
+The subfamilies were then aggregated into families, based on remote homologies. Their families correspond to our gene cluster communities.
+For the aggregation they compared the subfamilies HMM profiles using hhblits from the HHpred suite.
+From this search they selected the subfamilies with hhblits-probability ≥95% and coverage ≥0.50.
+They used a similarity score (probability × coverage) as weight for the search sequence similarity network. This network was then partitioned using the Markov CLustering algorithm (MCL), with 2.0 as the inflation parameter.
+
+The main differences with our method:
+1. We used the score/cols (hhblits search score over number of aligned columns) as edge weight for the sequence similarity network.
+2. We didn't use a default MCL inflation parameter for the partitioning of the sequence similarity network. We tested several values on the set of Known clusters. The best inflation value was then determined using the combination of different metrics, including the Pfam domain architecture composition of our gene clusters.
+
+
+The cluster communities were filtered for those annotated to the 16  ribosomal proteins used in Méheust et al., and those contained in the collection of bacterial single-copy genes of Anvi'o10, that can be downloaded from (https://github.com/merenlab/anvio/blob/master/anvio/data/hmm/Bacteria_71/genes.txt). The genes contained in this community subset, were processed using the approach proposed by Méheust et al. The results were then compared with those obtained in this paper using the functions of the R package aricode (https://github.com/jchiquet/aricode), which allow comparisons between clustering methods.
 
 **Scripts:** The code used for this analysis can be found in [cl_comm_ribo_prot.r](scripts/Cluster_communities/community_validation/cl_comm_ribo_prot.r).
 
