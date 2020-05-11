@@ -89,6 +89,17 @@ Olson et al. [[3]](#3) phylogenetically analysed PRs in the sunlit ocean and gro
 
 </div>
 
+<div class="img_container" style="width:50%; margin:2em auto;">
+
+*Number of genes, clusters and communities annotated to PR*
+
+| Genes  | Clusters | Communities |
+|:------:|:--------:|:-----------:|
+| 12,184 |    64    |      3      |
+
+
+</div>
+
 The distribution of the cluster communitites among 16 bacterial ribosomal protein families reflects the fragmented nature of metagenoic data.
 Because ribosomal proteins are highly conserved, we expect one protein family per ribosomal subunit. However, we observe the same ribosomal protein falling in different communities, as shown in the following figure and this is likely due to the fragmented nature of metagenomic ORFs.
 
@@ -109,6 +120,19 @@ In fact, this effect almost disappear when we subset for the communities contain
 *Ribosomal protein distribution in HQ cluster communities.*
 
 </div>
+
+<div class="img_container" style="width:50%; margin:2em auto;">
+
+*Number of genes, clusters and communities annotated to ribosomial proteins*
+
+|              |  Genes  | Clusters | Communities |
+| ------------ |:-------:|:--------:|:-----------:|
+| All clusters | 781,579 |  1,843   |     98      |
+| HQ clusters  |  1,687  |   145    |     26      |
+
+</div>
+
+
 
 <h3 class="section-heading  text-primary">Communities inference methods comparison</h3>
 
