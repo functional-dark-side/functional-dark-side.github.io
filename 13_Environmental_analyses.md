@@ -132,6 +132,46 @@ The signal of broad distributed EU communities may demonstrate that these groups
 
 <br>
 
+**HMP outlier samples**
+
+| label     | organ  | body_site                   | HPV_type                                                                |
+| --------- | ------ | --------------------------- | ----------------------------------------------------------------------- |
+| SRS013234 | Mouth  | Tongue dorsum               | HPV20,HPV135,HPV147                                                     |
+| SRS024580 | Mouth  | Tongue dorsum               | HPV20,HPV135,HPV17                                                      |
+| SRS043646 | Mouth  | Buccal mucosa               | HPV32                                                                   |
+| SRS046623 | Mouth  | Buccal mucosa               | HPV32,HPV107                                                            |
+| SRS045127 | Mouth  | Tongue dorsum               | HPV32                                                                   |
+| SRS055426 | Mouth  | Tongue dorsum               | HPV32,HPV5                                                              |
+| SRS022158 | Vagina | Posterior fornix            | HPV18,HPV34,HPV39,HPV56,HPV90                                           |
+| SRS048536 | Vagina | Posterior fornix            | HPV18,HPV34,HPV39,HPV56,HPV90,HPV103,HPV106,HPV51,HPV6,HPV73,HPV74      |
+| SRS014465 | Vagina | Vaginal introitus           | HPV90                                                                   |
+| SRS015071 | Vagina | Vaginal introitus           | HPV90                                                                   |
+| SRS014494 | Vagina | Posterior fornix            | HPV90,HPV45                                                             |
+| SRS015073 | Vagina | Posterior fornix            | HPV90                                                                   |
+| SRS023850 | Vagina | Posterior fornix            | HPV91                                                                   |
+| SRS075419 | Vagina | Posterior fornix            | HPV91                                                                   |
+| SRS014343 | Vagina | Posterior fornix            | HPV89,HPV131,HPV134,HPV52                                               |
+| SRS054962 | Vagina | Posterior fornix            | HPV89,HPV118                                                            |
+| SRS014235 | Gut    | Stool                       | HPV47                                                                   |
+| SRS019685 | Gut    | Stool                       | HPV47                                                                   |
+| SRS057717 | Gut    | Stool                       | HPV68                                                                   |
+| SRS023346 | Gut    | Stool                       | HPV101                                                                  |
+| SRS019019 | Skin   | Anterior nares              | HPV107,HPV23                                                            |
+| SRS014682 | Skin   | Anterior nares              | HPV124,HPV14                                                            |
+| SRS019039 | Skin   | Anterior nares              |                                                                         |
+| SRS019033 | Skin   | Right retroauricular crease | HPV24,HPV75,HPV144,HPV92,HPV121,HPV130                                  |
+| SRS019016 | Skin   | Right retroauricular crease | HPV24,HPV75,HPV144,HPV92,HPV120,HPV104,HPV119,HPV147,HPV149,HPV153,HPV8 |
+| SRS015430 | Skin   | Anterior nares              | HPV148,HPV127,HPV149,HPV131                                             |
+| SRS015450 | Skin   | Anterior nares              | HPV148,HPV127,HPV144,HPV132,HPV141                                      |
+| SRS019067 | Skin   | Anterior nares              | HPV148,HPV122,HPV149,HPV10,HPV115,HPV147                                |
+| SRS019064 | Skin   | Right retroauricular crease | HPV126,HPV14                                                            |
+| SRS019081 | Skin   | Right retroauricular crease | HPV126                                                                  |
+| SRS018585 | Skin   | Anterior nares              | HPV112,HPV132,HPV136,HPV148                                             |
+| SRS051600 | Skin   | Anterior nares              | HPV119,HPV130                                                           |
+| SRS017044 | Skin   | Anterior nares              | HPV12,HPV19,HPV28                                                       |
+| SRS044474 | Skin   | Anterior nares              | HPV12,HPV19,HPV142,HPV17,HPV19,HPV88,HPV119,HPV134,HPV147               |
+
+
 <h4 class="section-heading  text-primary">References</h4>
 
 <a name="1"></a>[1] Levins, Richard. 1966. “THE STRATEGY OF MODEL BUILDING IN POPULATION BIOLOGY.” American Scientist 54 (4): 421–31
