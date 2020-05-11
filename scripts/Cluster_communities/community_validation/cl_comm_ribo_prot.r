@@ -50,6 +50,47 @@ write.table(categ_hhbl_metrics,"data/cluster_communities/validation/categ_hhbl_m
 
 save(eu_hhbl,gu_hhbl,kwp_hhbl,k_hhbl,file="data/cluster_communities/validation/categ_hhbl_metrics_comparison_obj.rda")
 
+# Plot
+data_r <- categ_hhbl_metrics %>%
+  dt_select(probability, score_col, pmax_cov, categ) %>%
+  data.table:::unique.data.table() %>%
+  let(r_probability = rank(probability), r_score_col = rank(score_col), r_pmax_cov = rank(pmax_cov))
+pmax_covProbability_p <- data_r %>%
+  ggplot(aes(pmax_cov, probability)) +
+  geom_hex(bins = 100) +
+  viridis::scale_fill_viridis(trans = "log10") +
+  theme_bw() +
+  theme(legend.position = "right",
+        panel.grid = element_blank(),
+        panel.background = element_blank(),
+        strip.background = element_blank()) +
+  xlab("Méheust et al.") +
+  ylab("HHblits-Probability")
+score_colProbability_p <- data_r %>%
+  ggplot(aes(score_col, probability)) +
+  geom_hex(bins = 100) +
+  viridis::scale_fill_viridis(trans = "log10") +
+  theme_bw() +
+  theme(legend.position = "right",
+        panel.grid = element_blank(),
+        panel.background = element_blank(),
+        strip.background = element_blank()) +
+  xlab("Vanni et al.") +
+  ylab("HHblits-Probability")
+pmax_covScore_col_p <- data_r %>%
+  ggplot(aes(score_col, pmax_cov)) +
+  geom_hex(bins = 100) +
+  viridis::scale_fill_viridis(trans = "log10") +
+  theme_bw() +
+  theme(legend.position = "right",
+        panel.grid = element_blank(),
+        panel.background = element_blank(),
+        strip.background = element_blank()) +
+  xlab("Vanni et al.") +
+  ylab("Méheust et al.")
+ggpubr::ggarrange(pmax_covProbability_p, score_colProbability_p, pmax_covScore_col_p, ncol = 3, nrow = 1, common.legend = TRUE)
+
+
 # Comparison with methods used in Méheust et al. 2019
 ## Find orfs annotated to ribosomal proteins
 comps <- read_tsv("data/cluster_communities/communities_2019-03/all_communities_2019-03-28-144550.tsv.gz")

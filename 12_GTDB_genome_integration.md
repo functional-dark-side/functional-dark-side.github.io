@@ -335,7 +335,7 @@ The best inflation value for the cluster aggregation was determined at 2.5, and 
 
 <div class="img_container" style="width:80%; margin:2em auto;">
 
-*Only-GTDB cluster community categories*
+*GTDB cluster community categories*
 
 |             |     K     |   KWP   |    GU     |   EU    |     Total      |
 |:-----------:|:---------:|:-------:|:---------:|:-------:|:--------------:|
@@ -349,7 +349,7 @@ A set of these clusters and cluster communities, was found in the metagenomic co
 
 <div class="img_container" style="width:80%; margin:2em auto;">
 
-*GTDB cluster in MG communities*
+*GTDB cluster found in MG communities*
 
 |             |    K    |   KWP   |    GU     |   EU   |     Total     |
 |:-----------:|:-------:|:-------:|:---------:|:------:|:-------------:|

@@ -106,6 +106,16 @@ Discarded cluster classes:
 | ORFs        | 232,895,994 | 32,930,286 | 68,757,918 | 3,541,592 | **338,125,790** |
 
 
+Summary of MG + GTDB gene cluster communites:
+
+| Communities   |   K    |  KWP   |   GU    |   EU    |    Total    |
+| ------------- |:------:|:------:|:-------:|:-------:|:-----------:|
+| MG+GTDB       | 62,300 | 91,742 | 416,364 | 103,195 | **673,601** |
+| only-new-GTDB | 38,119 | 26,804 | 270,264 | 55,100  | **390,287** |
+| GTDB in MG    | 14,241 | 20,399 | 69,204  |  2,799  | **106,643** |
+| MG            | 24,181 | 64,938 | 146,100 | 48,095  | **283,314** |
+
+
 <h3 class="section-heading  text-primary">MG + GTDB</h3>
 
 <div class="img_container" style="width:60%; margin:2em auto;">
