@@ -87,6 +87,8 @@ The remaining (unmapped) 26M (28%) GTDB ORFs were clustered in 7,958,475 cluster
 
 </div>
 
+Total GTDB clusters (only-GTDB + GTDB in MG): 10,121,856
+
 The new/only-GTDB non-singletons clusters have an average size, i.e. number of ORFs, of 8.6 (median=3), with a maximum of 18,114 ORFs and a minimum of 2.
 
 <h4 class="section-heading  text-primary">2) Characterization of GTDB Clusters</h4>

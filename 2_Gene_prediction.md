@@ -29,6 +29,20 @@ The numbers of contigs and ORFs retrieved for each project are shown in the tabl
 
 </div>
 
+Metagenomic gene completness information retrieved with the Prodigal gene prediction.
+
+<div class="img_container" style="width:70%; margin:2em auto;">
+
+*Number of predicted genes per completeness category.*
+
+|    Total    |    “00”     |    “10”     |    “01”     |    “11”    |
+|:-----------:|:-----------:|:-----------:|:-----------:|:----------:|
+| 322,248,552 | 118,717,690 | 106,031,163 | 102,966,482 | 75,694,123 |
+
+Note: “00”=complete, both start and stop codon identified. “01”=right boundary incomplete. “10”=left boundary incomplete. “11”=both left and right edges incomplete.
+
+</div>
+
 <br>
 <br>
 
