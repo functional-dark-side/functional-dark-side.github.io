@@ -121,9 +121,29 @@ Overall, the MG+GTDB integrated cluster dataset contains 204,031 EU gene cluster
 
 *(B) Number of EU clusters not found in GTDB MAGs*
 
+|  Total  | Broad | Narrow | Non-significant/NA |
+|:-------:|:-----:|:------:|:------------------:|
+| 151,800 |  386  | 8,157  |      143,257       |
+
+
+</div>
+
+
+<div class="img_container" style="width:70%; margin:2em auto;">
+
+*MG+GTDB EU clusters in GTDB + TARA Ocean MAGs and type of distribution based on the Levin's Niche Breadth index*
+
+*(A) Number of EU clusters found in GTDB+TARA MAGs*
+
 | Total  | Broad | Narrow | Non-significant/NA |
 |:------:|:-----:|:------:|:------------------:|
-| 151,800 |  386  | 8,157  |      143,257       |
+| 55,520 |  88   |  316   |       55,116       |
+
+*(B) Number of EU clusters not found in GTDB+TARA MAGs*
+
+|  Total  | Broad | Narrow | Non-significant/NA |
+|:-------:|:-----:|:------:|:------------------:|
+| 148,511 |  383  | 8,105  |      140,023       |
 
 
 </div>
