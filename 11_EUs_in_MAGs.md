@@ -123,7 +123,7 @@ Overall, the MG+GTDB integrated cluster dataset contains 204,031 EU gene cluster
 
 | Total  | Broad | Narrow | Non-significant/NA |
 |:------:|:-----:|:------:|:------------------:|
-| 52,231 |  386  | 8,157  |      143,257       |
+| 151,800 |  386  | 8,157  |      143,257       |
 
 
 </div>
