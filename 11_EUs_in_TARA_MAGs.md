@@ -105,6 +105,29 @@ ORFs length stats for the two found EU cluster communities:
 
 <br>
 
+<h3 class="section-heading  text-primary">MG + GTDB Environmental unknowns</h3>
+
+Overall, the MG+GTDB integrated cluster dataset contains 204,031 EU gene clusters (grouped in 103,195 cluster communities). The EU are divided into 127,032 metagenomic, 70,470 genomic, and 9,024 both metagenomic and genomic gene clusters. The last two subsets contain 52,231 EU found in GTDB metagenome-assembled genomes (MAGs).
+
+<div class="img_container" style="width:70%; margin:2em auto;">
+
+*MG+GTDB EU clusters in GTDB MAGs and type of distribution based on the Levin's Niche Breadth index*
+
+*(A) Number of EU clusters found in GTDB MAGs*
+
+| Total  | Broad | Narrow | Non-significant/NA |
+|:------:|:-----:|:------:|:------------------:|
+| 52,231 |  85   |  264   |       51,882       |
+
+*(B) Number of EU clusters not found in GTDB MAGs*
+
+| Total  | Broad | Narrow | Non-significant/NA |
+|:------:|:-----:|:------:|:------------------:|
+| 52,231 |  386  | 8,157  |      143,257       |
+
+
+</div>
+
 * * *
 
 <h4 class="section-heading  text-primary">References</h4>
