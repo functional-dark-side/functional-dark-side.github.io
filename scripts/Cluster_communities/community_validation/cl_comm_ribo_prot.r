@@ -49,7 +49,11 @@ write.table(categ_hhbl_metrics,"data/cluster_communities/validation/categ_hhbl_m
             col.names=T, row.names=F, sep="\t",quote=F)
 
 save(eu_hhbl,gu_hhbl,kwp_hhbl,k_hhbl,file="data/cluster_communities/validation/categ_hhbl_metrics_comparison_obj.rda")
-
+categ_hhbl_metrics$categ <- factor(as.factor(categ_hhbl_metrics$categ), levels=c("K","KWP","GU","EU"))
+ggplot(categ_hhbl_metrics, aes(score_col)) + geom_histogram() +
+  facet_wrap(.~categ , scales = "free") +
+  scale_y_continuous(labels = comma)
+ggsave("categ_hhbl_score_col.pdf",width=10,height=8)
 # Plot
 data_r <- categ_hhbl_metrics %>%
   dt_select(probability, score_col, pmax_cov, categ) %>%
