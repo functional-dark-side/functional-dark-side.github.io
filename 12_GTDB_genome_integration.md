@@ -282,7 +282,7 @@ The only-GTDB cluster categories before the known and unknown refinement resulte
 
 *Only-GTDB cluster categories*
 
-|       K       |      KWP      |       GU        |      PGU      |
+|       K       |      KWP      |       GU        |      EU      |
 |:-------------:|:-------------:|:---------------:|:------------:|
 | 464,815 (20%) | 305,284 (13%) | 1,359,202 (58%) | 218,201 (9%) |
 
@@ -298,7 +298,7 @@ The search of the KWP cluster HMMs against the Pfam database resulted in 56% of 
 
 *Cluster category refinement steps:*
 
-|                                 |       K       |     KWP      |       GU        |     PGU      |
+|                                 |       K       |     KWP      |       GU        |     EU      |
 |:-------------------------------:|:-------------:|:------------:|:---------------:|:-----------:|
 |  Clusters (pre-EUs_refinement)  |    464,815    |   305,284    |    1,359,202    |   218,201   |
 |         EUs refinement          |       -       |    +5,704    |    +144,295     |  -149,999   |
@@ -419,6 +419,17 @@ As for the metagenomic cluster database, we retrieved the genomic "High Quality"
 * * *
 
 <h5 class="section-heading  text-primary">Only-GTDB Singletons</h5>
+
+
+<div class="img_container" style="width:70%; margin:2em auto;">
+
+*Total singletons and their completion*
+
+|   Total   | Complete "00" | Partial "01" | Partial "10" | Partial "11" |
+|:---------:|:-------------:|:------------:|:------------:|:------------:|
+| 5,558,438 |   4,682,584   |   416,323    |   417,523    |    42,008    |
+
+</div>
 
 -   *Pfam annotation*
 

@@ -9,6 +9,17 @@ The sinlgetons are the clusters with only one member/ORF.
 
 <div class="img_container" style="width:70%; margin:2em auto;">
 
+*Total singletons and their completion*
+
+|   Total    | Complete "00" | Partial "01" | Partial "10" | Partial "11" |
+|:----------:|:-------------:|:------------:|:------------:|:------------:|
+| 19,911,324 |   2,124,209   |  7,490,987   |  7,023,398   |  3,272,730   |
+
+</div>
+
+
+<div class="img_container" style="width:70%; margin:2em auto;">
+
 *Singletons Pfan annotations*
 
 | Singletons |   Annotated  |   Not-annotated  |
