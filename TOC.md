@@ -51,7 +51,7 @@ The methods (included all the scripts/code) and results for each module are docu
 
 **Main analyses and results:**
 
--   [**Cluster and communities overview**](16.1_Cluster_and_communities_overview)
+-   [**Cluster and communities overview**](17.1_Cluster_and_communities_overview)
 
 -   [**Coverage of external databases**](10_Coverage_external_DBs)
 
@@ -65,8 +65,9 @@ The methods (included all the scripts/code) and results for each module are docu
 
 -   [**TARA ocean OM-RGC-v.2 integration**](15_Tara_Ocean_OMRGCv2)
 
--   [**Results in numbers**](16_Cluster_DB_numbers)
+-   [**Mutant phenotypes**](16_Mutant_phenotypes)
 
+-   [**Results in numbers**](17_Cluster_DB_numbers)
 
 <!---
  -   [**Workflow (usage)**](Workflow)
