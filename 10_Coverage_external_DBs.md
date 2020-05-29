@@ -259,7 +259,7 @@ As shown in the figure below, our clusters are found in each one of the 11 main 
 
 <h4 class="section-heading  text-primary">Unknown genes with mutant phenotypes</h4>
 
-Price et al. identified 37,684 mutant-genes. We covered 85% of them in our cluster database.
+Price et al. [[9]](#9) identified 37,684 mutant-genes. We covered 85% of them in our cluster database.
 
 <div class="img_container" style="width:50%; margin:2em auto;">
 
