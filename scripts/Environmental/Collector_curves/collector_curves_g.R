@@ -10,11 +10,10 @@ library(profmem)
 reg_dir_accum <- file.path(getwd(), paste(format(Sys.Date()), format(Sys.time(), "%H%M%S"), sep = "-"))
 reg_data_accum <- makeRegistry(reg_dir_accum, seed=123, conf.file = ".batchtools.conf.R")
 
-# Files are stored in data/collector_curves
 # GTDB cluster data
 lo_env$cl_data <-
   fread(
-    "all_gtdb_genome_orf_cl_categ.tsv.gz",
+    "data/collector_curves/all_gtdb_genome_orf_cl_categ.tsv.gz",
     header = FALSE,
     col.names = c(
       "genome",
@@ -27,7 +26,7 @@ lo_env$cl_data <-
 # GTDB cluster community data
 lo_env$com_data <-
   fread(
-    "all_gtdb_genome_orf_comm_categ.tsv.gz",
+    "data/collector_curves/all_gtdb_genome_orf_comm_categ.tsv.gz",
     header = FALSE,
     col.names = c(
       "genome",
@@ -37,7 +36,8 @@ lo_env$com_data <-
     )
   )
 
-# Increase in number of clusters with the nummber of genomes
+# Collector curves x genomes
+# Increase in the number of GTDB clusters with the nummber of genomes
 ## for the commmunity curves just replace "cl_name" with "comm"
 cl_data_kept <-
   lo_env$cl_data %>%
@@ -109,8 +109,9 @@ getStatus(reg = reg_data_accum) # Summarize job status
 
 cum_curve_res <- lapply(findDone()$job.id, loadResult, reg = reg_data_accum) %>% bind_rows() %>% as_tibble()
 
+# Optional:
 # Get genome stats of each permutation ------------------------------------
-genome_stats <- fread("gtdb_genomes_info.tsv.gz")
+genome_stats <- fread("data/GTDB/gtdb_data/gtdb_genomes_info.tsv.gz")
 
 genome_stats <- cl_data_kept %>% group_by(tip) %>%
   count(name = "n_clusters") %>%
@@ -173,7 +174,8 @@ getStatus(reg = reg_data_stats) # Summarize job status
 cum_stats_res <- lapply(findDone()$job.id, loadResult) %>% bind_rows() %>% as_tibble()
 
 
-## GTDB ORFs
+# Collector curves x orfs
+# Increase in number of GTDB clusters with the nummber of orfs
 cl_data_kept <-
   lo_env$cl_data %>%
   dt_select(orf, cl_name) %>%

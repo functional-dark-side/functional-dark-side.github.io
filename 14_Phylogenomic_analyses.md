@@ -39,6 +39,17 @@ We found 15% of clusters with a significant (P<0.05) [[2]](#2) non-random distri
 
 </div>
 
+*Bacteria phylogenetically conserved GCs*
+
+| Category | Type of GCs  | Number of GCs |
+| -------- |:------------:|:-------------:|
+| Known    |     All      |    239,094    |
+| Known    | Non-specific |    205,985    |
+| Known    |   Specific   |    33,109     |
+| Unknown  |     All      |    226,054    |
+| Unknown  | Non-specific |    147,286    |
+| Unknown  |   Specific   |    78,768     |
+
 Similar results are observed for the archaea tree.
 
 **Archaea**
@@ -50,6 +61,19 @@ Similar results are observed for the archaea tree.
 *Phylogenetic conservation analysis. a) proportion of known and unknown clusters with a significant non-random distribution. We observed 15% of clusters with a significant non-random distribution (P<0.05) in the Archaeal phylogeny. b) letter-value plot showing the maximum clade depth (maximum tauD) distribution for the non-randomly distributed clusters of knowns and unknowns. TauD was calculated with consenTRAIT. The maximum tauD is ranging from 0.05 - 0.99.*
 
 </div>
+
+
+*Archaea phylogenetically conserved GCs*
+
+| Category | Type of GCs  | Number of GCs |
+| -------- |:------------:|:-------------:|
+| Known    |     All      |    19,669     |
+| Known    | Non-specific |    17,405     |
+| Known    |   Specific   |     2,264     |
+| Unknown  |     All      |    15,187     |
+| Unknown  | Non-specific |     9,497     |
+| Unknown  |   Specific   |     5,690     |
+
 
 -   **Lineage-specificity analysis results:**
 

@@ -11,12 +11,12 @@ library(batchtools)
 reg_dir_accum <- file.path(getwd(), paste(format(Sys.Date()), format(Sys.time(), "%H%M%S"), sep = "-"))
 reg_data_accum <- makeRegistry(reg_dir_accum, seed=123, conf.file = "~/.batchtools.conf.R")
 
-# DATA stored in data/collector_curves
+# Collector curves x sample/metagenome
 # MG clusters x samples (input data: sample"\t"categ"_"cl_name)
-cl_data_smpl <- fread("marine_hmp_smpl_cl_categ.tsv.gz", stringsAsFactors = F, header = F, nThread = 28) %>%
+cl_data_smpl <- fread("data/collector_curves/marine_hmp_smpl_cl_categ.tsv.gz", stringsAsFactors = F, header = F, nThread = 28) %>%
   setNames(c("sample","cl_name"))
 # Filter for sample with at least 1K clusters
-ok_smpl <- fread("/vol/scratch/gtdb/listSamplesPaper.tsv")
+ok_smpl <- fread("data/collector_curves/listSamplesPaper.tsv")
 cl_data_smpl <- cl_data_smpl %>% dt_filter(sample %in% ok_smpl$label)
 
 # Prepare data
@@ -82,14 +82,14 @@ cum_curve_res <- lapply(findDone()$job.id, loadResult, reg = reg_data_accum) %>%
 bind_rows() %>% as_tibble() %>%
 add_row(cat=c("EU","GU","KWP","K","all"),n=c(0,0,0,0,0),perm=c(0,0,0,0,0),size=c(0,0,0,0,0))
 
-# Apply same function on communities and then using the number of ORFs instead of the samples
-
+# Apply same function on communities
 # MG communities x samples (input data: sample"\t"categ"_"comm_name)
-com_data_smpl <- fread("marine_hmp_smpl_comm_categ.tsv.gz", stringsAsFactors = F, header = F, nThread = 28) %>%
+com_data_smpl <- fread("data/collector_curves/marine_hmp_smpl_comm_categ.tsv.gz", stringsAsFactors = F, header = F, nThread = 28) %>%
   setNames(c("sample","comm"))
 
-# MG ORFs
-cl_data_orfs <- fread("marine_hmp_orfs_cl_categ.tsv.gz", stringsAsFactors = F, header = F, nThread = 28) %>%
+# Apply the same function using the number of ORFs instead of the samples
+# MG cluster per orfs
+cl_data_orfs <- fread("data/collector_curves/marine_hmp_orfs_cl_categ.tsv.gz", stringsAsFactors = F, header = F, nThread = 28) %>%
   setNames(c("cl_name","orf"))
 
 norfs <- cl_data_smpl$orfs %>% unique()
