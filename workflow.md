@@ -4,12 +4,8 @@ title: A workflow to unify the Known and Unknown
 ---
 We implemented a computational workflow ([Agnostos](https://www.encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/agnostos-theos)) to structure and explore the large pool of genes with unknown functions found in microbial genomes and metagenomes. We used a protein domain-based approach to partition more than 400 million predicted genes from 1,628 metagenomes and ~29 genomes into different categories of gene clusters of known and unknown functions.
 
-<figure>
-<img alt="workflow.png" src="img/workflow.png" width="750" height="" >
-<figcaption>Agnostos workflow different modules</figcaption>
-</figure>
 
-
+{% include image.html url="img/workflow.png" description="Agnostos workflow different modules" %}
 
 
 The AGNOSTOS WORKFLOW can be found [HERE](https://github.com/functional-dark-side/agnostos-wf).
