@@ -42,6 +42,15 @@ p {
     margin-bottom: 20px;
 }
 
+.p a{
+    @include transition-all;
+    color: #315C71;
+    &:hover,
+    &:focus {
+        color: darken(#315C71, 10%);
+    }
+}
+
 .bg-primary {
     background-color: $theme-primary;
 }
@@ -419,10 +428,5 @@ dl {
 figcaption {
     padding: 2px;
     text-align: center;
-    font-weight: bold;
-}
-
-link {
-    color: #315C71;
     font-weight: bold;
 }
