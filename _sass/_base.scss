@@ -51,6 +51,11 @@ p {
     color: white;
 }
 
+.bg-light {
+    background-color: $theme-primary;
+    color: #F5F1F2;
+}
+
 .text-faded {
     color: rgba(white, .7);
 }
@@ -61,10 +66,6 @@ section {
 
 aside {
     padding: 50px 0;
-}
-
-about {
-    background-color: #F5F1F2;
 }
 
 .no-padding {
