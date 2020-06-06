@@ -10,8 +10,8 @@ We implemented a computational workflow ([Agnostos](https://www.encyclopedia.com
 | **Brief schematic of the workflow** |
 
 
-!["dominating_sets_example2"](http://sparkandshine.net/wordpress/wp-content/uploads/2016/02/dominating_sets_example2.png)
-*Fig. 2: The minimum dominating set of a graph*
+!["dominating_sets_example2"](http://sparkandshine.net/wordpress/wp-content/uploads/2016/02/dominating_sets_example2.png){:height="50%" width="50%" align="center"} 
+**Fig. 2: The minimum dominating set of a graph**
 
 The workflow is based on Snakemake for the easy processing of large datasets in a reproducible manner. It provides three different strategies to analyze the data. The module **DB-creation** creates the gene cluster database, validates and partitions the gene clusters (GCs) in the main functional categories. The module **DB-update** allows the integration of new sequences (either at the contig or predicted gene level) in the existing gene cluster database. In addition, the workflow has a **profile-search** function to quickly screen the gene cluster PSSM profiles in the database
 
