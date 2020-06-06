@@ -436,3 +436,10 @@ ol {
     font-size: 16px;
     line-height: 2;
 }
+
+mg + br + em {
+    font-style: normal;
+    display: inherit;
+    text-align: center;
+    font-size: 90%;
+}
