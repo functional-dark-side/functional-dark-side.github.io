@@ -285,10 +285,10 @@ li.dropdownActive a {
 }
 
 
-.navbar-inverse .navbar-nav > li > a {
+/* .navbar-inverse .navbar-nav > li > a {
     background-color: transparent;
     margin-top:10px;
-}
+} */
 
 .post-content .rssfeedLink {
     color: #248EC2;
@@ -309,18 +309,18 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 /* navgoco sidebar styles (customized) */
-.nav, .nav ul, .nav li {
+/* .nav, .nav ul, .nav li {
     list-style: none;
-}
+} */
 
-.nav ul {
+/* .nav ul {
     padding: 0;
-    /*margin: 0 0 0 18px;*/
+    /*margin: 0 0 0 18px;
     margin:0px;
-}
-
+} */
+/* 
 .nav {
-    /* padding: 4px;*/
+ 
     padding:0px;
     margin: 0px;
 }
@@ -339,7 +339,6 @@ a.accordion-toggle, a.accordion-collapsed {
     outline: none;
     /*-webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    border-radius: 4px;*/
     text-decoration: none;
 }
 
@@ -377,12 +376,12 @@ background-color: #347DBE;
     font-size: 14px;
     line-height: 20px;
     padding: 4px 10px;
-}
+} */
 
 ul#mysidebar {
     border-radius:0px;
 }
-
+/* 
 .nav ul li ul li a {
     padding-left:40px;
 }
@@ -411,7 +410,6 @@ ul#mysidebar {
     border-top:1px solid whitesmoke;
     padding-left:10px;
 }
-/* end sidebar */
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     border-radius:5px;
@@ -419,7 +417,7 @@ ul#mysidebar {
 
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
     border-radius: 5px;
-}
+} */
 
 span.projectTitle {
     font-family: Helvetica;
@@ -534,9 +532,9 @@ button.cursorNorm {
     cursor: default;
 }
 
-a.dropdown-toggle, .navbar-inverse .navbar-nav > li > a  {
+/* a.dropdown-toggle, .navbar-inverse .navbar-nav > li > a  {
     margin-left: 10px;
-}
+} */
 
 hr.faded {
     border: 0;
@@ -597,10 +595,10 @@ h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic;} */
     overflow: hidden;
 }
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+/* .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     background-color: #248ec2;
     color: white;
-}
+} */
 
 ol li ol li {list-style-type: lower-alpha;}
 ol li ul li {list-style-type: disc;}
@@ -845,12 +843,12 @@ span.soft {
     margin: 15px 0px;
     background-color: whitesmoke;
 }
-
+/* 
 @media (max-width: 767px) {
     .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
         color: #444;
     }
-}
+} */
 
 @media (max-width: 990px) {
     #mysidebar {
@@ -1001,7 +999,7 @@ span.label.label-default {
 span.label.label-primary {
     background-color: #f0ad4e;
 }
-.col-lg-12 .nav li a {background-color: white}
+/* .col-lg-12 .nav li a {background-color: white} */
 
 
 /* .nav li.active > a.subfoldersTitle {
@@ -1161,7 +1159,7 @@ h4.panel-title {
     margin-top: 0px;
 }
 
-/*set navbar breakpoint so that it converts to hamburger earlier */
+/* set navbar breakpoint so that it converts to hamburger earlier
 
 @media (max-width: 1200px) {
     .navbar-header {
@@ -1197,4 +1195,4 @@ h4.panel-title {
     .collapse.in{
         display:block !important;
     }
-}
+} */
