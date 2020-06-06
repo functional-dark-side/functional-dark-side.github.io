@@ -590,8 +590,8 @@ a.fa.fa-envelope-o.mailto {
     font-weight: 600;
 }
 
-h3 {color: #ED1951; font-weight:normal; font-size:130%;}
-h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic;}
+/* h3 {color: #ED1951; font-weight:normal; font-size:130%;}
+h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic;} */
 
 .alert, .callout {
     overflow: hidden;
@@ -709,10 +709,10 @@ ol.series li {
 }
 
 /* not sure if using this ...*/
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+/* .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: #248ec2 !important;
-}
-
+} */
+/* 
 #mysidebar .nav ul {
     background-color: #FAFAFA;
 }
@@ -730,7 +730,7 @@ ol.series li {
 
 .nav ul.series {
     background-color: #FAFAFA;
-}
+} */
 
 /*
 a.dropdown-toggle.otherProgLangs {
@@ -1004,11 +1004,11 @@ span.label.label-primary {
 .col-lg-12 .nav li a {background-color: white}
 
 
-.nav li.active > a.subfoldersTitle {
+/* .nav li.active > a.subfoldersTitle {
     background-color: whitesmoke;
     font-weight: bold;
     color: black;
-    }
+    } */
 
 a code {
     color: #248EC2;
