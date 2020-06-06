@@ -14,9 +14,7 @@ list of people who helped in the porject
 <li><b><span style="font-size:larger;">A. Murat Eren</span></b> (University of Chicago)</li>
 <li><b><span style="font-size:larger;">Tom O. Delmont</span></b> (Genoscope, France)</li>
 <li><b><span style="font-size:larger;">Albert Barberan</span></b> (University of Arizona)</li>
-<li><b><span style="font-size:larger;">Alex Mitchell</span></b> (European Bioinformatics Institute)</li>
 <li><b><span style="font-size:larger;">Frank Oliver Gloeckner</span></b> (Max Planck Institute for Marine Microbiology)</li>
-<li><b><span style="font-size:larger;">Gerard Funosas</span></b> (Blanes Centre for Advanced Studies/CSIC)</li>
 <li><b><span style="font-size:larger;">Martin Steinegger</span></b> (Max Planck Institute for Biophysical Chemistry)</li>
 <li><b><span style="font-size:larger;">Silvia Acinas</span></b> (Institute of Marine Sciences/CSIC)</li>
 <li><b><span style="font-size:larger;">Pablo Sanchez</span></b> (Institute of Marine Sciences/CSIC)</li>
