@@ -16,12 +16,11 @@ Follow the links for a detailed description of the methods and results:
 1. [Gene prediction](gene-prediction)
 2. [Pfam annotations](pfam-annotation)
 3. [Deep clustering](deep-clustering)
-4. [Cluster validation](cluster-validation)
-5. [Cluster refinement](cluster-refinement)
-6. [Cluster classification in categories](cluster-classification)
-7. [Known-Unknown cluster category refinement](category-refinement)
-8. [Cluster communities inference](cluster-communities)
+4. [Gene cluster validation](cluster-validation)
+5. [Gene cluster refinement](cluster-refinement)
+6. [Gene cluster classification](cluster-classification)
+7. [Gene cluster category refinement](category-refinement)
+8. [Gene cluster communities inference](cluster-communities)
 
 
-> You can try the workflow [here](https://github.com/functional-dark-side/agnostos-wf). 
-> A description of the data used for the manuscript can be found [here](data)
+You can try the workflow [here](https://github.com/functional-dark-side/agnostos-wf). A description of the data used for the manuscript can be found [here](data)
