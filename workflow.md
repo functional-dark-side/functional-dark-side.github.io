@@ -23,4 +23,14 @@ Follow the links for a detailed description of the methods and results for each 
 8. [Gene cluster communities inference](cluster-communities)
 
 
+<div class="panel panel-gitlab-orange">
+**Heading**
+{: .panel-heading}
+<div class="panel-body">
+
 You can try the workflow [here](https://github.com/functional-dark-side/agnostos-wf). A description of the data used for the manuscript can be found [here](data)
+
+</div>
+</div>
+
+
