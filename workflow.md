@@ -26,4 +26,7 @@ Follow the links for a detailed description of the methods and results for each 
 {: .info title="Info"}
 You can try the workflow [here](https://github.com/functional-dark-side/agnostos-wf). A description of the data used for the manuscript can be found [here](data)
 
+<div class="alert alert-primary" role="alert">
+  This is a primary alert—check it out!
+</div>
 
