@@ -444,3 +444,8 @@ img + em {
     text-align: center;
     font-size: 90%;
 }
+
+img[src*='#center'] { 
+    display: block;
+    margin: auto;
+}
