@@ -24,6 +24,4 @@ Follow the links for a detailed description of the methods and results for each 
 
 
 
-  {% include callout.html content="You can try the workflow [here](https://github.com/functional-dark-side/agnostos-wf). A description of the data used for the manuscript can be found [here](data)." type="primary" %}
-
-  {% include callout.html content="**Important information**: This is my callout. It has a border on the left whose color you define by passing a type parameter. I typically use this style of callout when I have more information that I want to share, often spanning multiple paragraphs. <br/><br/>Here I am starting a new paragraph, because I have lots of information to share. You may wonder why I'm using line breaks instead of paragraph tags. This is because Kramdown processes the Markdown here as a span rather than a div (for whatever reason). Be grateful that you can be using Markdown at all inside of HTML. That's usually not allowed in Markdown syntax, but it's allowed here." type="primary" %} 
+  {% include callout.html content="You can try the workflow [here](https://github.com/functional-dark-side/agnostos-wf). <br />A description of the data used for the manuscript can be found [here](data)." type="primary" %}
