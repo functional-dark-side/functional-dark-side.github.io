@@ -45,6 +45,7 @@ p {
 .p a{
     @include transition-all;
     color: #315C71;
+    font-weight: bold;
     &:hover,
     &:focus {
         color: darken(#315C71, 10%);
