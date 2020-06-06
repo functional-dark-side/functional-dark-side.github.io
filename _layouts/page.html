@@ -3,10 +3,18 @@
 
 {% include head.html %}
 
-<body>
+<body id="page-top">
   {% include nav_page.html %}
   {% include header_page.html %}
-  {{ content }}
+  <section class="container" id="intro">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12">
+                {{ content }}
+              </div>
+          </div>
+      </div>
+  </section>
   {% include aside.html %}
   {% include contact.html %}
   {% include scripts.html %}
