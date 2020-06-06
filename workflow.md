@@ -27,3 +27,5 @@ Follow the links for a detailed description of the methods and results for each 
     You can try the workflow [here](https://github.com/functional-dark-side/agnostos-wf). A description of the data used for the manuscript can be found [here](data)
   </div>
   
+  
+  {% include note.html content="This is my note. All the content I type here is treated as a single paragraph." %}
