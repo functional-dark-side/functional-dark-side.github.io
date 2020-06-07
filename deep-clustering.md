@@ -97,12 +97,3 @@ An example of the script usage can be found here:
 
 <p></p>
 {% include collapsible.html toggle-name="toggle-ref" button-text="References" toggle-text=references %}
-
-
-
-
-<h4 class="section-heading  text-primary">References</h4>
-
-<a name="1"></a>[1]	M. Steinegger and J. Söding, “MMseqs2 enables sensitive protein sequence searching for the analysis of massive data sets.,” Nature biotechnology, vol. 35, no. 11, pp. 1026–1028, Nov. 2017.
-
-<a name="2"></a>[2] M. Steinegger and J. Söding. 2018. “Clustering Huge Protein Sequence Sets in Linear Time.” Nature Communications 9 (1): 2542.
