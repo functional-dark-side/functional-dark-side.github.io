@@ -3,53 +3,63 @@ layout: page
 title: Gene prediction
 ---
 
-We decided to collect the data at the assembly state/level and to start our workflow with the gene prediction step. (The metagenomic assembly is rather computationally expensive step and re-do it for all the considered projects would have required too many resources).
+We used the official assemblies from the metagenomic projects TARA, OSD2014, Malaspina, HMP-I/II and GOS to test our approach. We used Prodigal (v2.6.3) [1] in metagenomic mode to predict the genes from the metagenomic dataset. We identified potential spurious genes using the AntiFam database. Furthermore, we screened for 'shadow' genes using the procedure described in Yooseph et al. [2]
 
-<h3 class="section-heading  text-primary">Methods</h3>
+{% include callout.html content="- For more information regarding the identification of spurious and shadow genes, check [here](spurious-shadow-genes.md). <br />- A description of the data used for the manuscript can be found [here](data)." type="primary" %}
+  
+We identified a total of 322,248,552 predicted ORFs in total for the metagenomic dataset (Table 1) and 93,723,190 genes for GTDB (Table 2).
 
-To predict our Open Reading Frames (ORFs) we used the Prodigal (Prokaryotic Dynamic Programming Gene-finding Algorithm) (version 2.6.3: February 2016) program, applied in metagenomic mode [[1]](#1). In addiction we mapped pair-end reads back to the assembled contigs using the short-read BWA mapper [[2]](#2), to obtain an estimation of the ORF abundances based on the counts of mapped reads.
+<p></p>
 
-**Scripts and description:** The script <a href="scripts/Gene_prediction/gene_prediction.sh">gene_prediction.sh</a> takes in input contigs from genomes or metagenomes, in fasta format, and returns the predicted ORFs amino acid sequences and a summary in .gff format. The ORFs headers are created using the script <a href="scripts/Gene_prediction/rename_orfs.awk">rename_orfs.awk</a>.
 
-<h3 class="section-heading  text-primary">Results</h3>
-We identified a total of 322,248,552 predicted ORFs.
-The numbers of contigs and ORFs retrieved for each project are shown in the table below.
+| Data set  | Number of contigs | Number of genes |
+| :-------: | :---------------: | :-------------: |
+|   TARA    |    62,404,654     |   111,903,261   |
+| Malaspina |     9,330,293     |   20,574,033    |
+|    OSD    |     4,127,095     |    7,015,383    |
+|    GOS    |    12,672,518     |   20,068,580    |
+|    HMP    |    80,560,927     |   162,687,295   |
+{: style="margin-left: auto; margin-right: auto; width: 60%"}
 
-<div class="img_container" style="width:70%; margin:2em auto;">
+**Table 1.** Number of contigs and predicted genes Prodigal
+{: style="color:gray; font-size: 90%; text-align: center;"}
 
-*Number of contigs and predicted ORFs retrieved with Prodigal*
 
-| Data set  | Number of contigs  | Number of ORFs |
-|:---------:|:------------------:|:--------------:|
-| TARA      |      62,404,654    |   111,903,261  |
-| Malaspina |       9,330,293    |    20,574,033  |
-| OSD       |       4,127,095    |     7,015,383  |
-| GOS       | 12,672,518 (reads) |    20,068,580  |
-| HMP       |      80,560,927    |   162,687,295  |
+<br />
 
-</div>
+We compiled the gene completion for the metagenomic dataset (Table 2). Where **00** is a complete gene with both start and stop codon identified; **01** has the right boundary incomplete; **10** has the left boundary incomplete; and **11** when both left and right edges are incomplete.
 
-Metagenomic gene completness information retrieved with the Prodigal gene prediction.
 
-<div class="img_container" style="width:70%; margin:2em auto;">
+|   Dataset   |    “00”     |    “10”     |    “01”     |    “11”    |    Total    |
+| :---------: | :---------: | :---------: | :---------: | :--------: | :---------: |
+| Metagenomic | 118,717,690 | 106,031,163 | 102,966,482 | 75,694,123 | 322,248,552 |
+{: style="margin-left: auto; margin-right: auto; width: 60%"}
 
-*Number of predicted genes per completeness category.*
+**Table 2.** Number of predicted genes per completeness category. 
+{: style="color:gray; font-size: 90%; text-align: center;"}
 
-|    Total    |    “00”     |    “10”     |    “01”     |    “11”    |
-|:-----------:|:-----------:|:-----------:|:-----------:|:----------:|
-| 322,248,552 | 118,717,690 | 106,031,163 | 102,966,482 | 75,694,123 |
+Prodigal only predicted 37% of complete genes (00) for the metagenomic dataset. After the gene prediction, the workflow proceeds with the [Pfam annotation](pfam-annotation) step. 
 
-Note: “00”=complete, both start and stop codon identified. “01”=right boundary incomplete. “10”=left boundary incomplete. “11”=both left and right edges incomplete.
+<br />
+<br />
 
-</div>
+{% capture code %}
 
-<br>
-<br>
+The script <a href="scripts/Gene_prediction/gene_prediction.sh">gene_prediction.sh</a> takes in input contigs from genomes or metagenomes, in fasta format, and returns the predicted ORFs amino acid sequences and a summary in .gff format. The ORFs headers are created using the script <a href="scripts/Gene_prediction/rename_orfs.awk">rename_orfs.awk</a>.
 
-* * *
+{% endcapture %}
 
-<h4 class="section-heading  text-primary">References</h4>
+{% include collapsible.html toggle-name="toggle-code" button-text="Code and description" toggle-text=code %}
 
-<a name="1"></a>[1]	D. Hyatt, G.-L. Chen, P. F. Locascio, M. L. Land, F. W. Larimer, and L. J. Hauser, “Prodigal: prokaryotic gene recognition and translation initiation site identification.,” BMC bioinformatics, vol. 11, p. 119, Mar. 2010.
+{% capture references %}
 
-<a name="2"></a>[2]	H. Li and R. Durbin, “Fast and accurate long read alignment with Burrows-Wheeler transform.,” Bioinformatics, vol. 26, no. 5, pp. 589–595, 2010.
+**[1]**	Hyatt, D., Chen, L. G.-L. L.-., LoCascio, F. P., Land, L. M., Larimer, W. F., & Hauser, J. L. (2010). Prodigal: prokaryotic gene recognition and translation initiation site identification. BMC Bioinformatics, 11(1), 119–119.  
+**[2]** Yooseph, S., Sutton, G., Rusch, B. D., Halpern, L. A., Williamson, J. S., Remington, K., Eisen, A. J., Heidelberg, B. K., Manning, G., Li, W., Jaroszewski, L., Cieplak, P., Miller, S. C., Li, H., Mashiyama, T. S., Joachimiak, P. M., Van Belle, C., Chandonia, M. J., Soergel, A. D., … Venter, C. J. (2007). The Sorcerer II global ocean sampling expedition: Expanding the universe of protein families. PLoS Biology, 5(3), 0432–0466.
+
+{% endcapture %}
+
+<p></p>
+{% include collapsible.html toggle-name="toggle-ref" button-text="References" toggle-text=references %}
+
+
+

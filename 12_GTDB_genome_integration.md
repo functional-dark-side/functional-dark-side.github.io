@@ -31,17 +31,16 @@ NB: We renamed the predicted genes to follow the nomenclature used for the metag
 
 We collected 90,621,864 proteins from 27,372 bacterial genomes, and 3,101,326 from 1,569 archaeal genomes:
 
-<div class="img_container" style="width:50%; margin:2em auto;">
-
-*GTDB dataset*
 
 |           | Genomes |  Proteins  |
-|:---------:|:-------:|:----------:|
+| :-------: | :-----: | :--------: |
 | Bacterial | 27,372  | 90,621,864 |
 | Archaeal  |  1,569  | 3,101,326  |
 |   Total   | 28,941  | 93,723,190 |
+{: style="margin-left: auto; margin-right: auto; width: 60%"}
 
-</div>
+**Table 2.** Number of genomes and predicted genes by Prodigal
+{: style="color:gray; font-size: 90%; text-align: center;"}
 
 We then integrated the collected genomes in the metagenomic gene clusters, using the incremental clustering algorithm of MMseqs2.
 

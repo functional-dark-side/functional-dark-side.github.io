@@ -1,0 +1,11 @@
+<div class="wrap-collapsible" markdown="0">
+    <input id="#{{include.toggle-name}}" class="toggle" type="checkbox" >
+    <label for="#{{include.toggle-name}}" class="lbl-toggle">{% if include.button-text %} {{include.button-text}} {% else %} Open {% endif %}</label>
+    <div class="collapsible-content">
+        <div class="content-inner">
+            <p>
+                {{include.toggle-text | markdownify }}
+            </p>
+        </div>
+    </div>
+</div>

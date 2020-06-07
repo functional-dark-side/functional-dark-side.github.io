@@ -1,80 +1,105 @@
 ---
 layout: page
-title: Sequence clustering with MMseqs2
+title: Deep clustering
 ---
 
-To get a biologically meaningful partitioning and reduce data redundancy, we performed a cascaded clustering of our ORFs set, using a final similarity threshold of 30%.
+We clustered the metagenomic predicted genes using the cascaded-clustering workflow of the **MMseqs2 software** [1] (*--cov-mode 2 -c 0.8 --min-seq-id 0.3*). We discarded from downstream analyses the singletons and clusters with a size below a threshold identified after applying a broken-stick model (Figure 2). Next, the cascaded clustering created 32,465,074 gene clusters (Table 1). 
 
-<h3 class="section-heading  text-primary">Methods</h3>
+**Table 1.** Cascaded clustering results. 
+{: style="color:gray; font-size: 90%; text-align: center;"}     
 
-We chose a sequence similarity-based method, because a higher speed characterizes it compared to other approaches, like the graph-based clustering methods, and therefore considered more suitable to be applied to the massive metagenomic datasets.
-The cascaded clustering was performed using the MMseqs2 (Many-against-Many sequence searching 2) open-source software [[1]](#1)[[2]](#2), which allows a fast and deep clustering of large datasets, based on sequence similarity and greedy set cover approach to identify the clusters. We selected a coverage threshold of 80%, a sequence identity threshold of 30% and a sensitivity of 5.
+| Initial genes | Redundancy step | Cluster step 0 | Cluster step 1 | Cluster step 2 | Cluster step 3 |
+| :-----------: | :-------------: | :------------: | :------------: | :------------: | :------------: |
+|  322,248,552  |   137,568,876   |   67,369,644   |   42,891,295   |   35,267,181   |   32,465,074   |
+{: style="margin-left: auto; margin-right: auto; width: 60%"}
 
-The obtained cluster database was filtered based on cluster size. We first removed the singletons (clusters form by only one gene). Then, applying the broken-stick model, we determined a cluster-size threshold below which a cluster is discarded.
+<br />
+<br />
+
+We used a broken-stick model approach to identi
+
+![img/MG_cluster_size_threshold.png](img/MG_cluster_size_threshold.png#center){:height="50%" width="50%" align="center"} 
+**Figure 1.** Cluster size distribution. The red line indicates the "breaking point" of the distribution, which corresponds to clusters of ~10 ORFs.
+{: style="color:gray; font-size: 90%; text-align: center;"}  
 
 
-- **Scripts and description**: The input for the script [clustering.sh](scripts/MMseqs_clustering/clustering.sh) is the multi-fasta file containing the predicted ORFs (amino acids). The sequences are clustered down to 30% sequence similarity and the results are parsed by the scripts [clustering_res.sh](scripts/MMseqs_clustering/clustering_res.sh) and [cluster_info.sh](scripts/MMseqs_clustering/cluster_info.sh). From the parsing we obtain a sequence database of the clusters, tables containing information about the cluster representative, the size and the cluster members and we identified the set of clusters with more than 10 ORFs, those with less and the set of singletons. For more information check the [README_clu.md](scripts/MMseqs_clustering/README_clu.md) file.
+
+<br />
+<br />
 
 
-<h3 class="section-heading  text-primary">Results</h3>
+For the downstream processing, we kept 3,003,897 gene clusters (83% of the original genes) after filtering out any gene cluster that contained less than 10 genes removing 9,549,853 clusters and 19,911,324 singletons.  
 
-The dataset of predicted ORFs proved to be rather redundant. The clustering step identified 32,465,074 clusters, represented by a non-redundant sequence, from the original 322,248,552 ORFs and yielded a 90% reduction rate. From the ~32 million clusters at/with 30% level of homology.
-We filtered out ~19M singletons and ~9.5M clusters with a number of genes found below the broken-stick threshold of 10genes per cluster.
-For our downstream analyses we only will use the remaining **3,003,897** clusters (with ≥ 10 genes).
+<br />
+<br />
 
-<br>
-
-<div class="img_container" style="width:50%; margin:2em auto;">
-
-*Cascaded clustering results*
-
-|                     |  Clusters   |
-|:-------------------:|:-----------:|
-|     **Initial**     | 322,248,552 |
-| **Redundancy step** | 137,568,876 |
-| **Cluster step 0**  | 67,369,644  |
-| **Cluster step 1**  | 42,891,295  |
-| **Cluster step 2**  | 35,267,181  |
-| **Cluster step 3**  | 32,465,074  |
-
-</div>
-
-Total number of clusters for each level in the cascaded clustering (we keep the intermediate results of the clustering) and report the size of each cluster and it’s related statistics (average, min, max).
-
-<div class="img_container" style="width:100%; margin:2em auto;">
-
-*Parsed clustering results*
+**Table 2.** Cascaded clustering results after parsing. 
+{: style="color:gray; font-size: 90%; text-align: center;"}  
 
 |          |    Total    | Clusters ≥ 10 ORFs | Clusters 1< ORFs < 10 | Singletons |
-| -------- |:-----------:|:------------------:|:---------------------:|:----------:|
+| -------- | :---------: | :----------------: | :-------------------: | :--------: |
 | Clusters | 32,465,074  |     3,003,897      |       9,549,853       | 19,911,324 |
 | ORFs     | 322,248,552 |    268,467,763     |      33,869,465       | 19,911,324 |
+{: style="margin-left: auto; margin-right: auto; width: 60%"}
 
-</div>
-
-The clustering general results after the filtering based on the number of members, i.e. genes, for each cluster.
 
 <br>
 
-<div class="img_container" style="width:90%; margin:2em auto;">
+![MG_mmseqs_clustering_res.png](img/MG_mmseqs_clustering_res.png#center){:height="80%" width="80%" align="center"} 
+**Figure 1.** Clustering results: (a) Percentage of clusters in the different sets and (b) percentage of ORFs in the different cluster sets.
+{: style="color:gray; font-size: 90%; text-align: center;"}  
 
-<img alt="MG_mmseqs_clustering_res.png" src="/img/MG_mmseqs_clustering_res.png" width="100%" height="" >
 
-*Clustering results: (a) Percentage of clusters in the different sets and (b) percentage of ORFs in the different cluster sets.*
 
-</div>
 
-#### Cluster sizes
 
-<div class="img_container" style="width:80%; margin:2em auto;">
 
-<img alt="MG_cluster_size_threshold.png" src="/img/MG_cluster_size_threshold.png" height="" width="90%">
+<br />
+<br />
 
-*Cluster size distribution. The red line indicates the "breaking point" of the distribution, which corresponds to clusters of ~10 ORFs.*
+{% capture code %}
 
-</div>
+The input for the script [clustering.sh](scripts/MMseqs_clustering/clustering.sh) is the multi-fasta file containing the predicted ORFs (amino acids). The sequences are clustered down to 30% sequence similarity and the results are parsed by the scripts [clustering_res.sh](scripts/MMseqs_clustering/clustering_res.sh) and [cluster_info.sh](scripts/MMseqs_clustering/cluster_info.sh). From the parsing we obtain a sequence database of the clusters, tables containing information about the cluster representative, the size and the cluster members and we identified the set of clusters with more than 10 ORFs, those with less and the set of singletons. 
+<br />
+An example of the script usage can be found here:
 
-* * *
+```bash
+“clustering.sh” (script calling the cascaded clustering program of MMSeqs2):
+
+    input: “data/gene_prediction/TARA_OSD_GOS_malaspina_hmpI-II.fasta.gz”
+    output: “data/mmseqs_clustering/marine_hmp_db/marine_hmp_db_03112017” & “/data/mmseqs_clustering/marine_hmp_db/marine_hmp_db_03112017_clu”
+
+“clustering_res.sh” & “clustering_info.sh”:
+
+    input: The output DBs from “clustering.sh” and the orfs fasta file
+    output: Files in “/data/mmseqs_clustering/” folder
+        marine_hmp_db_03112017_clu.tsv (clusters, long format)
+        marine_hmp_db_03112017_clu_wide.tsv (clusters, wide format, first column = representative)
+        marine_hmp_db_03112017_clu_size.tsv (clusters representative - size)
+        marine_hmp_db_03112017_clu_rep.tsv (clusters representatives)
+        marine_hmp_db_03112017_clu_fa (.index) (cluster sequence DB)
+        marine_hmp_db_03112017_clu_ge10.tsv (clusters with more than 10 members)
+        marine_hmp_db_03112017_singletons.txt (clusters with only one member)
+        marine_hmp_db_03112017_clu_info.tsv (info about cluster ID, size, ORFs length)
+
+```
+
+{% endcapture %}
+
+{% include collapsible.html toggle-name="toggle-code" button-text="Code and description" toggle-text=code %}
+
+{% capture references %}
+
+**[1]**	Finn, R. D., Clements, J., & Eddy, S. R. (2011). HMMER web server: interactive sequence similarity searching. Nucleic Acids Research, 39(Web Server issue), W29–W37.  
+**[2]** El-Gebali, S., Mistry, J., Bateman, A., Eddy, S. R., Luciani, A., Potter, S. C., Qureshi, M., Richardson, L. J., Salazar, G. A., Smart, A., Sonnhammer, E. L. L., Hirsh, L., Paladin, L., Piovesan, D., Tosatto, S. C. E., & Finn, R. D. (2019). The Pfam protein families database in 2019. Nucleic Acids Research, 47(D1), D427–D432.  
+
+{% endcapture %}
+
+<p></p>
+{% include collapsible.html toggle-name="toggle-ref" button-text="References" toggle-text=references %}
+
+
+
 
 <h4 class="section-heading  text-primary">References</h4>
 

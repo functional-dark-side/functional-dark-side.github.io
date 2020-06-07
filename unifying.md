@@ -20,4 +20,4 @@ Genomic Unknown
 Environmental Unknown
 : This category contains genes of unknown function not detected in sequenced or draft genomes, but only in environmental metagenomes or metagenome-assembled genomes.
 
-In addition to the conceptual framework we created a computational workflow that partitions the coding sequence space. More information can be found [here](workflow)
+{% include callout.html content="In addition to the conceptual framework we created a computational workflow that partitions the coding sequence space. More information can be found [here](workflow)" type="primary" %}
