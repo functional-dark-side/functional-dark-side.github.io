@@ -39,8 +39,20 @@ We collected 90,621,864 proteins from 27,372 bacterial genomes, and 3,101,326 fr
 |   Total   | 28,941  | 93,723,190 |
 {: style="margin-left: auto; margin-right: auto; width: 60%"}
 
-**Table 2.** Number of genomes and predicted genes by Prodigal
+*Number of genomes and predicted genes by Prodigal*
 {: style="color:gray; font-size: 90%; text-align: center;"}
+
+<div class="img_container" style="width:70%; margin:2em auto;">
+
+*Number of predicted genes per completeness category.*
+
+|   Total    |    “00”    |   “10”    |   “01”    |  “11”   |
+|:----------:|:----------:|:---------:|:---------:|:-------:|
+| 93,723,190 | 90,388,583 | 1,604,489 | 1,594,074 | 136,044 |
+
+Note: “00”=complete, both start and stop codon identified. “01”=right boundary incomplete. “10”=left boundary incomplete. “11”=both left and right edges incomplete.
+
+</div>
 
 We then integrated the collected genomes in the metagenomic gene clusters, using the incremental clustering algorithm of MMseqs2.
 
