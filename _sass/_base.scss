@@ -114,7 +114,7 @@ aside {
             &.active {
                 > a,
                 > a:focus {
-                    color: $theme-primary !important;
+                    color: #E85A5B;
                     background-color: transparent;
                     &:hover {
                         background-color: transparent;
@@ -317,6 +317,15 @@ header {
 
 .btn-primary {
     @include button-variant(white, $theme-primary, $theme-primary);
+}
+.btn-default:hover,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    background-color: #248ec2;
+    border-color: #347DBE;
 }
 
 .btn {

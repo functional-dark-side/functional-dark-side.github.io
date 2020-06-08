@@ -1,18 +1,27 @@
-- title: About
-  url: /about.html
-- title: Team
-  url: /who.html
-- title: Contact
-  url: /contact.html
-- title: Store
-  url: /store.html
-- title: Support
-  url: /support.html
+- title: The unknown
+  url: unifying
+- title: The workflow
+  url: workflow
   sublinks:
-    - title: FAQ
-      url: /faq.html
-    - title: Documentation
-      url: /documentation.html
+    - title: Workflow
+      url: /workflow
     - title: separator
-    - title: Customer Support
-      url: /customer-support.html
+    - title: Gene prediction
+      url: /gene-prediction
+    - title: Pfam annotation
+      url: /pfam-annotation
+    - title: Deep clustering
+      url: /deep-clustering
+    - title: Gene cluster validation
+      url: /cluster-validation
+    - title: Gene cluster refinement
+      url: /cluster-refinement
+    - title: Gene cluster classification
+      url: /cluster-classification
+    - title: Gene cluster category refinement
+      url: /category-refinement
+    - title: Gene cluster communities
+      url: /cluster-communities
+- title: Who we are
+  url: /who.html
+

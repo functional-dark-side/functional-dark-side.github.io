@@ -5,6 +5,9 @@ title: Deep clustering
 
 We clustered the metagenomic predicted genes using the cascaded-clustering workflow of the **MMseqs2 software** [1] (*--cov-mode 2 -c 0.8 --min-seq-id 0.3*). We discarded from downstream analyses the singletons and clusters with a size below a threshold identified after applying a broken-stick model (Figure 2). Next, the cascaded clustering created 32,465,074 gene clusters (Table 1). 
 
+<br />
+<br />
+
 **Table 1.** Cascaded clustering results. 
 {: style="color:gray; font-size: 90%; text-align: center;"}     
 
@@ -29,6 +32,7 @@ We used a broken-stick model approach to identi
 
 
 For the downstream processing, we kept 3,003,897 gene clusters (83% of the original genes) after filtering out any gene cluster that contained less than 10 genes removing 9,549,853 clusters and 19,911,324 singletons.  
+
 
 <br />
 <br />

@@ -6,6 +6,9 @@ title: Pfam functional annotation
 
 We annotated the predicted genes using the **hmmsearch** program from the HMMER package (version: 3.1b2) [1] in combination with the **Pfam database v31** [2]. We kept the matches exceeding the internal gathering threshold and presenting an *independent e-value < 1e-5* and *coverage > 0.4*. In addition, we took in account multi-domain annotations and we removed overlapping annotations when the overlap is larger than 50%, keeping the ones with the smaller e-value. In addition, we took into account their order of occurrence on the sequence. We assigned a Pfam annotation to 44% of the initial ~322 million genes (Table 1).
 
+<br />
+<br />
+
 
 | Original dataset | Annotated ORFs | Not-annotated ORFs |
 | :--------------: | :------------: | :----------------: |

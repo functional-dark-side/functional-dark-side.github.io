@@ -6,10 +6,15 @@ title: Gene prediction
 We used the official assemblies from the metagenomic projects TARA, OSD2014, Malaspina, HMP-I/II and GOS to test our approach. We used Prodigal (v2.6.3) [1] in metagenomic mode to predict the genes from the metagenomic dataset. We identified potential spurious genes using the AntiFam database. Furthermore, we screened for 'shadow' genes using the procedure described in Yooseph et al. [2]
 
 {% include callout.html content="- For more information regarding the identification of spurious and shadow genes, check [here](spurious-shadow-genes.md). <br />- A description of the data used for the manuscript can be found [here](data)." type="primary" %}
-  
+
+<br />
+<br />
+
 We identified a total of 322,248,552 predicted ORFs in total for the metagenomic dataset (Table 1) and 93,723,190 genes for GTDB (Table 2).
 
-<p></p>
+
+<br />
+<br />
 
 
 | Data set  | Number of contigs | Number of genes |
@@ -26,6 +31,8 @@ We identified a total of 322,248,552 predicted ORFs in total for the metagenomic
 
 
 <br />
+<br />
+
 
 We compiled the gene completion for the metagenomic dataset (Table 2). Where **00** is a complete gene with both start and stop codon identified; **01** has the right boundary incomplete; **10** has the left boundary incomplete; and **11** when both left and right edges are incomplete.
 
