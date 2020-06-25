@@ -149,6 +149,7 @@ We investigated the distribution in the human and marine (TARA and Malaspina) me
 *Gracilibacteria* are particularly poorly understood microorganisms, due mostly to undersampling and the incompleteness of the available genomes. The first genome was retrieved in a hydrothermal vent environment in the deep sea ([[10]](#10). Was then also identified in an oil degrading community [[10]](#10)[[11]](#11) and as a part of the oral microbiome [[12]](#12). As shown in the figure below, panel b), we found both known and unknown lineage-specific clusters in this class, distributed in both human and marine metagenomes. We observe 3 clusters of unknowns only seen in the HMP, they could represent a nice target for human-health study, since *Gracilibacteria* was found enriched in healthy individuals. There are then lineage-specific clusters of knowns and unknowns only specific to the marine environment. In general these data can now lead to the generation of hypotheses and open the way for further/new investigations.
 In the context of this paper we want to use the example of *Gracilibacteria* to show the potential of our approach, which brings/leads to a unification of the KNOWN and UNKNOWN functional space and it can be used indifferently to explore both metagenomic and genomic data.
 
+
 <div class="img_container" style="width:90%; margin:2em auto;">
 
 <img alt="Phylo_analysis_bac_patesci.png" src="/img/Phylo_analysis_bac_patesci.png" width="80%" height="" >
@@ -156,6 +157,8 @@ In the context of this paper we want to use the example of *Gracilibacteria* to 
 *Patescibacteria metagenomic lineage specific clusters. a) Phylogenetic tree of Patescibacteria genera, grouped/colored by classes. The heatmaps around the tree show the proportion of lineage specific cluster of knowns and unknowns in the metagenomes from TARA, Malaspina and the HMP. b) Metagenomic lineage specific clusters in the class of Gracilibacteria.*
 
 </div>
+
+The Patescibacteria (CPR) lineage-specific gene clusters analysed in the above section can be found in Figshare in [agnostosDB_dbf02445-20200519_CPR-GCs](https://figshare.com/account/projects/82241/articles/12562676).
 
 <br>
 

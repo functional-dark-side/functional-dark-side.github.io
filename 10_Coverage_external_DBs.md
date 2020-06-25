@@ -26,7 +26,7 @@ The 0.7% of the clusters in our database cover 60% of the FUnkfams.
 
 | FUnkfams genes |  FUnkfams   |   Clusters    |
 |:--------------:|:-----------:|:-------------:|
-|     38,174     | 3,975 (60%) | 19,478 (0.7%) |
+|  38,174 (62%)  | 3,975 (60%) | 19,478 (0.7%) |
 
 </div>
 
@@ -61,7 +61,7 @@ We found 49% of the viral PCs in our clusters. And, as shown in the category dis
 
 | POV genes |   viral PCs   |   Clusters    |
 |:---------:|:-------------:|:-------------:|
-| 2,104,063 | 222,162 (49%) | 674,948 (23%) |
+| 2,104,063 (50%) | 222,162 (49%) | 674,948 (23%) |
 
 </div>
 
@@ -92,7 +92,8 @@ The large majority (70%) of the TOV dataset is covered in our cluster database a
 
 | TOV genes |    TOV PCs    |    Clusters     |
 |:---------:|:-------------:|:---------------:|
-| 5,481,108 | 753,558 (70%) | 1,023,061 (34%) |
+| 5,481,108 (82%) | 753,558 (70%) | 1,023,061 (34%) |
+
 
 </div>
 
@@ -232,9 +233,9 @@ Our cluster database covered 48% of the EBI MGY clusters.
 
 *EBI-MGY vs Clusters search results*
 
-|   Mgy ORFs    |   Mgy clusters   |    Clusters     |
-|:-------------:|:----------------:|:---------------:|
-| 4,065,229,104 | 97,435,318 (48%) | 2,626,472 (89%) |
+|     Mgy ORFs      |   Mgy clusters   |    Clusters     |
+|:-----------------:|:----------------:|:---------------:|
+| 623,063,480 (74%) | 97,435,318 (48%) | 2,626,472 (89%) |
 
 </div>
 
