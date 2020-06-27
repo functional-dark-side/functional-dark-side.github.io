@@ -158,7 +158,7 @@ In the context of this paper we want to use the example of *Gracilibacteria* to 
 
 </div>
 
-The Patescibacteria (CPR) lineage-specific gene clusters analysed in the above section can be found in Figshare in [agnostosDB_dbf02445-20200519_CPR-GCs](https://figshare.com/account/projects/82241/articles/12562676).
+The Patescibacteria (CPR) lineage-specific gene clusters analysed in the above section can be found in Figshare in [agnostosDB_dbf02445-20200519_CPR-GCs](https://doi.org/10.6084/m9.figshare.12562676).
 
 <br>
 
