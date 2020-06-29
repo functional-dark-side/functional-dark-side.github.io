@@ -22,13 +22,14 @@ To aggregate the clusters, we performed a community identification using the Mar
 The best inflation value corresponds to the radar plot with the largest area. Once determined the best inflation value, we added the missing clusters (nodes) to the MCL communities. We then used coverage, probability and Score/aligned-columns from the profile-vs-profile search results to find the best hits in a three-step approach: First, we checked if any of the not assigned clusters had any homology to the just classified ones using more relaxed filtering thresholds for the profile search results (probability ≥ 50% and coverage > 40%) and keeping just the best hits. Second, we found secondary relationships between the newly assigned clusters and the missing ones. And third, we ran the MCL algorithm on the missing clusters, using the identified best inflation value and we created new MCL communities.
 In the end, we collected and aggregated all communities. We repeated the whole process for the other categories (KWPs, GUs and EUs), with the exception that at the end we selected and applied the optimal inflation value found for the Ks.
 
-<div class="img_container" style="width:60%; margin:2em auto;">
+<div class="img_container" style="width:80%; margin:2em auto;">
 
-<img alt="k_partition_stats_eval_plot_red.png" src="/img/k_partition_stats_eval_plot_red.png" width="80%" heigth="">
+<img alt="GCC_inference.png" src="/img/GCC_inference.png" width="80%" heigth="">
 
 *Radar plots used to determine the best MCL inflation value for the partitioning of the Ks into cluster components. The plots were built using a combination of five variables: 1=proportion of clusters with 1 component and 2=proportion of clusters with more than 1 member, 3=clan entropy (proportion of clusters with entropy = 0), 4=intra hhblits score-per-column (normalised by the maximum value), and 5=number of clusters (related to the non-redundant set of DAs).*
 
 </div>
+
 
 **Scripts:** [community_inference](scripts/Cluster_communities/community_inference).
 
@@ -40,6 +41,23 @@ Usage:
 
 We found that a large proportion of Ks exhibited domain architecture redundancy between clusters. This may have been caused by the limitations of the clustering method used (based on sequence similarity) to detect distant homologies and the final threshold selected (30% of similarity). An inherent property of metagenomic data is that a large proportion of ORFs are fragmented. Therefore many of the DAs observed in the KNOWN space are part of fragmented ORFs which could be part of a larger DAs of another complete/partial ORF. To minimise this, we identified DAs that could be part of a larger ones. In our dataset, we had 29,341 different domain architectures, that after the filtering and collapsing steps were reduced to 23,681 different DAs.
 We determined an optimal inflation value of 2.2, corresponding to the radar plot with the largest area (Figure above), which is in agreement with the value empirically determined to be the optimal [[2]](#2) (and close the software default of 2). The inference led to a set of 283,314 communities out of ~2.9M clusters. The numbers for each category are shown in the table below:
+
+<div class="img_container" style="width:60%; margin:2em auto;">
+
+<img alt="k_partition_stats_eval_plot_red.png" src="/img/k_partition_stats_eval_plot_red.png" width="90%" heigth="">
+
+*Overview of the workflow to aggregate GCs in communities. We inferred a gene cluster homology network using the results of an all-vs-all HMM gene cluster comparison with HHBLITS. The edges of the network are based on the HHblits-score/Aligned-columns. Communities are identified by an iterative screening of different MCL inflation parameters and evaluated using five different metrics that take into account the inter- and intra-community properties.*
+
+</div>
+
+<div class="img_container" style="width:80%; margin:2em auto;">
+
+<img alt="GCC_res_numbers.png" src="/img/GCC_res_numbers.png" width="90%" heigth="">
+
+*Comparison of the number of GCs and GCCs for each of the functional categories.*
+
+</div>
+
 
 <div class="img_container" style="width:90%; margin:2em auto;">
 
@@ -83,11 +101,13 @@ Olson et al. [[3]](#3) phylogenetically analysed PRs in the sunlit ocean and gro
 
 <div class="img_container" style="width:80%; margin:2em auto;">
 
-<img alt="alluvial_PR.png" src="/img/alluvial_PR.png" width="80%" height="" >
+<img alt="GCC_val_proteor.png" src="/img/GCC_val_proteor.png" width="90%" height="" >
 
-*Cluster communities distribution within the microbial rhodopsin phylogeny.*
+*Validation of the GCCs inference based on the environmental genes annotated as proteorhodopsins. Ribbons in the alluvial plot are genes, and each stacked bar corresponds (from left to right) to the (1) gene taxonomic classification at domain level, (2) GC membership, (3) GCC membership and (4) MicRhoDE operational classification.*
 
 </div>
+
+<br>
 
 <div class="img_container" style="width:50%; margin:2em auto;">
 
@@ -101,23 +121,13 @@ Olson et al. [[3]](#3) phylogenetically analysed PRs in the sunlit ocean and gro
 </div>
 
 The distribution of the cluster communitites among 16 bacterial ribosomal protein families reflects the fragmented nature of metagenoic data.
-Because ribosomal proteins are highly conserved, we expect one protein family per ribosomal subunit. However, we observe the same ribosomal protein falling in different communities, as shown in the following figure and this is likely due to the fragmented nature of metagenomic ORFs.
+Because ribosomal proteins are highly conserved, we expect one protein family per ribosomal subunit. However, we observe the same ribosomal protein falling in different communities and this is likely due to the fragmented nature of metagenomic ORFs. In fact, this effect almost disappear when we subset for the communities containing only [HQ clusters](8.1_Cluster_categories_overview) (high percentage of complete ORFs), as shown in the next figure:
 
 <div class="img_container" style="width:50%; margin:2em auto;">
 
-<img alt="alluvial_ribo_all.png" src="/img/alluvial_ribo_all.png" width="90%" height="" >
+<img alt="GCC_val_ribo.png" src="/img/GCC_val_ribo.png" width="90%" height="" >
 
-*Ribosomal protein distribution in our cluster communties.*
-
-</div>
-
-In fact, this effect almost disappear when we subset for the communities containing only [HQ clusters](8.1_Cluster_categories_overview) (high percentage of complete ORFs), as shown in the next figure:
-
-<div class="img_container" style="width:50%; margin:2em auto;">
-
-<img alt="alluvial_ribo_hq.png" src="/img/alluvial_ribo_hq.png" width="90%" height="" >
-
-*Ribosomal protein distribution in HQ cluster communities.*
+*Validation of the GCCs inference based on ribosomal proteins based on standard and high-quality GCs.*
 
 </div>
 
@@ -131,6 +141,7 @@ In fact, this effect almost disappear when we subset for the communities contain
 | HQ clusters  |  1,687  |   145    |     26      |
 
 </div>
+
 
 
 
@@ -174,6 +185,27 @@ The clustering approach proposed in this paper was compared to the method used b
 | NVI |             0.101              |               0.0858               |                0.124                 |
 | NID |             0.0717             |               0.0841               |                0.122                 |
 | NMI |             0.928              |               0.916                |                0.878                 |
+
+
+</div>
+
+
+<div class="img_container" style="width:80%; margin:2em auto;">
+
+<img alt="hmm_comp1.png" src="/img/hmm_comp1.png" width="80%" height="" >
+
+*Cluster pairs distribution based on the metrics used to weight the gene cluster HMM-HMM homology network. (A) HHblits-Score/Aligned-columns (Vanni et al.). (B) maximum(HHblits-probability x coverage) (Méheust et al.).*
+
+</div>
+
+
+<div class="img_container" style="width:80%; margin:2em auto;">
+
+<img alt="hmm_comp2.png" src="/img/hmm_comp2.png" width="80%" height="" >
+
+*Determination of the edge-weight metrics for the GC HMM-HMM homology network. We tested the metrics used in Méheust et al. and in this paper (Vanni et al.). The correlations between metrics are shown per functional category. The metric used by Méheust et al. corresponds to the maximum(HHblits-probability x coverage). The metric applied in this paper is the HHblits-Score/Aligned-columns. (A) Correlation between the Méheust et al. metric and the HHblits-probability. (B) Correlation between the Vanni et al. metric and the HHblits-probability. (C) Correlation between the Vanni et al. and the Méheust et al. metrics.*
+
+</div>
 
 
 <br>
