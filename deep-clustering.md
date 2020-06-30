@@ -19,7 +19,7 @@ We clustered the metagenomic predicted genes using the cascaded-clustering workf
 <br />
 <br />
 
-We used a broken-stick model approach to identi
+We used a broken-stick model approach to identify the size of the cluster to keep
 
 ![img/MG_cluster_size_threshold.png](img/MG_cluster_size_threshold.png#center){:height="50%" width="50%" align="center"} 
 **Figure 1.** Cluster size distribution. The red line indicates the "breaking point" of the distribution, which corresponds to clusters of ~10 ORFs.
