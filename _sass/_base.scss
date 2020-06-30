@@ -66,6 +66,11 @@ p {
     color: $theme-primary;
 }
 
+.bg-red {
+    background-color: $theme-dark;
+    color: #E85A5B;
+}
+
 .text-faded {
     color: rgba(white, 0.7);
 }
