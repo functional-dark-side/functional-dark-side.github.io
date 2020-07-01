@@ -32,3 +32,11 @@ For more details about the used data, the workflow methods and results, visit ou
 
 ### The agnostos workflow
 The agnostos snakemake workflow can be found [here](https://github.com/functional-dark-side/agnostos-wf).
+
+* * *
+
+### Citation
+
+**Light into the darkness: Unifying the known and unknown coding sequence space in microbiome analyses**
+Chiara Vanni, Matthew Schechter, Silvia Acinas, Albert Barberán, Pier Luigi Buttigieg, Emilio O Casamayor, Tom O Delmont, Carlos M Duarte, A Murat Eren, Rob Finn, Alex Mitchell, Pablo Sanchez, Kimmo Siren, Martin Steinegger, Frank Oliver Glöckner, Antonio Fernandez-Guerra
+bioRxiv 2020.06.30.180448; doi: https://doi.org/10.1101/2020.06.30.180448
