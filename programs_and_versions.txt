@@ -1,0 +1,30 @@
+List of all programs utilised and their version:
+
+Prodigal - version 2.6.3
+HMMER - version 3.1b2
+MMSeqs2 - version 5fcc48fbf4f6697e73e1e2a4b3f53c6cdf87e8f1
+Parasail - version 2.1.5
+Famsa - version 1.1
+LEON-BIS - version 1.0
+OD-SEQ - version 1.0
+HH-suite - version 3
+hhblits - version 3.0.3
+MMSeqs2 taxonomy program - version b43de8b7559a3b45c8e5e9e02cb3023dd339231a
+CD-HIT - version 4.6
+RaxML - version 8.2.12
+Papara - version 2.5
+pplacer - version v1.1.alpha19-0-g807f6f3
+SEQKIT - version 0.10.1
+EPA-NG modeltest-ng - version 0.3.5
+Taxtastic - version 0.8.9
+BWA mapper - version 0.7.12
+BEDTOOLS - version 2.23.0
+MCL - version 12.068
+seqkit - version 0.7.2
+seqtk - version 1.2-r102-dirty
+bbmap - version 35.14
+openmpi - version 1.8.1
+datamash - version 1.3
+ripgrep - version 0.10.0
+parallel - version 20200122
+igraph - version 0.7.1
