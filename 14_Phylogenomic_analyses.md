@@ -43,12 +43,12 @@ We found 15% of clusters with a significant (P<0.05) [[2]](#2) non-random distri
 
 | Category | Type of GCs  | Number of GCs |
 | -------- |:------------:|:-------------:|
-| Known    |     All      |    239,094    |
-| Known    | Non-specific |    205,985    |
-| Known    |   Specific   |    33,109     |
-| Unknown  |     All      |    226,054    |
-| Unknown  | Non-specific |    147,286    |
-| Unknown  |   Specific   |    78,768     |
+| Known    |     All      |    238,861    |
+| Known    | Non-specific |    205,919    |
+| Known    |   Specific   |    32,942     |
+| Unknown  |     All      |    226,062    |
+| Unknown  | Non-specific |    147,443    |
+| Unknown  |   Specific   |    78,619     |
 
 Similar results are observed for the archaea tree.
 
@@ -67,17 +67,17 @@ Similar results are observed for the archaea tree.
 
 | Category | Type of GCs  | Number of GCs |
 | -------- |:------------:|:-------------:|
-| Known    |     All      |    19,669     |
-| Known    | Non-specific |    17,405     |
-| Known    |   Specific   |     2,264     |
-| Unknown  |     All      |    15,187     |
-| Unknown  | Non-specific |     9,497     |
-| Unknown  |   Specific   |     5,690     |
+| Known    |     All      |    19,693     |
+| Known    | Non-specific |    17,445     |
+| Known    |   Specific   |     2,248     |
+| Unknown  |     All      |    15,200     |
+| Unknown  | Non-specific |     9,535     |
+| Unknown  |   Specific   |     5,665     |
 
 
 -   **Lineage-specificity analysis results:**
 
-Lineage-specific clusters were found at both broad taxonomic levels (e.g. Phylum, Order) and narrow taxonomic levels (e.g. class and family). However, as we can see in Figure 4a, we observe a trend in which lineage-specific protein families increase in frequency from higher (e.g. phylum) to lower (e.g. species) taxonomic levels. At higher resolution we observed a majority of lineage-specific unknowns. This suggests that the diversification process at this high resolution levels is mainly guided by family of unknowns functions, probably with an adaptive potential. Although lineage-specific families are relatively rare at high taxonomic levels, these cases often represent ancient, clade-defining bacterial innovations. We found 36 phylum- and 423 class-specific GUs that can be potential candidates to hypothesize clade diversification.
+Lineage-specific clusters were found at both broad taxonomic levels (e.g. Phylum, Order) and narrow taxonomic levels (e.g. class and family). However, as we can see in Figure 4a, we observe a trend in which lineage-specific protein families increase in frequency from higher (e.g. phylum) to lower (e.g. species) taxonomic levels. At higher resolution we observed a majority of lineage-specific unknowns. This suggests that the diversification process at this high resolution levels is mainly guided by family of unknowns functions, probably with an adaptive potential. Although lineage-specific families are relatively rare at high taxonomic levels, these cases often represent ancient, clade-defining bacterial innovations. We found 35 phylum- and 421 class-specific GUs that can be potential candidates to hypothesize clade diversification.
 
 **Bacteria**
 
@@ -87,22 +87,19 @@ Lineage-specific clusters were found at both broad taxonomic levels (e.g. Phylum
 
 | Category | Domain | Phylum | Class | Order | Family |  Genus  | Species |
 |:--------:|:------:|:------:|:-----:|:-----:|:------:|:-------:|:-------:|
-|    K     |   8    |   24   |  445  | 1,536 | 12,903 | 40,959  | 66,377  |
-|   KWP    |   0    |   2    |  19   |  54   |  959   |  8,712  | 33,225  |
-|    GU    |   10   |   36   |  423  | 2,378 | 28,197 | 169,885 | 377,760 |
-|    EU    |   0    |   1    |   7   |  55   |  599   |  7,080  | 30,488  |
+|    K     |   8    |   22   |  444  | 1,532 | 12,847 | 40,914  | 66,375  |
+|   KWP    |   0    |   2    |  19   |  54   |  955   |  8,707  | 33,225  |
+|    GU    |   10   |   35   |  421  | 2,366 | 28,106 | 169,788 | 377,755 |
+|    EU    |   0    |   1    |   7   |  55   |  599   |  7,080  | 30,487  |
 
 </div>
 
+
 <div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="Lineage_spec_bac.png" src="/img/Lineage_spec_bac.png" width="80%" height="" >
+<img alt="bac_rank_ls_clusters.png" src="/img/bac_rank_ls_clusters.png" width="80%" height="" >
 
 *Number of lineage specific clusters as a function of the relative evolutionary divergence (RED) in the context of the GTDB bacteria tree.*
-
-<img alt="Lineage_spec_bac_barplot.png" src="/img/Lineage_spec_bac_barplot.png" width="50%" height="" >
-
-*Number of lineage specific clusters at each taxonomic level, divided by cluster categories.*
 
 </div>
 
@@ -112,21 +109,17 @@ Lineage-specific clusters were found at both broad taxonomic levels (e.g. Phylum
 
 | Category | Domain | Phylum | Class | Order | Family | Genus  | Species |
 |:--------:|:------:|:------:|:-----:|:-----:|:------:|:------:|:-------:|
-|    K     |   0    |   4    |  16   |  210  | 1,233  | 3,032  |  4,485  |
-|   KWP    |   0    |   0    |   0   |   8   |   82   |  413   |  1,753  |
-|    GU    |   0    |   1    |  25   |  377  | 2,915  | 12,482 | 18,697  |
+|    K     |   0    |   4    |  15   |  208  | 1,210  | 3,032  |  4,485  |
+|   KWP    |   0    |   0    |   0   |   8   |   81   |  413   |  1,753  |
+|    GU    |   0    |   1    |  25   |  376  | 2,895  | 12,472 | 18,697  |
 |    EU    |   0    |   0    |   0   |   2   |   42   |  494   |  2,305  |
 
 
 <div class="img_container" style="width:60%; margin:2em auto;">
 
-<img alt="Lineage_spec_arc.png" src="/img/Lineage_spec_arc.png" width="80%" height="" >
+<img alt="arc_rank_ls_clusters.png" src="/img/arc_rank_ls_clusters.png" width="80%" height="" >
 
 *Number of lineage specific clusters as a function of the relative evolutionary divergence (RED) in the context of the GTDB archaea tree.*
-<br>
-<img alt="Lineage_spec_arc_barplot.png" src="/img/Lineage_spec_arc_barplot.png" width="50%" height="" >
-
-*Number of lineage specific clusters at each taxonomic level, divided by cluster categories.*
 <br>
 
 </div>

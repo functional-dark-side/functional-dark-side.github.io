@@ -21,7 +21,7 @@ lo_env <- new.env()
 # All GTDB ORFs, included those in MG clusters (3,270,101 clusters, and 75,297,319 ORFs)
 lo_env$cl_data <-
   fread(
-    "mg_gtdb_kept_cluster_genome_orf_categ.tsv.gz",
+    "/vol/scratch/gtdb/mg_gtdb_kept_cluster_genome_orf_categ.tsv.gz",
     header = FALSE,
     col.names = c(
       "genome",
@@ -33,18 +33,18 @@ lo_env$cl_data <-
 
 # GTDB contextual data (the example is for bacterial genomes, same data are available also for the archaea)
 gtdb_cdata <-
-  fread("gtdb_data/bac_metadata_r86.tsv", #"gtdb_data/arc_metadata_r86.tsv"
+  fread("gtdb_data/arc_metadata_r86.tsv", #"gtdb_data/bac_metadata_r86.tsv"
         header = TRUE,
         sep = "\t")
 
 # GTDB tree
-tree <- read.tree("gtdb_data/gtdb_r86_bac.tree") #"gtdb_data/gtdb_r86_ar.tree"
+tree <- read.tree("gtdb_data/gtdb_r86_ar.tree") #"gtdb_data/gtdb_r86_bac.tree"
 node_depths <- node.depth.edgelength(tree)
 
 # GTDB taxonomy
 gtdb_tax <-
   read.delim(
-    "gtdb_data/bac_taxonomy_r86.tsv", #"gtdb_data/arc_taxonomy_r86.tsv"
+    "gtdb_data/arc_taxonomy_r86.tsv", #"gtdb_data/bac_taxonomy_r86.tsv"
     row.names = NULL,
     header = FALSE,
     col.names = c("genome", "taxonomy_string")
@@ -80,8 +80,7 @@ get_level_index <- function(level) {
 leaf_counts <-
   setNames(sapply(prop.part(tree), length), 1:tree$Nnode)
 
-node_tax_levels <- tax_levels.tree(tree, gtdb_tax)
-node_tax_levels <- read_tsv("gtdb_data/node_tax_levels_bac_r86.tsv", col_names = TRUE) #"gtdb_data/node_tax_levels_arc_r86.tsv"
+node_tax_levels <- read_tsv("gtdb_data/node_tax_levels_arc_r86.tsv", col_names = TRUE) #"gtdb_data/node_tax_levels_bac_r86.tsv"
 tax_levels <-
   c(
     d = "Domain",
@@ -129,13 +128,11 @@ all.equal((lo_env$cl_data$genome %>% unique() %>% sort),
 
 cl_to_keep <- lo_env$cl_data %>%
   dt_filter(categ != "NO_HIT") %>%
-  unite(cl_name, c( "categ", "cl_name"), remove = TRUE) %>%
   dt_summarise(nobs = .N, by = cl_name) %>%
   dt_filter(nobs >= 1)
 
 cl_data_kept <-
   lo_env$cl_data %>%
-  unite(cl_name, c( "categ", "cl_name"), remove = TRUE) %>%
   dt_filter(cl_name %in% cl_to_keep$cl_name) %>%
   dt_summarise(n = .N, by = list(genome, cl_name))
 
@@ -240,13 +237,13 @@ get_f1 <- function(x) {
 
   names(tauD) <- colnames(tmp)
 
-  tauD <- map_dfr(tauD, `[`, c("mean_depth", "var_depth", "var_depth", "max_depth", "P", "mean_random_depth"), .id = "cl_name")
+  tauD <- map_dfr(tauD, `[`, c("mean_depth", "var_depth", "min_depth", "max_depth", "P", "mean_random_depth"), .id = "cl_name")
 
   results <- f1scores.max.cl %>%
     as_tibble(rownames = "cl_name") %>%
+    mutate(f1_score = round(f1_score, 6)) %>%
     inner_join(tauD) %>%
-    as.data.frame() %>%
-    column_to_rownames("cl_name")
+    rename(trait = cl_name)
   message("done...")
   return(results)
 }
@@ -255,7 +252,7 @@ get_f1 <- function(x) {
 library(batchtools)
 # Create the job registry
 reg_dir_f1 <- file.path(getwd(), paste(format(Sys.Date()), format(Sys.time(), "%H%M%S"), sep = "-"))
-reg_data_f1 <- makeRegistry(reg_dir_f1, seed=123, conf.file = "~/.batchtools.conf.R")
+reg_data_f1 <- makeRegistry(reg_dir_f1, seed=123, conf.file = ".batchtools.conf.R")
 # Define number of jobs (here 4)
 Njobs <- 1:length(list_cls)
 ids <- batchMap(fun=get_f1, x=Njobs)
@@ -279,14 +276,19 @@ done <- submitJobs(ids,
 )
 waitForJobs(reg = reg_data_f1) # Wait until jobs are completed
 getStatus(reg = reg_data_f1) # Summarize job status
-f1scores.max.cl <- do.call("rbind", lapply(Njobs, loadResult, reg = reg_data_f1))
-saveRDS(f1scores.max.cl, "f1scores.max.cl.RDS", compress = FALSE)
+f1scores.max.cl <- map_dfr(Njobs, loadResult, reg = reg_data_f1) %>% as_tibble()
+
+write_tsv(
+  f1scores.max.cl,
+   "new_results/max_f1_scores_per_node.gtdb_arc_r86.tsv"
+)
 saveRegistry(reg = reg_data_f1)
 
 # Make a descriptive table with F1 scores and taxonomic info
 get_lineages <- function(x) {
+  library(tidyverse)
   source("phylo_functions.R")
-  lineage_string <- lapply(list_nodes[[x]], function(X){
+  map_dfr(list_nodes[[x]], function(X){
     node_index <- X
     node_lineage_vec <- node_tax_levels[match(node_index,
                                               node_tax_levels$node_index),
@@ -295,15 +297,15 @@ get_lineages <- function(x) {
     names(node_lineage_vec) <-
       colnames(node_tax_levels)[2:ncol(node_tax_levels)]
     lineage_string <- vector2lineage_string(node_lineage_vec)
-    return(lineage_string)
+    return(tibble(node_index = node_index, lineage = lineage_string))
   })
-  return(do.call("rbind",lineage_string))
 }
 
 reg_dir_lin <- file.path(getwd(), paste(format(Sys.Date()), format(Sys.time(), "%H%M%S"), sep = "-"))
-reg_data_lin <- makeRegistry(reg_dir_lin, seed=123, conf.file = "~/.batchtools.conf.R")
+reg_data_lin <- makeRegistry(reg_dir_lin, seed=123, conf.file = ".batchtools.conf.R")
 
-list_nodes <- split(f1scores.max.cl$node_index, (seq(length(f1scores.max.cl$node_index)) - 1) %/% 1e4)
+node_indices <- f1scores.max.cl$node_index %>% unique()
+list_nodes <- split(node_indices, (seq(length(node_indices)) - 1) %/% 1e4)
 # Define number of jobs (here 4)
 Njobs <- 1:length(list_nodes)
 ids <- batchMap(fun=get_lineages, x=Njobs, reg = reg_data_lin)
@@ -325,88 +327,66 @@ done <- submitJobs(ids,
 waitForJobs(reg = reg_data_lin) # Wait until jobs are completed
 getStatus(reg = reg_data_lin) # Summarize job status
 
-cl_lineages <- do.call("rbind", lapply(Njobs, loadResult, reg = reg_data_lin))
+cl_lineages <- map_dfr(Njobs, loadResult, reg = reg_data_lin)
 
-f1score.out_table.cl <-
-  cbind(
-    trait = rownames(f1scores.max.cl),
-    lineage = cl_lineages %>% unlist(),
-    f1scores.max.cl,
-    stringsAsFactors = FALSE
-  )
-rownames(f1score.out_table.cl) <- NULL
-f1score.out_table.cl <-
-  f1score.out_table.cl[order(-f1score.out_table.cl$f1_score),]
-write.table(
+f1score.out_table.cl <- f1scores.max.cl %>%
+  inner_join(cl_lineages) %>%
+  arrange(desc(f1_score))
+
+write_tsv(
   f1score.out_table.cl,
-  "f1scores.gtdb_bac_r86.cl.tsv", #  "f1scores.gtdb_arc_r86.cl.tsv"
-  quote = FALSE,
-  sep = "\t",
-  row.names = FALSE
+  "new_results/f1_scores.gtdb_arc_r86.tsv"
 )
 
-# We want clusters that are present in less than half of all genomes and in at
-# least 2 with F1 score > 0.95
-tax_lineages_for_plotting.cl <- as.character(unlist(
-  subset(
-    f1score.out_table.cl,
-    n_present_tips.phylo < length(tree$tip.label) / 2 &
-      n_present_tips.phylo > 1 &
-      f1_score > 0.95,
-    select = lineage
-  )
-))
 
-
-get_rank <- function(lineage) {
-  lineage_vector <- strsplit(lineage, split = "__|;")[[1]]
-  lowest_rank <- lineage_vector[length(lineage_vector)]
-  lowest_level <-
-    tax_levels[lineage_vector[length(lineage_vector) - 1]]
-  return(lowest_rank)
-}
-
-get_level <- function(lineage) {
-  lineage_vector <- strsplit(lineage, split = "__|;")[[1]]
-  lowest_rank <- lineage_vector[length(lineage_vector)]
-  lowest_level <-
-    tax_levels[lineage_vector[length(lineage_vector) - 1]]
-  return(lowest_level)
-}
-
-#################################################
-## Plots
-#################################################
-# Plot lineage specific on tree -------------------------------------------
-f1score.out_table.cl_filt <- f1score.out_table.cl %>% as_tibble() %>%
+f1score.out_table.cl_filt <- f1score.out_table.cl %>%
+  as_tibble() %>%
   filter(
-    n_present_tips.phylo < length(tree$tip.label) / 2 &
-      n_present_tips.phylo > 1 &
-      f1_score > 0.95
+   (n_present_tips.phylo < (length(tree$tip.label) / 2)),
+      (n_present_tips.phylo > 1),
+      (f1_score > 0.95)
   )
 
-f1 <- f1score.out_table.cl_filt %>%
-  inner_join(f1score.out_table.cl_filt %>% select(lineage) %>%
-               unique() %>%
-               rowwise() %>%
-               mutate(lowest_rank = get_rank(as.character(lineage)),
-                      lowest_level = get_level(as.character(lineage)))) %>%
+get_rank_level <- function(lineage) {
+  lineage_vector <- strsplit(lineage, split = "__|;")[[1]]
+  lowest_rank <- lineage_vector[length(lineage_vector)]
+  lowest_level <-
+    tax_levels[lineage_vector[length(lineage_vector) - 1]]
+  return(tibble(lineage = lineage, lowest_rank = lowest_rank, lowest_level = lowest_level))
+}
+
+f1score.out_table.cl_filt_rank_level <- pmap_dfr(f1score.out_table.cl_filt %>%
+                                                   select(lineage) %>%
+                                                   distinct(), get_rank_level)
+
+f1score.out_table.cl_filt_lowest_rank_level <- f1score.out_table.cl_filt %>%
+  inner_join(f1score.out_table.cl_filt_rank_level) %>%
   separate(
     trait,
     into = "categ",
     sep = "_",
     remove = F,
     extra = "drop"
-  ) %>%
-  mutate(categ = fct_relevel(categ, rev(c("K", "KWP", "GU", "EU"))),
-         lowest_level = fct_relevel(lowest_level, tax_levels))
+  )
 
-save(
-  f1score.out_table.cl,
-  tree,
-  gtdb_tax,
-  f1,
-  cl_annotation_plot.df,
-  tax_levels,
-  file = "gtdb_bac_r86_plot.Rda"  #"gtdb_arc_r86_plot.Rda"
+write_tsv(
+  f1score.out_table.cl_filt_lowest_rank_level,
+  "new_results/filtered_f1_scores_lowest_levels_ranks.gtdb_arc_r86-1.tsv"
 )
+nrow(f1score.out_table.cl_filt_lowest_rank_level)
+read_tsv("new_results/filtered_f1_scores_lowest_levels_ranks.gtdb_arc_r86-1.tsv") %>% nrow()
+
+write_tsv(
+  f1score.out_table.cl_filt,
+  "new_results/filtered_f1_scores.gtdb_arc_r86-1.tsv"
+)
+
+# save(
+#   f1score.out_table.cl,
+#   tree,
+#   gtdb_tax,
+#   f1,
+#   cl_annotation_plot.df,
+#   tax_levels,
+#   file = "new_results/gtdb_arc_r86_plot.Rda"  #"gtdb_bac_r86_plot.Rda"
+# )
