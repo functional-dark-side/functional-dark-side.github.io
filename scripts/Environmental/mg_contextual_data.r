@@ -235,7 +235,7 @@ dbWriteTable(conn = db, name = "GOS_contex", value = GOS_contexual_data)
 dbWriteTable(conn = db, name = "HMP_contex", value = HMP_contexual_data)
 
 # Query and modify SQL database
-db <- dbConnect(SQLite(), dbname = "~/Desktop/MarMic/msc_thesis/matt_msc/databases/contextual_data.db")
+db <- dbConnect(SQLite(), dbname = "data/env_contextual_data/contextual_data.db")
 # SQL query to make new table within the db
 dbFetch(dbSendQuery(db, "CREATE TABLE mg_contextual_data_all AS
   SELECT sample_ID, project, longitude, latitude, ecoregion, province, depth, temperature, salinity FROM OSD_contex UNION
@@ -312,7 +312,7 @@ stat_percentile_xlab <- function(mapping = NULL, data = NULL, geom = "text",
 ​# Create the final set of sample to use for the environmental analyses
 #######################################################################
 # Get assemblies
-HMP1_I_assm <- read_csv("~/Downloads/HMASM.csv") %>%
+HMP1_I_assm <- read_csv("data/env_contextual_data/HMASM.csv") %>%
   select(1:2) %>%
   setNames(c("label", "body_site"))
 ​
@@ -331,7 +331,7 @@ HMP_qc <- read_tsv("data/env_contextual_data/HMP_qc_passed.txt", col_names = FAL
 # Get all cdata
 # HMP1-I date = 2011
 # HMP1-II date = 2014
-HMP_cdata <- read_csv("~/Downloads/HMP_phase2017_cdata.txt", col_names = FALSE) %>%
+HMP_cdata <- read_csv("data/env_contextual_data/HMP_phase2017_cdata.txt", col_names = FALSE) %>%
   mutate(phase = case_when(grepl("2011", X8) ~ "HMP1-I",
                            TRUE ~ "HMP1-II")) %>%
   select(X1, phase) %>% rename(label = X1)

@@ -17,7 +17,7 @@ samples_analyses <- sample_list %>%
 
 # Read cluster data
 # both tables are in data/cluster_categories
-gCl_smpl <- fread("cl_abund_smpl_grouped.tsv.gz", stringsAsFactors = F, header = F) %>%
+gCl_smpl <- fread("marine_hmp_cluster_abundance_smpl_grouped.tsv.gz", stringsAsFactors = F, header = F) %>%
   setNames(c("gCl_name","sample_id","abund","categ")) %>%
   dt_filter(sample_id %in% samples_analyses$label) %>%
   mutate(gCl_name = as.character(gCl_name))

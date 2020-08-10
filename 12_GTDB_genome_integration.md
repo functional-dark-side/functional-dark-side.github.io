@@ -420,7 +420,7 @@ As for the metagenomic cluster database, we retrieved the genomic "High Quality"
 |          |      K      |     KWP     |      GU     |      EU     |      Total      |
 |----------|:-----------:|:-----------:|:-----------:|:-----------:|:---------------:|
 | Clusters | 1,667,510   |   768,859   | 2,647,359   |   204,031   |  **5,287,759**  |
-| ORFs     | 232,895,994 | 32,930,286  | 68,757,918  |  3,541,592  | **338,125,790** |
+| ORFs     | 230,641,766 | 32,754,365  | 68,509,335  |  3,534,207  | **335,439,673** |
 
 </div>
 
@@ -520,7 +520,7 @@ The GTDB singletons appeared to be mostly GUs and PGUs.
 
 <div class="img_container" style="width:95%; margin:2em auto;">
 
-|      K       |      KWP      |       GU        |       PGU        |
+|      K       |      KWP      |       GU        |       EU        |
 |:------------:|:-------------:|:---------------:|:---------------:|
 | 473,460 (9%) | 896,127 (16%) | 2,528,370 (45%) | 1,660,481 (30%) |
 
@@ -546,9 +546,9 @@ Small clusters now >=10: 187,953 (2%) (total small clusters with one or more GTD
 
 *New MG+GTDB clusters with more than 10 ORFs*
 
-| Clusters | ORFs      |
-| -------- | --------- |
-| 240,711  | 9,001,819 |
+| Clusters | ORFs       |
+| -------- | ---------- |
+| 240,711  | 10,136,816 |
 
 </div>
 

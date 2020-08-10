@@ -8,15 +8,18 @@ setwd("/bioinf/projects/megx/UNKNOWNS/2017_11/")
 gene_annot_all <- fread("data/pfam_annotation/marine_hmp_pfam31_multi_domain_coord.tsv.gz", header = F) %>%
   setNames(c("gene","pfam","start","end"))
 
+# Gene coverage for mono-domain annotation
 mono <- gene_annot_all %>% dt_filter(!grepl("\\|",start)) %>%
   mutate(pfam_covered_aa=(as.numeric(end)-as.numeric(start))+1) %>% select(gene,pfam,pfam_covered_aa)
 save(mono,file="data/pfam_annotation/marine_hmp_pfam31_mono_coord.rda")
 
+# Gene coverage for mono-domain annotation
 multi <- gene_annot_all %>% dt_filter(grepl("\\|",start)) %>%
   separate_rows(start,end,sep="\\|")
 
 list <- split(multi, list(multi$gene), drop=TRUE)
 
+# Function to calculate multi-domain annotations coverage, taking into account eventual coordinates overlaps
 overlaps_dt_f <- function(df){
   tbl <- as.data.table(df %>% mutate(start=as.numeric(start),end=as.numeric(end)))
 
