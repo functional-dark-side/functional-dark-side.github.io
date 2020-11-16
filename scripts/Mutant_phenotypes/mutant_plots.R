@@ -7,12 +7,12 @@ source("lib/colors.R")
 ggthemr::ggthemr(layout = "scientific", palette = "fresh")
 # Load data
 # For plotting the Tn-Seq data
-load("data/mutants/mutants_gu19737823/mutant_genes_cls_gu19737823.Rda")
+load("data/mutant_phenotypes_analysis/mutants_gu19737823/mutant_genes_cls_gu19737823.Rda")
 # For plotting the glyph for AO356_08590
-load("data/mutants/mutants_gu19737823/genes_int_gu19737823.Rda")
+load("data/mutant_phenotypes_analysis/mutants_gu19737823/genes_int_gu19737823.Rda")
 # For plotting the occurrence in OM-RGCv2 and other MG
-load("data/mutants/mutants_gu19737823/samp_sel_cls_gu19737823.Rda")
-load("data/mutants/mutants_gu19737823/omrgc_genes_gu19737823.Rda")
+load("data/mutant_phenotypes_analysis/mutants_gu19737823/samp_sel_cls_gu19737823.Rda")
+load("data/mutant_phenotypes_analysis/mutants_gu19737823/omrgc_genes_gu19737823.Rda")
 samples_list <- read_tsv("data/listSamplesPaper.tsv") %>%
   rename(project = study) %>%
   mutate(project = toupper(project))
@@ -32,11 +32,11 @@ GOS_cdata <- tbl(contex, "GOS_contex") %>%
   collect() %>%
   rename(label = sample_ID)
 # Load data for the hhblits graph
-load("data/mutants/mutants_gu19737823/hhblits_graph_gu_c_12103.Rda", verbose = TRUE)
+load("data/mutant_phenotypes_analysis/mutants_gu19737823/hhblits_graph_gu_c_12103.Rda", verbose = TRUE)
 # Load data for the glyphs
-load("data/mutants/mutants_gu19737823/data_glyphs_gu19737823.Rda", verbose = TRUE)
+load("data/mutant_phenotypes_analysis/mutants_gu19737823/data_glyphs_gu19737823.Rda", verbose = TRUE)
 # Load data for the tree
-load("data/mutants/mutants_gu19737823/tree_data_gu19737823.Rda", verbose = TRUE)
+load("data/mutant_phenotypes_analysis/mutants_gu19737823/tree_data_gu19737823.Rda", verbose = TRUE)
 # Spectinocym plot for Pseudomonas fluorescens FW300-N2C3
 org <- "pseudo5_N2C3_1"
 base_exp <- "LB"

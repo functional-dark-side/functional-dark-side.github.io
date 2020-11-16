@@ -94,16 +94,6 @@ function get_outliers() {
   rm "${N}".out "${N}".cor
 }
 
-function get_SSN_leon() {
-  # Identity scores from the MSA
-  ID="${N}"_id
-  # the 5th column has the identity score
-  "${TCOFFEE_BIN}" -other_pg seq_reformat -in "${ALN}" -output=sim_mat_blosum62mt | grep TOP | awk '{print $5,$6,$7}' | sed -e 's/__/_</g' > "${ID}"
-  # Get statistics from the raw SSN
-  SSN_RAW_STATS="${N}"_SSN_raw_stats.tsv
-  RSTATS=$("${STATS_BIN}" "${ID}")
-  echo "${RSTATS}" | awk -vN="${N}" -vS="${NSEQS}" 'BEGIN{OFS="\t"}{print N,S,$1,$3,$4,$6}' > "${SSN_RAW_STATS}"
-}
 
 function get_SSN_para() {
   # Identity scores from the MSA
@@ -293,7 +283,6 @@ trap "cleanup; exit 0" EXIT SIGHUP SIGINT SIGQUIT SIGPIPE SIGTERM
 
 declare -r MMSEQS_BIN="${HOME}/opt/MMseqs2/bin/mmseqs"
 declare -r FILTER_BIN="${PWD}/scripts/Cluster_validation/compos/filter_graph"
-declare -r TCOFFEE_BIN="${HOME}/opt/tcoffee/bin/t_coffee"
 declare -r PARASAIL_BIN="${HOME}/opt/parasail/bin/parasail_aligner"
 declare -r FAMSA_BIN="${HOME}/opt/FAMSA/famsa"
 declare -r ODSEQ_BIN="${HOME}/opt/OD-Seq/OD-seq"

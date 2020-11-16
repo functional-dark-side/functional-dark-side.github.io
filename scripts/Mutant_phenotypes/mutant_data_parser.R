@@ -7,13 +7,13 @@ library(data.table)
 library(maditr)
 library(tidyverse)
 
-unixtools::set.tempdir(path.expand("/vol/cloud/SANDBOX/tmp"))
+unixtools::set.tempdir(path.expand("/scratch/tmp"))
 
 lo_env <- new.env()
 
 setDTthreads(28)
 source("lib/colors.R")
-mutants_db <- dbConnect(drv=SQLite(), dbname="/vol/cloud/SANDBOX/mutants/analysis/data/fit/cgi_data/feba.db")
+mutants_db <- dbConnect(drv=SQLite(), dbname="data/mutant_phenotypes_analysis/fit/cgi_data/feba.db")
 
 
 experim <-  tbl(mutants_db, "Experiment") %>%
@@ -27,11 +27,11 @@ organisms <-  tbl(mutants_db, "Organism") %>% collect(n = Inf) %>%
 
 gene_fit <- tbl(mutants_db, "GeneFitness") %>% collect(n = Inf)
 
-mutants_best_hit <- read_tsv("/vol/cloud/SANDBOX/mutants/analysis/data/mutants_mg_gtdb_best-hits.tsv") %>%
+mutants_best_hit <- read_tsv("data/mutant_phenotypes_analysis/mutants_mg_gtdb_best-hits.tsv") %>%
   separate(col = gene, into = c("orgId", "locusId"), sep = ":", remove = TRUE)
 
 # Get phylogenomic info
-load("/vol/cloud/SANDBOX/mutants/analysis/data/GTDB/gtdb_bac_r86_plot.Rda", verbose = TRUE)
+load("data/mutant_phenotypes_analysis/GTDB/gtdb_bac_r86_plot.Rda", verbose = TRUE)
 f1 <- f1 %>%
   separate(trait, into = c("categ", "cl_name"), sep = "_")
 
@@ -54,12 +54,12 @@ mutant_genes_cls <- genes %>%
   mutate(is_specific = ifelse(is.na(lowest_rank), "non-specific", "specific"))
 
 # Read OM-RGCv2 data
-lo_env$omrgc_unk_gu_gtdb <- read_tsv(file = "/vol/cloud/SANDBOX/mutants/analysis/data/om-rgc_v2/om-rgc_v2.unks.unk-gu.gtdb.tsv.gz") %>%
+lo_env$omrgc_unk_gu_gtdb <- read_tsv(file = "data/mutant_phenotypes_analysis/om-rgc_v2/om-rgc_v2.unks.unk-gu.gtdb.tsv.gz") %>%
   mutate(cl_name = as.character(cl_name))
 
-lo_env$omrgc <- read_tsv(file = "/vol/cloud/SANDBOX/mutants/analysis/data/om-rgc_v2/OM-RGC_v2_genes_class_categ.tsv.gz")
+lo_env$omrgc <- read_tsv(file = "data/mutant_phenotypes_analysis/om-rgc_v2/OM-RGC_v2_genes_class_categ.tsv.gz")
 
-lo_env$omrgc_pairs <- read_tsv(file = "/vol/cloud/SANDBOX/mutants/analysis/data/om-rgc_v2/OM-RGC_v2_genes_class_categ_pairs.tsv.gz")
+lo_env$omrgc_pairs <- read_tsv(file = "data/mutant_phenotypes_analysis/om-rgc_v2/OM-RGC_v2_genes_class_categ_pairs.tsv.gz")
 
 mutant_genes_cls_omrgc <- mutant_genes_cls %>%
   inner_join(lo_env$omrgc %>%
@@ -186,7 +186,7 @@ plot_gene_int <- ggplot(gene_int, aes(xmin = begin, xmax = end, y = molecule, fi
 omrgc_genes <- lo_env$omrgc %>% filter(cl_name == 19737823)
 
 # In how many samples do we find it
-lo_env$mg_cl <- fread(input = "/vol/cloud/UNK_SANDBOX/mg_all_cl_categ_smpl_abund_norfs.tsv.gz", header = TRUE, verbose = TRUE)
+lo_env$mg_cl <- fread(input = "data/env_contextual_data/mg_all_cl_categ_smpl_abund_norfs.tsv.gz", header = TRUE, verbose = TRUE)
 
 samp_sel_cls <- lo_env$mg_cl %>%
   filter(cl_name == 19737823) %>%
@@ -196,7 +196,7 @@ samp_sel_cls <- lo_env$mg_cl %>%
                            grepl("^OSD", sample) ~ "OSD",
                            TRUE ~ "GOS"))
 
-save(samp_sel_cls, file = "/vol/cloud/UNK_SANDBOX/samp_sel_cls.Rda")
+save(samp_sel_cls, file = "data/mutant_phenotypes_analysis/samp_sel_cls.Rda")
 
 samp_sel_cls %>%
   group_by(study) %>%
@@ -204,7 +204,7 @@ samp_sel_cls %>%
 
 
 # Get GTDB data, identify genomes, get gene glyphs and plot tree with number of genomes at R rank
-lo_env$orf_cl <- fread(input = "/vol/cloud/SANDBOX/all_mg_gtdb_genome_orf_cl_categ.tsv.gz", verbose = TRUE, header = FALSE)
+lo_env$orf_cl <- fread(input = "data/GTDB/mg_gtdb_kept_cluster_genome_orf_categ.tsv.gz", verbose = TRUE, header = FALSE)
 lo_env$orf_cl_parsed <- lo_env$orf_cl %>%
   setNames(c("genome", "domain", "orf", "cl_name")) %>%
   separate(cl_name, c("categ", "cl_name"), sep = "_") %>%
@@ -220,7 +220,7 @@ sel_genomes <- lo_env$orf_cl_parsed %>%
   select(genome) %>%
   distinct()
 
-load("/vol/cloud/SANDBOX/gtdb_bac_r86_plot.Rda", verbose = TRUE)
+load("data/mutant_phenotypes_analysis/GTDB/gtdb_bac_r86_plot.Rda", verbose = TRUE)
 
 
 gtdb_tax %>%
@@ -403,13 +403,13 @@ plot_genes <- ggplot(all_genes, aes(xmin = start, xmax = end, y = molecule, fill
 
 # Plots
 # 1. Scatter plot
-save(mutant_genes_cls, file = "/vol/cloud/UNK_SANDBOX/mutants_gu19737823/mutant_genes_cls_gu19737823.Rda")
+save(mutant_genes_cls, file = "data/mutant_phenotypes_analysis/mutants_gu19737823/mutant_genes_cls_gu19737823.Rda")
 
 # 2. INteresting genes in metagenomes
-save(omrgc_genes, file = "/vol/cloud/UNK_SANDBOX/mutants_gu19737823/omrgc_genes_gu19737823.Rda")
-save(samp_sel_cls, file = "/vol/cloud/UNK_SANDBOX/mutants_gu19737823/samp_sel_cls_gu19737823.Rda")
+save(omrgc_genes, file = "data/mutant_phenotypes_analysis/mutants_gu19737823/omrgc_genes_gu19737823.Rda")
+save(samp_sel_cls, file = "data/mutant_phenotypes_analysis/mutants_gu19737823/samp_sel_cls_gu19737823.Rda")
 
 # 3. Interesting genes in genomes
-save(tax_family, tree_family, family_data, cl_counts, file = "/vol/cloud/UNK_SANDBOX/mutants_gu19737823/family_data_gu19737823.Rda" )
-save(data_glyphs, file = "/vol/cloud/UNK_SANDBOX/mutants_gu19737823/data_glyphs_gu19737823.Rda")
-save(genes_int, file = "/vol/cloud/UNK_SANDBOX/mutants_gu19737823/genes_int_gu19737823.Rda")
+save(tax_family, tree_family, family_data, cl_counts, file = "data/mutant_phenotypes_analysis/mutants_gu19737823/family_data_gu19737823.Rda" )
+save(data_glyphs, file = "data/mutant_phenotypes_analysis/mutants_gu19737823/data_glyphs_gu19737823.Rda")
+save(genes_int, file = "data/mutant_phenotypes_analysis/mutants_gu19737823/genes_int_gu19737823.Rda")

@@ -36,6 +36,27 @@ The Global Ocean Sampling Expedition (GOS) [[2]](#2), the Tara Oceans expedition
 
 The data were collected in the form of single-reads from GOS and at the stage of metagenomic assemblies from the other four projects. Specifically, GOS single-reads came from shotgun sequencing performed with the Sanger sequencing techniques, which leads to sufficiently long reads [[5]](#5) (GOS Sanger data have an average read length of ~800 nucleotides [[2]](#2)). TARA, OSD, Malaspina and the HMP data are, instead, metagenomic assemblies of Illumina pair-end reads. TARA reads were assembled using MOCAT [[6]](#6), Malaspina with RAY-Meta [[7]](#7), OSD using SPAdes [[8]](#8) and the HMP with SOAPdenovo (V 1.04 28) [[9]](#9).
 
+<!---
+DATA SOURCES:
+
+TARA Oceans (https://www.embl.de/tara-oceans and https://oceans.taraexpeditions.org/en) Data distribution explained here: https://www.ebi.ac.uk/services/tara-oceans-data
+Contextual: PANGAEA https://doi.pangaea.de/10.1594/PANGAEA.842197
+Raw data: ENA https://www.ebi.ac.uk/ena/data/view/PRJEB402 and EBI metagenomics (MGnify) https://www.ebi.ac.uk/metagenomics/studies/ERP001736#overview
+GOS (https://www.jcvi.org/gos)
+Contextual: https://www.imicrobe.us/#/search/GOS (originally CAMERA, now iMICROBE)
+Raw data: https://www.ncbi.nlm.nih.gov/bioproject/208472
+OSD (https://www.microb3.eu/osd.html)
+Contextual: PANGAEA http://store.pangaea.de/Projects/OSD_2014/
+Raw data: ENA http://www.ebi.ac.uk/ena/data/view/PRJEB8682
+Malaspina (http://www.expedicionmalaspina.es/Malaspina/Main.do#content:Home)
+Contextual: Public? We got them directly from the Malaspina group.
+Raw data: ENA, but I can find only these https://www.ebi.ac.uk/ena/data/view/PRJNA330770
+HMP (https://portal.hmpdacc.org/)
+Contextual : HMP portal https://hmpdacc.org/hmp/catalog/grid.php?dataset=metagenomic
+Raw data: HMP portal https://portal.hmpdacc.org/
+
+--->
+
 <br>
 
 <h2 class="section-heading  text-primary">Data sets integration via incremental clustering</h2>

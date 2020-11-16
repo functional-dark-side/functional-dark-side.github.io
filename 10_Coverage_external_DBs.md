@@ -165,11 +165,11 @@ Tara Ocean MAG dataset:
 
 </div>
 
-All Tata MAGs are represented in the cluster database with 77% of their ORFs. Again the majority of the ORFs was found in the K and GU clusters.
+All Tara MAGs are represented in the cluster database with 77% of their ORFs. Again the majority of the ORFs was found in the K and GU clusters.
 
 <div class="img_container" style="width:70%; margin:2em auto;">
 
-*TaraOcean-MAGs vs Clusters search results*
+*Tara Ocean-MAGs vs Clusters search results*
 
 | Tara MAGs ORFs  | Tara MAGs  |    Clusters     |
 |:---------------:|:----------:|:---------------:|
@@ -260,19 +260,17 @@ As shown in the figure below, our clusters are found in each one of the 11 main 
 
 <h4 class="section-heading  text-primary">Unknown genes with mutant phenotypes</h4>
 
-Price et al. [[9]](#9) identified 37,684 mutant-genes. We covered 85% of them in our cluster database.
+Price et al. [[9]](#9) identified 156,439 mutant-genes. We covered 85% of them in our cluster database.
 
 <div class="img_container" style="width:50%; margin:2em auto;">
 
-*Mutant-genes vs Clusters search results*
+*Mutant-genes vs Clusters search results (Considering only the search best-hits)*
 
-| Mutant-genes |   Clusters   |
-|:------------:|:------------:|
-| 31,944 (85%) | 199,439 (7%) |
+| Mutant-genes | Clusters |
+|:------------:|:--------:|
+|   137,502    |  49,864  |
 
 </div>
-
-Considering only the search best-hits: 14,026 clusters
 
 <div class="img_container" style="width:50%; margin:2em auto;">
 
@@ -281,11 +279,17 @@ Considering only the search best-hits: 14,026 clusters
 | CATEG | Mutant-genes | Clusters |
 |:-----:|:------------:|:--------:|
 |  EU   |      0       |    0     |
-|  GU   |    2,584     |  1,840   |
-|  KWP  |     673      |   458    |
-|   K   |    22,989    |  11,728  |
+|  GU   |    13,007    |  7,201   |
+|  KWP  |     3,041    |   1,596  |
+|   K   |   121,454    |  41,067  |
 
 </div>
+
+Selecting only the genes identified as unknwons by Prie et al.:
+
+Price et al. identified 49,736 unknowns, of which we covered 33,016 (66%), of which 21,967 (44%) were found in known GCs (92% K)
+
+<br>
 
 <h4 class="section-heading  text-primary">Summary of the coverage of external databases</h4>
 

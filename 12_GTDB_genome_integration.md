@@ -550,6 +550,13 @@ Small clusters now >=10: 187,953 (2%) (total small clusters with one or more GTD
 | -------- | ---------- |
 | 240,711  | 10,136,816 |
 
+
+| MG singletons | MG singl now LT10 | MG singl now GE10 |
+| ------------- | ----------------- | ----------------- |
+| 19,419,086    | 439,480           | 52,758            |
+
+MG+GTDB singletons: 24,977,524
+
 </div>
 
 Currently under validation ...
