@@ -94,11 +94,11 @@ The **combination** of the results of both cluster evaluations led to a set of 2
 **Table 1.** Number "good" and "bad" clusters defined after the validation and number of ORFs in them.
 {: style="color:gray; font-size: 90%; text-align: center;"}  
 
-|      Good Clusters     |     Bad Clusters      |
-|:----------------------:|:---------------------:|
-|     2,946,845 (98.1%)  |       57,052 (1.9%)   |
+|     Good Clusters      |     Bad Clusters      |
+| :--------------------: | :-------------------: |
+|   2,946,845 (98.1%)    |     57,052 (1.9%)     |
 | **Good Clusters ORFs** | **Bad Clusters ORFs** |
-|    263,022,636 (98%)   |     5,445,127 (2%)    |
+|   263,022,636 (98%)    |    5,445,127 (2%)     |
 {: style="margin-left: auto; margin-right: auto; width: 60%"}
 
 
@@ -119,12 +119,12 @@ We compared the two validation steps for the set of annotated clusters, and we f
 {: style="color:gray; font-size: 90%; text-align: center;"}  
 
 | CLUSTERS           | Functional BAD | Functional GOOD | <span style="color:grey">Not annotated clusters</span> |
-| ------------------ |:--------------:|:---------------:|:------------------------------------------------------:|
+| ------------------ | :------------: | :-------------: | :----------------------------------------------------: |
 | Compositional BAD  |    **337**     |      9,006      |         <span style="color:grey">36,288</span>         |
 | Compositional GOOD |     11,421     |   **995,160**   |     <span style="color:grey">**1,951,685**</span>      |
 
 | ORFs               | Functional BAD | Functional GOOD | <span style="color:grey">Not annotated clusters</span> |
-| ------------------ |:--------------:|:---------------:|:------------------------------------------------------:|
+| ------------------ | :------------: | :-------------: | :----------------------------------------------------: |
 | Compositional BAD  |   **19,956**   |     990,903     |       <span style="color:grey">1,188,266</span>        |
 | Compositional GOOD |   3,246,002    | **177,176,680** |     <span style="color:grey">**85,845,956**</span>     |
 
@@ -152,7 +152,7 @@ The annotated clusters are processed through the R script [eval_shingl_jacc.r](s
 
 We combined the two validation results and we saved/stored them in the form of an SQLiteDB (database).
 <br />
-[validation_res.sh](scripts/Cluster_validation/validation_res.sh), which parse the raw compositional validation results retrieving info about the cluster old representatives and the annotations and [validation_res.r](scripts/Cluster_validation/validation_res.r), R script that combines and summarises the results, saves them in a database and generates some report plots. More info in the [README_val.md](scripts/Cluster_validation/README_val.md).
+[validation_res.sh](scripts/Cluster_validation/validation_res.sh), which parse the raw compositional validation results retrieving info about the cluster old representatives and the annotations and [validation_res.r](scripts/Cluster_validation/validation_res.r), R script that combines and summarises the results, saves them in a database and generates some report plots. More info in the [README](https://raw.githubusercontent.com/functional-dark-side/functional-dark-side.github.io/master/scripts/Cluster_validation/README_val.md).
 
 
 {% endcapture %}
