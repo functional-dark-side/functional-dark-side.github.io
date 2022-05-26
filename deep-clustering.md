@@ -63,7 +63,7 @@ For the downstream processing, we kept 3,003,897 gene clusters (83% of the origi
 
 {% capture code %}
 
-The input for the script [clustering.sh](scripts/MMseqs_clustering/clustering.sh) is the multi-fasta file containing the predicted ORFs (amino acids). The sequences are clustered down to 30% sequence similarity and the results are parsed by the scripts [clustering_res.sh](scripts/MMseqs_clustering/clustering_res.sh) and [cluster_info.sh](scripts/MMseqs_clustering/cluster_info.sh). From the parsing we obtain a sequence database of the clusters, tables containing information about the cluster representative, the size and the cluster members and we identified the set of clusters with more than 10 ORFs, those with less and the set of singletons. 
+The input for the script [clustering.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/MMseqs_clustering/clustering.sh) is the multi-fasta file containing the predicted ORFs (amino acids). The sequences are clustered down to 30% sequence similarity and the results are parsed by the scripts [clustering_res.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/MMseqs_clustering/clustering_res.sh) and [cluster_info.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/MMseqs_clustering/cluster_info.sh). From the parsing we obtain a sequence database of the clusters, tables containing information about the cluster representative, the size and the cluster members and we identified the set of clusters with more than 10 ORFs, those with less and the set of singletons. 
 <br />
 An example of the script usage can be found here:
 

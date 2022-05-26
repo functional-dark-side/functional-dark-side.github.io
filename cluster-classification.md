@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cluster classification
+title: Gene Cluster classification
 ---
 
 First clssification of our clusters in the four main functional categories:
@@ -96,10 +96,10 @@ The results of the different steps are shown in the next figure, and the numbers
 
 *Results from the search against the UniRef90 and the NCBI nr databases*
 
-|      Database     | Characterised hits |  Hypothetical hits |       No-hits      |
-|:-----------------:|:------------------:|:------------------:|:------------------:|
-|      UniRef90     |       749,439      |      831,676       |       365,622      |
-|       NCBI nr     |         4,279      |       15,998       |       345,345      |
+| Database | Characterised hits | Hypothetical hits | No-hits |
+| :------: | :----------------: | :---------------: | :-----: |
+| UniRef90 |      749,439       |      831,676      | 365,622 |
+| NCBI nr  |       4,279        |      15,998       | 345,345 |
 
 </div>
 
@@ -115,10 +115,10 @@ Results are summarised in the following table and figure:
 
 *Cluster categories and ORFs content.*
 
-|          |      K      |     KWP     |      GU     |      EU     |
-|----------|:-----------:|:-----------:|:-----------:|:-----------:|
-| Clusters |   912,551   |   753,718   |   928,643   |   345,345   |
-| ORFs     | 164,720,321 |  37,907,627 |  46,689,540 |  10,824,866 |
+|          |      K      |    KWP     |     GU     |     EU     |
+| -------- | :---------: | :--------: | :--------: | :--------: |
+| Clusters |   912,551   |  753,718   |  928,643   |  345,345   |
+| ORFs     | 164,720,321 | 37,907,627 | 46,689,540 | 10,824,866 |
 
 </div>
 
@@ -130,23 +130,38 @@ Results are summarised in the following table and figure:
 
 </div>
 
-**Scripts and description:** The main script, [classification.sh](scripts/Cluster_classification/classification.sh), calls both the cluster of unknowns and the clusters of knowns classifications. The input are the refined set of annotated and not annoated clusters. Additional info in the [README_class.md](scripts/Cluster_classification/README_class.md).
 
 <br>
 <br>
 
 * * *
 
-<h4 class="section-heading  text-primary">References</h4>
+<br>
+<br>
 
-<a name="1"></a>[1] H. Tordai, A. Nagy, K. Farkas, L. Bányai, and L. Patthy, “Modules, multidomain proteins and organismic complexity.,” The FEBS journal, vol. 272, no. 19, pp. 5064–5078, Oct. 2005.
+{% capture code %}
 
-<a name="2"></a>[2]	J. H. Fong, L. Y. Geer, A. R. Panchenko, and S. H. Bryant, “Modeling the evolution of protein domain architectures using maximum parsimony.,” J Mol Biol, vol. 366, pp. 307–315, Feb. 2007.
+The main script, [classification.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_classification/classification.sh), calls both the cluster of unknowns and the clusters of knowns classifications. The input are the refined set of annotated and not annoated clusters. Additional info in the [README](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_classification/README_class.md).
 
-<a name="3"></a>[3]	M. Magrane and UniProt Consortium, “UniProt Knowledgebase: a hub of integrated protein data.,” Database: the journal of biological databases and curation, vol. 2011, p. bar009, Mar. 2011.
+{% endcapture %}
 
-<a name="4"></a>[4]	M. Steinegger and J. Söding, “MMseqs2 enables sensitive protein sequence searching for the analysis of massive data sets.,” Nature biotechnology, vol. 35, no. 11, pp. 1026–1028, Nov. 2017.
+{% include collapsible.html toggle-name="toggle-code" button-text="Code and description" toggle-text=code %}
 
-<a name="4"></a>[5]	NCBI Resource Coordinators, “Database resources of the National Center for Biotechnology Information.,” Nucleic acids research, vol. 42, no. Database issue, pp. D7-17, Jan. 2014.
 
-<a name="4"></a>[6]	S. Yooseph et al., “The Sorcerer II Global Ocean Sampling expedition: expanding the universe of protein families,” PLoS biology, vol. 5, no. 3, p. 16, 2007.
+{% capture references %}
+
+**[1]** H. Tordai, A. Nagy, K. Farkas, L. Bányai, and L. Patthy, “Modules, multidomain proteins and organismic complexity.,” The FEBS journal, vol. 272, no. 19, pp. 5064–5078, Oct. 2005.
+
+**[2]**	J. H. Fong, L. Y. Geer, A. R. Panchenko, and S. H. Bryant, “Modeling the evolution of protein domain architectures using maximum parsimony.,” J Mol Biol, vol. 366, pp. 307–315, Feb. 2007.
+
+**[3]**	M. Magrane and UniProt Consortium, “UniProt Knowledgebase: a hub of integrated protein data.,” Database: the journal of biological databases and curation, vol. 2011, p. bar009, Mar. 2011.
+
+**[4]**	M. Steinegger and J. Söding, “MMseqs2 enables sensitive protein sequence searching for the analysis of massive data sets.,” Nature biotechnology, vol. 35, no. 11, pp. 1026–1028, Nov. 2017.
+
+**[5]**	NCBI Resource Coordinators, “Database resources of the National Center for Biotechnology Information.,” Nucleic acids research, vol. 42, no. Database issue, pp. D7-17, Jan. 2014.
+
+**[6]**	S. Yooseph et al., “The Sorcerer II Global Ocean Sampling expedition: expanding the universe of protein families,” PLoS biology, vol. 5, no. 3, p. 16, 2007.
+{% endcapture %}
+
+<p></p>
+{% include collapsible.html toggle-name="toggle-ref" button-text="References" toggle-text=references %}

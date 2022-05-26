@@ -13,7 +13,6 @@ Gene prediction algorithms have limitations and can yield inaccurate ORFs predic
 i) Two ORFs on the same strand are considered shadows if they overlap by at least 60 bps.
 ii) ORFs on opposite strands are identified as shadows if they overlap by at least 50 bps, and their ends of 3 'are within the intervals of the others, or if they overlap by at least 120 bps and the end of 5 'of one is in the interval of the other.
 
-**Scripts and description:** The scripts [spur_shadow_orfs.sh](scripts/Spurious_shadow/spur_shadow_orfs.sh) and [shadow_orfs.r](scripts/Spurious_shadow/shadow_orfs.r) identified the spurious and shadow ORFs in our dataset applying the criteria described above. The output is a tab-separated file containing the following fields: <orf_name> <orf_length> <cl_name> <cl_size> <prop_shadow (in the cluster)> <is.shadow> <is.spurious> . More info in the [README_spur.md](scripts/Spurious_shadow/README_spur.md).
 
 <h3 class="section-heading  text-primary">Results</h3>
 
@@ -25,9 +24,9 @@ TOTAL: 53,324 (0.02%)
 
 *Distribution of spurious ORFs in the different data sets.*
 
-|   TARA   | Malaspina |    GOS   |   OSD   |    HMP   |
-|:--------:|:---------:|:--------:|:-------:|:--------:|
-|   4,203  |   2,298   |   4,939  |  1,620  |  40,264  |
+| TARA  | Malaspina |  GOS  |  OSD  |  HMP   |
+| :---: | :-------: | :---: | :---: | :----: |
+| 4,203 |   2,298   | 4,939 | 1,620 | 40,264 |
 
 </div>
 
@@ -39,9 +38,9 @@ TOTAL: 611,774 (0.2%)
 
 *Distribution of shadows ORFs in the different data sets.*
 
-|   TARA   | Malaspina |    GOS   |   OSD   |    HMP   |
-|:--------:|:---------:|:--------:|:-------:|:--------:|
-|  157,688 |   40,762  |  66,245  |  70,632 |  276,447 |
+|  TARA   | Malaspina |  GOS   |  OSD   |   HMP   |
+| :-----: | :-------: | :----: | :----: | :-----: |
+| 157,688 |  40,762   | 66,245 | 70,632 | 276,447 |
 
 </div>
 
@@ -53,9 +52,9 @@ We detected a total of 53,324 (0.02%) **spurious ORFs** distributed in 6,228 (0.
 
 *Number of spurious ORFs in the clusters and in each project.*
 
-| Spurious in clusters ≥ 10 members | Spurious in clusters < 10 members > 1 |  Spurious in singletons  |
-|:---------------------------------:|:-------------------------------------:|:------------------------:|
-|          44,205                   |                6,784                  |          2,335           |
+| Spurious in clusters ≥ 10 members | Spurious in clusters < 10 members > 1 | Spurious in singletons |
+| :-------------------------------: | :-----------------------------------: | :--------------------: |
+|              44,205               |                 6,784                 |         2,335          |
 
 </div>
 
@@ -66,9 +65,9 @@ clusters.
 
 *Number of shadow ORFs in the clusters and in each project.*
 
-| Shadows in clusters ≥ 10 members | Shadows in clusters < 10 members > 1 |  Shadows in singletons  |
-|:--------------------------------:|:------------------------------------:|:-----------------------:|
-|           290,077                |              144,571                 |          177,126        |
+| Shadows in clusters ≥ 10 members | Shadows in clusters < 10 members > 1 | Shadows in singletons |
+| :------------------------------: | :----------------------------------: | :-------------------: |
+|             290,077              |               144,571                |        177,126        |
 
 </div>
 
@@ -77,10 +76,35 @@ clusters.
 
 * * *
 
-<h4 class="section-heading  text-primary">References</h4>
+{% capture code %}
 
-<a name="3"></a>[1]	R. Y. Eberhardt, D. H. Haft, M. Punta, M. Martin, C. O’Donovan, and A. Bateman, “AntiFam: a tool to help identify spurious ORFs in protein annotation.,” Database: the journal of biological databases and curation, vol. 2012, p. bas003, Mar. 2012.
+The scripts [spur_shadow_orfs.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Spurious_shadow/spur_shadow_orfs.sh) and [shadow_orfs.r](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Spurious_shadow/shadow_orfs.r) identified the spurious and shadow ORFs in our dataset applying the criteria described above. The output is a tab-separated file containing the following fields: 
 
-<a name="4"></a>[2]	S. Yooseph et al., “The Sorcerer II Global Ocean Sampling expedition: expanding the universe of protein families,” PLoS biology, vol. 5, no. 3, p. 16, 2007.
+- orf_name
+- orf_length
+- cl_name
+- cl_size
+- prop_shadow_in_the_cluster
+- is.shadow
+- is.spurious 
 
-<a name="5"></a>[3]	S. Yooseph, W. Li, and G. Sutton, “Gene identification and protein classification in microbial metagenomic sequence data via incremental clustering.,” BMC bioinformatics, vol. 9, p. 182, Apr. 2008.
+
+More info in the [README](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Spurious_shadow/README_spur.md).
+
+{% endcapture %}
+
+{% include collapsible.html toggle-name="toggle-code" button-text="Code and description" toggle-text=code %}
+
+{% capture references %}
+
+
+**[1]**	R. Y. Eberhardt, D. H. Haft, M. Punta, M. Martin, C. O’Donovan, and A. Bateman, “AntiFam: a tool to help identify spurious ORFs in protein annotation.,” Database: the journal of biological databases and curation, vol. 2012, p. bas003, Mar. 2012.
+
+**[2]**	S. Yooseph et al., “The Sorcerer II Global Ocean Sampling expedition: expanding the universe of protein families,” PLoS biology, vol. 5, no. 3, p. 16, 2007.
+
+**[3]**	S. Yooseph, W. Li, and G. Sutton, “Gene identification and protein classification in microbial metagenomic sequence data via incremental clustering.,” BMC bioinformatics, vol. 9, p. 182, Apr. 2008.
+
+{% endcapture %}
+
+<p></p>
+{% include collapsible.html toggle-name="toggle-ref" button-text="References" toggle-text=references %}

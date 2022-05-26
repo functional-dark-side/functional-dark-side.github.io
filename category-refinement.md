@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cluster category refinement
+title: Gene Cluster category refinement
 ---
 
 <h2 class="section-heading  text-primary">Clusters of unknowns refinement</h2>
@@ -12,9 +12,6 @@ The EUs represent the most critical of our cluster categories since we expected 
 We screened the EUs using HHblits [[1]](#1) against the Uniclust database (release 30_2017_10) using the HMM comparison method since it is currently considered one of the most sensitive approaches for homology detection [[2]](#2).
 The results were parsed using a probability threshold of 90% and then processed with the same system used for the classification of the unknowns to retrieve the hits annotated to hypothetical or characterised proteins. The firsts were then moved to the class of GU and the second to the KWP. The clusters with no matches, i.e., no homologies, represented the refined set of EU.
 
-**Scripts and description:** The main script, [unkn_refinement.sh](scripts/Cluster_category_refinement/unkn_refinement.sh), takes as input the EUs cluster ids, searches them against the Uniclust HMM DB, and parse the results through the codes [hh_parser.sh and hh_reader.py](scripts/Cluster_category_refinement/hh_parser.sh). The output are updated sets of cluster ids reported in a file for each category.
-For more detailed info check the [README_kuref.md](scripts/Cluster_category_refinement/README_kuref.md) file.
-
 
 <h3 class="section-heading  text-primary">Results</h3>
 
@@ -25,7 +22,7 @@ We found that the 61% of the EUs have/show a remote homology to a Uniclust entry
 *Unknown refinement steps in terms of number of clusters.*
 
 |                                |       K       |      KWP      |       GU        |      EU      |
-|:------------------------------:|:-------------:|:-------------:|:---------------:|:------------:|
+| :----------------------------: | :-----------: | :-----------: | :-------------: | :----------: |
 | Clusters (pre-EUs_refinement)  |    912,551    |    753,718    |     928,643     |   345,345    |
 |         EUs refinement         |       -       |    +38,333    |    +171,183     |   -209,516   |
 | Clusters (post-EUs_refinement) | 912,551 (31%) | 792,051 (27%) | 1,099,826 (37%) | 135,829 (5%) |
@@ -36,7 +33,7 @@ We found that the 61% of the EUs have/show a remote homology to a Uniclust entry
 *First step refined **cluster categories** and ORFs content.*
 
 |          |      K      |    KWP     |     GU     |    EU     |      Total      |
-| -------- |:-----------:|:----------:|:----------:|:---------:|:---------------:|
+| -------- | :---------: | :--------: | :--------: | :-------: | :-------------: |
 | Clusters |   912,551   |  792,051   | 1,099,826  |  135,829  |  **2,940,257**  |
 | ORFs     | 164,720,321 | 39,188,198 | 52,892,578 | 3,341,257 | **260,142,354** |
 
@@ -64,8 +61,6 @@ The KWPs returning remote homologies to Pfam domain of known function were then 
 We added the pfam names and clans and we converted the table in the multi-domain format (dA|dB)
 --->
 
-**Scripts and description:** The main script, [known_refinement.sh](scripts/Cluster_category_refinement/known_refinement.sh), takes as input the KWPs cluster ids, searches them against the Pfam HMM DB, through the code [hhparse_kwp.sh](scripts/Cluster_category_refinement/hhparse_kwp.sh), and then parse the results. The output are updated sets of cluster ids divided in a file for each category.
-For more detailed info check the [README_kuref.md](scripts/Cluster_category_refinement/README_kuref.md) file.
 
 <h3 class="section-heading  text-primary">Results</h3>
 
@@ -79,7 +74,7 @@ Considering both Pfam domain of known function and DUFs we now have 32,616 origi
 *Known refinement steps in terms of number of clusters.*
 
 |                                 |        K        |      KWP      |       GU        |      EU      |
-|:-------------------------------:|:---------------:|:-------------:|:---------------:|:------------:|
+| :-----------------------------: | :-------------: | :-----------: | :-------------: | :----------: |
 | Clusters (pre-KWPs_refinement)  |     912,551     |    792,051    |    1,099,826    |   135,829    |
 |         KWPs refinement         |    +137,615     |   -159,598    |     +21,983     |      -       |
 | Clusters (post-KWPs_refinement) | 1,050,166 (36%) | 632,453 (21%) | 1,121,809 (38%) | 135,829 (5%) |
@@ -88,10 +83,10 @@ Considering both Pfam domain of known function and DUFs we now have 32,616 origi
 
 _Refined **cluster categories** and ORFs content._
 
-|          |      K      |     KWP     |      GU     |      EU     |      Total      |
-|----------|:-----------:|:-----------:|:-----------:|:-----------:|:---------------:|
-| Clusters |  1,050,166  |    632,453  |  1,121,809  |   135,829   | **2,940,257**   |
-| ORFs     | 172,147,128 |  30,601,694 | 54,052,275  |  3,341,257  | **260,142,354** |
+|          |      K      |    KWP     |     GU     |    EU     |      Total      |
+| -------- | :---------: | :--------: | :--------: | :-------: | :-------------: |
+| Clusters |  1,050,166  |  632,453   | 1,121,809  |  135,829  |  **2,940,257**  |
+| ORFs     | 172,147,128 | 30,601,694 | 54,052,275 | 3,341,257 | **260,142,354** |
 
 </div>
 
@@ -104,17 +99,43 @@ An overview of the metagenomic cluster categories, including additional informat
 <h3 class="section-heading  text-primary">Finalization of the cluster categories</h3>
 
 After the refinement we combined together the annotations for the categories with annotated clusters (K,KWP and GU). We also created two summary files: one mapping all the clusters with the respective category, "cluster_ids_categ.tsv" and one with an additional field containing the cluster ORFs: "cluster_ids_categ_orfs.tsv".
-The commands used to gather this information are stored in the script [clu_categ_summary.sh](scripts/Cluster_category_refinement/clu_categ_summary.sh).
+The commands used to gather this information are stored in the script [clu_categ_summary.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_category_refinement/clu_categ_summary.sh).
 
-In the end, we build an HH-suite database (ffindex dbs) for each category, using the script [categ_ffindex_files.sh](scripts/Cluster_category_refinement/categ_ffindex_files.sh).
+In the end, we build an HH-suite database (ffindex dbs) for each category, using the script [categ_ffindex_files.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_category_refinement/categ_ffindex_files.sh).
 
 <br>
 <br>
 
 * * *
+<br />
+<br />
 
-<h4 class="section-heading  text-primary">References</h4>
+{% capture code %}
 
-<a name="1"></a>[1]	M. Remmert, A. Biegert, A. Hauser, and J. Söding, “HHblits: lightning-fast iterative protein sequence searching by HMM-HMM alignment.,” Nat Methods, Nov. 2011.
 
-<a name="2"></a>[2]	B. Lobb, D. A. Kurtz, G. Moreno-Hagelsieb, and A. C. Doxey, “Remote homology and the functions of metagenomic dark matter.,” Frontiers in genetics, vol. 6, p. 234, Jul. 2015.
+**Refinement of the unknown:** 
+
+The main script, [unkn_refinement.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_category_refinement/unkn_refinement.sh), takes as input the EUs cluster ids, searches them against the Uniclust HMM DB, and parse the results through the codes [hh_parser.sh and hh_reader.py](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_category_refinement/hh_parser.sh). The output are updated sets of cluster ids reported in a file for each category.
+For more detailed info check the [README.md](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_category_refinement/README_kuref.md) file.
+
+**Refinement of the known:** 
+
+The main script, [known_refinement.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_category_refinement/known_refinement.sh), takes as input the KWPs cluster ids, searches them against the Pfam HMM DB, through the code [hhparse_kwp.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_category_refinement/hhparse_kwp.sh), and then parse the results. The output are updated sets of cluster ids divided in a file for each category.
+For more detailed info check the [README.md](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_category_refinement/README_kuref.md) file.
+
+{% endcapture %}
+
+{% include collapsible.html toggle-name="toggle-code" button-text="Code and description" toggle-text=code %}
+
+
+{% capture references %}
+
+**[1]**	M. Remmert, A. Biegert, A. Hauser, and J. Söding, “HHblits: lightning-fast iterative protein sequence searching by HMM-HMM alignment.,” Nat Methods, Nov. 2011.
+
+**[2]**	B. Lobb, D. A. Kurtz, G. Moreno-Hagelsieb, and A. C. Doxey, “Remote homology and the functions of metagenomic dark matter.,” Frontiers in genetics, vol. 6, p. 234, Jul. 2015.
+
+
+{% endcapture %}
+
+<p></p>
+{% include collapsible.html toggle-name="toggle-ref" button-text="References" toggle-text=references %}

@@ -26,7 +26,7 @@ We annotated the predicted genes using the **hmmsearch** program from the HMMER 
 
 {% capture code %}
 
-The input for the functional annotation script [hmmsearch_pfam.sh](scripts/Pfam_annotation/hmmsearch_pfam.sh) is the multi-fasta file containing the predicted ORFs sequences (amino acids). The output is a tab-separated file called _domain hits table_, for more information check the [HMMER user guide](http://eddylab.org/software/hmmer3/3.1b2/Userguide.pdf). This table is then parsed to remove overlapping hits and to filter out the matches showing an iE-value > 1e-05 and a coverage < 40%. This is done calling the script [hmmsearch_res_parser.sh](scripts/Pfam_annotation/hmmsearch_res_parser.sh) and passing it the result table and the E-value and coverage parameters/values.  
+The input for the functional annotation script [hmmsearch_pfam.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Pfam_annotation/hmmsearch_pfam.sh) is the multi-fasta file containing the predicted ORFs sequences (amino acids). The output is a tab-separated file called _domain hits table_, for more information check the [HMMER user guide](http://eddylab.org/software/hmmer3/3.1b2/Userguide.pdf). This table is then parsed to remove overlapping hits and to filter out the matches showing an iE-value > 1e-05 and a coverage < 40%. This is done calling the script [hmmsearch_res_parser.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Pfam_annotation/hmmsearch_res_parser.sh) and passing it the result table and the E-value and coverage parameters/values.  
 <br />
 An example of the script usage can be found here:
 

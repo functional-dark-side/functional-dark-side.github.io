@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cluster communities
+title: Gene Cluster Communities
 ---
 
 <h3 class="section-heading  text-primary">Methods</h3>
@@ -64,7 +64,7 @@ We determined an optimal inflation value of 2.2, corresponding to the radar plot
 *Number of communities, clusters and ORFs for each category.*
 
 |             |      K      |    KWP     |     GU     |    EU     |      Total      |
-| ----------- |:-----------:|:----------:|:----------:|:---------:|:---------------:|
+| ----------- | :---------: | :--------: | :--------: | :-------: | :-------------: |
 | Communities |   24,181    |   64,938   |  146,100   |  48,095   |   **283,314**   |
 | Clusters    |  1,050,166  |  632,453   | 1,121,809  |  135,829  |  **2,940,257**  |
 | ORFs        | 172,147,128 | 30,601,694 | 54,052,275 | 3,341,257 | **260,142,354** |
@@ -114,7 +114,7 @@ Olson et al. [[3]](#3) phylogenetically analysed PRs in the sunlit ocean and gro
 *Number of genes, clusters and communities annotated to PR*
 
 | Genes  | Clusters | Communities |
-|:------:|:--------:|:-----------:|
+| :----: | :------: | :---------: |
 | 12,184 |    64    |      3      |
 
 
@@ -136,7 +136,7 @@ Because ribosomal proteins are highly conserved, we expect one protein family pe
 *Number of genes, clusters and communities annotated to ribosomial proteins*
 
 |              |  Genes  | Clusters | Communities |
-| ------------ |:-------:|:--------:|:-----------:|
+| ------------ | :-----: | :------: | :---------: |
 | All clusters | 781,579 |  1,843   |     98      |
 | HQ clusters  |  1,687  |   145    |     26      |
 
@@ -178,13 +178,13 @@ The clustering approach proposed in this paper was compared to the method used b
 </div>
 
 
-|     | Vanni et al. vs Meheust et al. | Vanni et al. vs ribosomal families | Meheust et al. vs ribosomal families |
-|:---:|:------------------------------:|:----------------------------------:|:------------------------------------:|
-| ARI |             0.915              |               0.944                |                0.906                 |
-| AMI |             0.928              |               0.916                |                0.878                 |
-| NVI |             0.101              |               0.0858               |                0.124                 |
-| NID |             0.0717             |               0.0841               |                0.122                 |
-| NMI |             0.928              |               0.916                |                0.878                 |
+|       | Vanni et al. vs Meheust et al. | Vanni et al. vs ribosomal families | Meheust et al. vs ribosomal families |
+| :---: | :----------------------------: | :--------------------------------: | :----------------------------------: |
+|  ARI  |             0.915              |               0.944                |                0.906                 |
+|  AMI  |             0.928              |               0.916                |                0.878                 |
+|  NVI  |             0.101              |               0.0858               |                0.124                 |
+|  NID  |             0.0717             |               0.0841               |                0.122                 |
+|  NMI  |             0.928              |               0.916                |                0.878                 |
 
 
 </div>

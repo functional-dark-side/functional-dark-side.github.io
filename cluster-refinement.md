@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cluster refinement
+title: Gene Cluster refinement
 ---
 
 <h3 class="section-heading  text-primary">Methods</h3>
@@ -39,7 +39,7 @@ Summarising: we removed 63,640 clusters and a total of 8,325,409 ORFs; they cons
 {% capture code %}
 **Cluster refinement:** 
 <br />
-[refinement.sh](scripts/Cluster_refinement/refinement.sh). It takes the output from the cluster validation and the shadows and spurious ORFs, and returns a refined set of clusters (tables plus ffindex databases). More info in the [README](https://raw.githubusercontent.com/functional-dark-side/functional-dark-side.github.io/master/scripts/Cluster_refinement/README_ref.md)
+[refinement.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_refinement/refinement.sh). It takes the output from the cluster validation and the shadows and spurious ORFs, and returns a refined set of clusters (tables plus ffindex databases). More info in the [README](https://raw.githubusercontent.com/functional-dark-side/functional-dark-side.github.io/master/scripts/Cluster_refinement/README_ref.md)
 
 {% endcapture %}
 {% include collapsible.html toggle-name="toggle-code" button-text="Code and description" toggle-text=code %}

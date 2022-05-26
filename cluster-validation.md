@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Cluster validation
+title: Gene Cluster validation
 ---
 
 An evaluation of the clustering is necessary to compare the functional homogeneity of the sequences within the same cluster [1].
@@ -143,16 +143,16 @@ We compared the two validation steps for the set of annotated clusters, and we f
 
 **Compositional validation:** 
 <br />
-The input for the compositional validation main script, [compos_val.sh](scripts/Cluster_validation/compositional/compos_val.sh), is the cluster sequence DB. The output is a tab-formatted file containing the new representatives and the results from the MSA evaluation expressed/measured in terms of number and proportion of bad-aligned sequences per cluster. For more detailed info check the [README_comp.md](scripts/Cluster_validation/compositional/README_comp.md) file.
+The input for the compositional validation main script, [compos_val.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_validation/compositional/compos_val.sh), is the cluster sequence DB. The output is a tab-formatted file containing the new representatives and the results from the MSA evaluation expressed/measured in terms of number and proportion of bad-aligned sequences per cluster. For more detailed info check the [README](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_validation/compositional/README_comp.md) file.
 
 **Functional homogeneity validation**
 <br />
-The annotated clusters are processed through the R script [eval_shingl_jacc.r](scripts/Cluster_validation/functional/eval_shingl_jacc.r). The output is a summary tad-formatted table with info about the each cluster functional homogeneity, measured by the median of the jaccard similarity indexes per cluster. Additional info about the scripts and the output can be found in the [README_func.md](scripts/Cluster_validation/functional/README_func.md).
+The annotated clusters are processed through the R script [eval_shingl_jacc.r](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_validation/functional/eval_shingl_jacc.r). The output is a summary tad-formatted table with info about the each cluster functional homogeneity, measured by the median of the jaccard similarity indexes per cluster. Additional info about the scripts and the output can be found in the [README](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_validation/functional/README_func.md).
 
 
 We combined the two validation results and we saved/stored them in the form of an SQLiteDB (database).
 <br />
-[validation_res.sh](scripts/Cluster_validation/validation_res.sh), which parse the raw compositional validation results retrieving info about the cluster old representatives and the annotations and [validation_res.r](scripts/Cluster_validation/validation_res.r), R script that combines and summarises the results, saves them in a database and generates some report plots. More info in the [README](https://raw.githubusercontent.com/functional-dark-side/functional-dark-side.github.io/master/scripts/Cluster_validation/README_val.md).
+[validation_res.sh](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_validation/validation_res.sh), which parse the raw compositional validation results retrieving info about the cluster old representatives and the annotations and [validation_res.r](https://github.com/functional-dark-side/functional-dark-side.github.io/blob/master/scripts/Cluster_validation/validation_res.r), R script that combines and summarises the results, saves them in a database and generates some report plots. More info in the [README](https://raw.githubusercontent.com/functional-dark-side/functional-dark-side.github.io/master/scripts/Cluster_validation/README_val.md).
 
 
 {% endcapture %}
@@ -162,10 +162,15 @@ We combined the two validation results and we saved/stored them in the form of a
 {% capture references %}
 
 **[1]**	M. Mirdita, L. von den Driesch, C. Galiez, M. J. Martin, J. Söding, and M. Steinegger, “Uniclust databases of clustered and deeply annotated protein sequences and alignments,” Nucleic Acids Research, vol. 45, no. D1, Jan. 2017.  
+
 **[2]**	S. Deorowicz, A. Debudaj-Grabysz, and A. Gudyś, “FAMSA: Fast and accurate multiple sequence alignment of huge protein families.,” Scientific reports, vol. 6, p. 33964, Sep. 2016.  
+
 **[3]**	R. Vanhoutreve, A. Kress, B. Legrand, H. Gass, O. Poch, and J. D. Thompson, “LEON-BIS: multiple alignment evaluation of sequence neighbours using a Bayesian inference system.,” BMC bioinformatics, vol. 17, no. 1, p. 271, Jul. 2016.  
+
 **[4]**	P. Jehl, F. Sievers, and D. G. Higgins, “OD-seq: outlier detection in multiple sequence alignments.,” BMC bioinformatics, vol. 16, p. 269, Aug. 2015.  
+
 **[5]**	Bennett, K. D. 1996. “Determination of the Number of Zones in a Biostratigraphical Sequence.” The New Phytologist 132 (1): 155–70.  
+
 **[6]**	J. Daily, “Parasail: SIMD C library for global, semi-global, and local pairwise sequence alignments.,” BMC bioinformatics, vol. 17, p. 81, Feb. 2016.  
 
 
